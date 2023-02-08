@@ -13,7 +13,7 @@ class SheepApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-        backgroundColor: const Color(0xff1F8A70),
+        canvasColor: const Color(0xff1F8A70),
         textTheme: GoogleFonts.armataTextTheme(ThemeData.dark().textTheme),
       ),
       home: const SplashView(),
