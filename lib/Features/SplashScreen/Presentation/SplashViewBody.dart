@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:sheepmanager/Core/Utils/colors.dart';
 import 'package:sheepmanager/Features/SplashScreen/Presentation/Widgets/logoImage.dart';
 
 import '../../../Core/Utils/router.dart';
@@ -27,7 +28,7 @@ class _SplashViewBodyState extends State<SplashViewBody> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+      backgroundColor: AppColors.mainColor,
       body: SafeArea(
         child: Center(
           child: Column(

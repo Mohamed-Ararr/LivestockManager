@@ -14,8 +14,9 @@ class SheepApp extends StatelessWidget {
     return MaterialApp.router(
       routerConfig: AppRouter.routes,
       theme: ThemeData(
-        scaffoldBackgroundColor: const Color(0xff1F8A70),
-        textTheme: GoogleFonts.armataTextTheme(ThemeData.dark().textTheme),
+        textTheme: GoogleFonts.armataTextTheme(
+          ThemeData.light().textTheme,
+        ),
       ),
     );
   }
