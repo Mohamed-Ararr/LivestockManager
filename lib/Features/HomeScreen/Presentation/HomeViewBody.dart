@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:sheepmanager/Core/Utils/colors.dart';
+import 'package:sheepmanager/Features/HomeScreen/Presentation/Widgets/avatarWidget.dart';
 import 'package:sheepmanager/constValues.dart';
 
 import '../../SplashScreen/Presentation/Widgets/logoImage.dart';
@@ -21,19 +22,7 @@ class HomeViewBody extends StatelessWidget {
             children: [
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const LogoImage(),
-                  Container(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 11, vertical: 6.5),
-                    alignment: Alignment.center,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(50),
-                      color: AppColors.mainColor,
-                    ),
-                    child: SvgPicture.asset(avatar),
-                  ),
-                ],
+                children: const [LogoImage(), AvatarButton()],
               ),
             ],
           ),
