@@ -1,9 +1,14 @@
 // ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:sheepmanager/Core/Utils/colors.dart';
+import 'package:sheepmanager/Features/HomeScreen/Presentation/Widgets/CardsListView.dart';
 import 'package:sheepmanager/Features/HomeScreen/Presentation/Widgets/CustomAppBar.dart';
+import 'package:sheepmanager/Features/HomeScreen/Presentation/Widgets/SheepCard.dart';
+import 'package:sheepmanager/Features/HomeScreen/Presentation/Widgets/SheepCardInfo.dart';
+import 'package:sheepmanager/Features/HomeScreen/Presentation/Widgets/SheepIconCard.dart';
 import 'package:sheepmanager/constValues.dart';
 
 import 'Widgets/customText.dart';
@@ -17,11 +22,20 @@ class HomeViewBody extends StatelessWidget {
       body: SafeArea(
         child: Padding(
           padding: kPaddingRightLeft,
-          child: Column(
-            children: const [
-              CustomAppBar(),
-              CustomTextField(),
-            ],
+          child: SingleChildScrollView(
+            physics: const BouncingScrollPhysics(),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: const [
+                CustomAppBar(),
+                SizedBox(height: 15),
+                CustomTextField(),
+                SizedBox(height: 15),
+                Text("Livestock List"),
+                SizedBox(height: 10),
+                CardsListView(),
+              ],
+            ),
           ),
         ),
       ),
