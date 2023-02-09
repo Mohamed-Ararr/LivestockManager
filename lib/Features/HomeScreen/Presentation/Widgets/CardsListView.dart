@@ -1,6 +1,7 @@
+// ignore_for_file: file_names
+
 import "package:flutter/material.dart";
 import "package:flutter_slidable/flutter_slidable.dart";
-import "package:font_awesome_flutter/font_awesome_flutter.dart";
 import "package:sheepmanager/Core/Utils/deleteOption.dart";
 import "package:sheepmanager/Core/Utils/soldOption.dart";
 

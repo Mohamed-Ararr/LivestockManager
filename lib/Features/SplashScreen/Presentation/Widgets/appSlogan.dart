@@ -11,6 +11,7 @@ class AppSlogan extends StatelessWidget {
       "Sheep Manager",
       style: TextStyle(
         fontSize: 30,
+        color: Colors.white,
       ),
     );
   }

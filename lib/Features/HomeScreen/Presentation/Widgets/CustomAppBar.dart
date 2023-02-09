@@ -14,6 +14,13 @@ class CustomAppBar extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: const [
         LogoImage(),
+        Text(
+          "Sheep Manager",
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 19,
+          ),
+        ),
         AvatarButton(),
       ],
     );

@@ -3,7 +3,9 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:sheepmanager/Core/Utils/colors.dart';
+import 'package:sheepmanager/Features/SplashScreen/Presentation/Widgets/appTagLine.dart';
 import 'package:sheepmanager/Features/SplashScreen/Presentation/Widgets/logoImage.dart';
+import 'package:sheepmanager/constValues.dart';
 
 import '../../../Core/Utils/router.dart';
 import 'Widgets/appSlogan.dart';
@@ -20,7 +22,7 @@ class _SplashViewBodyState extends State<SplashViewBody> {
   void initState() {
     super.initState();
     Future.delayed(
-      const Duration(seconds: 2),
+      const Duration(seconds: 3),
       () => GoRouter.of(context).push(AppRouter.homeView),
     );
   }
@@ -34,9 +36,13 @@ class _SplashViewBodyState extends State<SplashViewBody> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: const [
+              Spacer(),
               LogoImage(),
               SizedBox(height: 20),
               AppSlogan(),
+              Spacer(),
+              AppTagLine(),
+              SizedBox(height: 20),
             ],
           ),
         ),
