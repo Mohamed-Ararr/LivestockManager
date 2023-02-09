@@ -14,9 +14,9 @@ class SheepCard extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.symmetric(vertical: 8),
       decoration: BoxDecoration(
-        border: Border.all(
-          color: Colors.black,
-        ),
+        // border: Border.all(
+        //   color: Colors.black,
+        // ),
         borderRadius: kBorderRadius,
       ),
       child: Row(
