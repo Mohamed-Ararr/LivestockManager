@@ -1,7 +1,6 @@
 // ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
-import 'package:sheepmanager/Core/Utils/colors.dart';
 import 'package:sheepmanager/Features/HomeScreen/Presentation/Widgets/CardsListView.dart';
 import 'package:sheepmanager/Features/HomeScreen/Presentation/Widgets/CustomAppBar.dart';
 import 'package:sheepmanager/Features/HomeScreen/Presentation/Widgets/addNewSheepButton.dart';
@@ -23,20 +22,15 @@ class HomeViewBody extends StatelessWidget {
             physics: const BouncingScrollPhysics(),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const CustomAppBar(),
-                const SizedBox(height: 15),
-                const SearchCard(),
-                const SizedBox(height: 15),
-                Container(
-                  width: MediaQuery.of(context).size.width * 0.6,
-                  height: 1.5,
-                  color: AppColors.secColor,
-                ),
-                const SizedBox(height: 15),
-                const Text("Livestock List"),
-                const SizedBox(height: 10),
-                const CardsListView(),
+              children: const [
+                CustomAppBar(),
+                SizedBox(height: 25),
+                SearchCard(),
+                SizedBox(height: 15),
+                SizedBox(height: 10),
+                Text("Livestock List"),
+                SizedBox(height: 10),
+                CardsListView(),
               ],
             ),
           ),

@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 
-import 'Widgets/ProfileViewBody.dart';
+import 'ProfileViewBody.dart';
 
 class ProfileView extends StatelessWidget {
   const ProfileView({super.key});
