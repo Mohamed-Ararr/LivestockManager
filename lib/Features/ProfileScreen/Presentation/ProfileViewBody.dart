@@ -1,7 +1,7 @@
 // ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:sheepmanager/Features/ProfileScreen/Presentation/Widgets/profileCustomAppBar.dart';
 
 import '../../../constValues.dart';
 
@@ -15,20 +15,8 @@ class ProfileViewBody extends StatelessWidget {
         child: Padding(
           padding: kPaddingRightLeft,
           child: Column(
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  IconButton(
-                    onPressed: () {},
-                    icon: const Icon(FontAwesomeIcons.xmark),
-                  ),
-                  IconButton(
-                    onPressed: () {},
-                    icon: const Icon(FontAwesomeIcons.penToSquare),
-                  ),
-                ],
-              ),
+            children: const [
+              ProfileAppBar(),
             ],
           ),
         ),
