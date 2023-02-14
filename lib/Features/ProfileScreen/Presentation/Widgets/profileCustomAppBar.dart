@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
+import 'package:sheepmanager/Core/Utils/router.dart';
 
 class ProfileAppBar extends StatelessWidget {
   const ProfileAppBar({super.key});
@@ -17,7 +18,8 @@ class ProfileAppBar extends StatelessWidget {
           icon: const Icon(FontAwesomeIcons.xmark),
         ),
         IconButton(
-          onPressed: () {},
+          onPressed: () =>
+              GoRouter.of(context).push(AppRouter.profileForumView),
           icon: const Icon(FontAwesomeIcons.penToSquare),
         ),
       ],

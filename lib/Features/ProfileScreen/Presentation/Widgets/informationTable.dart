@@ -47,58 +47,22 @@ class InformationTable extends StatelessWidget {
             Container(
               decoration: BoxDecoration(
                 color: AppColors.mainColor.withAlpha(200),
+                borderRadius: const BorderRadius.only(
+                  bottomLeft: Radius.circular(10),
+                ),
               ),
               padding: const EdgeInsets.all(pad),
               child: const Text("Last Name"),
             ),
             Container(
               decoration: const BoxDecoration(
+                borderRadius: BorderRadius.only(
+                  bottomRight: Radius.circular(10),
+                ),
                 color: Color.fromARGB(255, 212, 212, 212),
               ),
               padding: const EdgeInsets.all(pad),
               child: const Text("Boussaha"),
-            ),
-          ],
-        ),
-        TableRow(
-          children: [
-            Container(
-              decoration: BoxDecoration(
-                color: AppColors.mainColor.withAlpha(200),
-              ),
-              padding: const EdgeInsets.all(pad),
-              child: const Text("Position"),
-            ),
-            Container(
-              decoration: const BoxDecoration(
-                color: Color.fromARGB(255, 212, 212, 212),
-              ),
-              padding: const EdgeInsets.all(pad),
-              child: const Text("Wood Carpenter"),
-            ),
-          ],
-        ),
-        TableRow(
-          children: [
-            Container(
-              decoration: BoxDecoration(
-                borderRadius: const BorderRadius.only(
-                  bottomLeft: Radius.circular(10),
-                ),
-                color: AppColors.mainColor.withAlpha(200),
-              ),
-              padding: const EdgeInsets.all(pad),
-              child: const Text("Certificate"),
-            ),
-            Container(
-              decoration: const BoxDecoration(
-                color: Color.fromARGB(255, 212, 212, 212),
-                borderRadius: BorderRadius.only(
-                  bottomRight: Radius.circular(10),
-                ),
-              ),
-              padding: const EdgeInsets.all(pad),
-              child: const Text("Farmer"),
             ),
           ],
         ),

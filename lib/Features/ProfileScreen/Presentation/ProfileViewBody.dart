@@ -1,7 +1,6 @@
 // ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
-import 'package:sheepmanager/Core/Utils/colors.dart';
 import 'package:sheepmanager/Features/ProfileScreen/Presentation/Widgets/informationTable.dart';
 import 'package:sheepmanager/Features/ProfileScreen/Presentation/Widgets/profileAvatar.dart';
 import 'package:sheepmanager/Features/ProfileScreen/Presentation/Widgets/profileCustomAppBar.dart';
@@ -18,12 +17,12 @@ class ProfileViewBody extends StatelessWidget {
         child: Padding(
           padding: kPaddingRightLeft,
           child: Column(
-            children: [
-              const ProfileAppBar(),
+            children: const [
+              ProfileAppBar(),
               Spacer(),
-              const ProfileAvatar(),
+              ProfileAvatar(),
               Spacer(),
-              const InformationTable(),
+              InformationTable(),
               Spacer(flex: 3),
             ],
           ),
