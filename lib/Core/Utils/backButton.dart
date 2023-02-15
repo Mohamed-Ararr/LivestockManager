@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
 
-class BackButton extends StatelessWidget {
-  const BackButton({super.key});
+class CustomBackButton extends StatelessWidget {
+  const CustomBackButton({super.key});
 
   @override
   Widget build(BuildContext context) {

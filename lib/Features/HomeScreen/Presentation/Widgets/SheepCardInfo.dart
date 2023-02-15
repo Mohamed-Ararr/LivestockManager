@@ -18,18 +18,15 @@ class SheepCardInfo extends StatelessWidget {
             const SizedBox(height: 5),
             const Text("State: Available"),
             const SizedBox(height: 5),
-            InkWell(
-              onTap: () {},
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const [
-                  Text("Tap For More Information"),
-                  Icon(
-                    FontAwesomeIcons.anglesRight,
-                    size: 18,
-                  ),
-                ],
-              ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: const [
+                Text("Tap For More Information"),
+                Icon(
+                  FontAwesomeIcons.anglesRight,
+                  size: 18,
+                ),
+              ],
             ),
           ],
         ),

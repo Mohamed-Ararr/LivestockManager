@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
+import 'package:sheepmanager/Core/Utils/backButton.dart';
 import 'package:sheepmanager/Features/AddNewSheepScreen/Presentation/Widgets/newSheepInputs.dart';
 import 'package:sheepmanager/constValues.dart';
 
@@ -18,19 +19,16 @@ class AddNewSheepViewBody extends StatelessWidget {
             padding: kPaddingRightLeft,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                IconButton(
-                  onPressed: () => GoRouter.of(context).pop(),
-                  icon: const Icon(FontAwesomeIcons.xmark),
-                ),
-                const Center(
+              children: const [
+                CustomBackButton(),
+                Center(
                   child: Text(
                     "Add New Sheep Forum",
                     style: TextStyle(fontSize: 22),
                   ),
                 ),
-                const SizedBox(height: 25),
-                const NewSheepInputs(),
+                SizedBox(height: 25),
+                NewSheepInputs(),
               ],
             ),
           ),

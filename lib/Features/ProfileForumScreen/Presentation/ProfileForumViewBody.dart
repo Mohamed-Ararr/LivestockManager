@@ -7,6 +7,8 @@ import 'package:sheepmanager/Core/Utils/confirmButton.dart';
 import 'package:sheepmanager/Core/Utils/customTextField.dart';
 import 'package:sheepmanager/constValues.dart';
 
+import '../../../Core/Utils/backButton.dart';
+
 class ProfileForumViewBody extends StatefulWidget {
   const ProfileForumViewBody({super.key});
 
@@ -32,10 +34,7 @@ class _ProfileForumViewBodyState extends State<ProfileForumViewBody> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                IconButton(
-                  onPressed: () => GoRouter.of(context).pop(),
-                  icon: const Icon(FontAwesomeIcons.xmark),
-                ),
+                const CustomBackButton(),
                 const SizedBox(height: 25),
                 const Center(
                     child: Text(

@@ -5,6 +5,8 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
 import 'package:sheepmanager/Core/Utils/router.dart';
 
+import '../../../../Core/Utils/backButton.dart';
+
 class ProfileAppBar extends StatelessWidget {
   const ProfileAppBar({super.key});
 
@@ -13,10 +15,7 @@ class ProfileAppBar extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        IconButton(
-          onPressed: () => GoRouter.of(context).pop(),
-          icon: const Icon(FontAwesomeIcons.xmark),
-        ),
+        const CustomBackButton(),
         IconButton(
           onPressed: () =>
               GoRouter.of(context).push(AppRouter.profileForumView),
