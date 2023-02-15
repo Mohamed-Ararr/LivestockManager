@@ -5,7 +5,6 @@ import 'package:go_router/go_router.dart';
 import 'package:sheepmanager/Core/Utils/colors.dart';
 import 'package:sheepmanager/Features/SplashScreen/Presentation/Widgets/appTagLine.dart';
 import 'package:sheepmanager/Features/SplashScreen/Presentation/Widgets/logoImage.dart';
-import 'package:sheepmanager/constValues.dart';
 
 import '../../../Core/Utils/router.dart';
 import 'Widgets/appSlogan.dart';
