@@ -40,6 +40,7 @@ dependencies:
   go_router: ^6.0.2
   font_awesome_flutter: ^10.3.0
   flutter_slidable: ^0.6.0
+  dropdown_search: ^5.0.5
 
 dev_dependencies:
   flutter_test:

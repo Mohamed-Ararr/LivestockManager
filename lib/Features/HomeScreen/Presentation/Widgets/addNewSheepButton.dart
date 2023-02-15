@@ -1,6 +1,8 @@
 // ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:sheepmanager/Core/Utils/router.dart';
 
 import '../../../../Core/Utils/colors.dart';
 import '../../../../constValues.dart';
@@ -11,7 +13,7 @@ class AddNewSheepButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      onPressed: () {},
+      onPressed: () => GoRouter.of(context).push(AppRouter.addNewSheepView),
       style: ElevatedButton.styleFrom(
         backgroundColor: AppColors.secColor,
         elevation: 0,

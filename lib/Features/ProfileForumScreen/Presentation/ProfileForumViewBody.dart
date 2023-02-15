@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
 import 'package:sheepmanager/Core/Utils/colors.dart';
+import 'package:sheepmanager/Core/Utils/confirmButton.dart';
+import 'package:sheepmanager/Core/Utils/customTextField.dart';
 import 'package:sheepmanager/constValues.dart';
 
 class ProfileForumViewBody extends StatefulWidget {
@@ -16,6 +18,10 @@ class ProfileForumViewBody extends StatefulWidget {
 class _ProfileForumViewBodyState extends State<ProfileForumViewBody> {
   final TextEditingController c1 = TextEditingController();
   final TextEditingController c2 = TextEditingController();
+
+  deleteInput(TextEditingController controller) {
+    controller.text = "";
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -38,56 +44,33 @@ class _ProfileForumViewBodyState extends State<ProfileForumViewBody> {
                   style: TextStyle(fontSize: 22),
                 )),
                 const SizedBox(height: 35),
-                customTextField("First Name", "Enter your name", c1),
-                const SizedBox(height: 15),
-                customTextField("Last Name", "Enter your last name", c2),
-                const SizedBox(height: 35),
-                ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: AppColors.mainColor,
-                    elevation: 0,
-                    minimumSize: Size(MediaQuery.of(context).size.width, 50),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: kBorderRadius,
+                CustomTextField(
+                  controller: c1,
+                  label: "First Name",
+                  hint: "Enter Your Name",
+                  widg: IconButton(
+                    onPressed: () => c1.text = "",
+                    icon: const Icon(
+                      FontAwesomeIcons.xmark,
                     ),
                   ),
-                  onPressed: () {},
-                  child: const Text(
-                    "Confirm",
-                    style: TextStyle(fontSize: 20),
+                ),
+                const SizedBox(height: 15),
+                CustomTextField(
+                  controller: c2,
+                  label: "Last Name",
+                  hint: "Enter Your Last Name",
+                  widg: IconButton(
+                    onPressed: () => c2.text = "",
+                    icon: const Icon(
+                      FontAwesomeIcons.xmark,
+                    ),
                   ),
                 ),
+                const SizedBox(height: 35),
+                const ConfirmButton()
               ],
             ),
-          ),
-        ),
-      ),
-    );
-  }
-
-  TextField customTextField(
-      String label, String hint, TextEditingController controller) {
-    return TextField(
-      controller: controller,
-      decoration: InputDecoration(
-        suffixIcon: IconButton(
-          onPressed: () => controller.text = "",
-          icon: const Icon(
-            FontAwesomeIcons.xmark,
-          ),
-        ),
-        labelStyle: TextStyle(
-          color: AppColors.secColor,
-        ),
-        labelText: label,
-        hintText: hint,
-        enabledBorder: OutlineInputBorder(
-          borderRadius: kBorderRadius,
-        ),
-        focusedBorder: OutlineInputBorder(
-          borderRadius: kBorderRadius,
-          borderSide: BorderSide(
-            color: AppColors.mainColor,
           ),
         ),
       ),
