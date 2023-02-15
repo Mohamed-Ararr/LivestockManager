@@ -14,7 +14,7 @@ class SheepCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () => GoRouter.of(context).push(AppRouter.editSheepView),
+      onTap: () => GoRouter.of(context).push(AppRouter.showSheepInfoView),
       child: Container(
         margin: const EdgeInsets.symmetric(vertical: 8),
         decoration: BoxDecoration(

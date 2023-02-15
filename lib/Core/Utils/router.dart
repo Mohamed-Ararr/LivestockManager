@@ -1,6 +1,7 @@
 import 'package:go_router/go_router.dart';
-import 'package:sheepmanager/Features/EditSheepSreen/Presentation/EditSheepView.dart';
+import 'package:sheepmanager/Features/HomeScreen/Presentation/EditSheepSreen/Presentation/EditSheepView.dart';
 import 'package:sheepmanager/Features/HomeScreen/Presentation/HomeView.dart';
+import 'package:sheepmanager/Features/HomeScreen/Presentation/ShowSheepInfo/Presentation/ShowSheepInfoView.dart';
 import 'package:sheepmanager/Features/ProfileScreen/Presentation/ProfileView.dart';
 import 'package:sheepmanager/Features/SplashScreen/Presentation/SplashView.dart';
 
@@ -13,6 +14,7 @@ class AppRouter {
   static String profileForumView = "/profileForumView";
   static String addNewSheepView = "/addNewSheepView";
   static String editSheepView = "/editSheepView";
+  static String showSheepInfoView = "/showSheepInfoView";
 
   static final routes = GoRouter(
     routes: <RouteBase>[
@@ -39,6 +41,10 @@ class AppRouter {
       GoRoute(
         path: editSheepView,
         builder: (context, state) => const EditSheepView(),
+      ),
+      GoRoute(
+        path: showSheepInfoView,
+        builder: (context, state) => const ShowSheepInfoView(),
       ),
     ],
   );
