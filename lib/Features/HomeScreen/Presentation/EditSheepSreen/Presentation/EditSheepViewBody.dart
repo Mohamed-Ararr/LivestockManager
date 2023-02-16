@@ -16,6 +16,7 @@ class EditSheepViewBody extends StatelessWidget {
         child: Padding(
           padding: kPaddingRightLeft,
           child: SingleChildScrollView(
+            physics: const BouncingScrollPhysics(),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: const [

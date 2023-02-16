@@ -1,25 +1,14 @@
 // ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:sheepmanager/Features/HomeScreen/Presentation/ShowSheepInfo/Presentation/Widgets/customAppBarInfo.dart';
-import 'package:sheepmanager/Features/HomeScreen/Presentation/ShowSheepInfo/Presentation/Widgets/infoCard.dart';
+import 'package:sheepmanager/Features/HomeScreen/Presentation/ShowSheepInfo/Presentation/Widgets/overallDetailsGridView.dart';
 import 'package:sheepmanager/constValues.dart';
 
-import '../../../../../Core/Utils/colors.dart';
+import 'Widgets/doctorAppoinCard.dart';
 
 class ShowSheepInfoViewBody extends StatelessWidget {
-  ShowSheepInfoViewBody({super.key});
-
-  final List infos = [
-    "ID",
-    "State",
-    "Sexe",
-    "Weight",
-    "Age",
-    "Last Birth",
-    "Children",
-  ];
+  const ShowSheepInfoViewBody({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -28,6 +17,7 @@ class ShowSheepInfoViewBody extends StatelessWidget {
       child: Padding(
         padding: kPaddingRightLeft,
         child: SingleChildScrollView(
+          physics: const BouncingScrollPhysics(),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -36,7 +26,10 @@ class ShowSheepInfoViewBody extends StatelessWidget {
               const Center(
                 child: Text(
                   "Sheep Infomation",
-                  style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+                  style: TextStyle(
+                    fontSize: 22,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ),
               const SizedBox(height: 30),
@@ -45,22 +38,15 @@ class ShowSheepInfoViewBody extends StatelessWidget {
                 style: TextStyle(fontSize: 20),
               ),
               const SizedBox(height: 15),
-              GridView.builder(
-                itemCount: infos.length,
-                physics: const NeverScrollableScrollPhysics(),
-                shrinkWrap: true,
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2,
-                  crossAxisSpacing: 15,
-                  mainAxisSpacing: 15,
-                ),
-                itemBuilder: (context, index) {
-                  return InfoCard(
-                    infoTitle: infos[index],
-                    infoContent: "hello",
-                  );
-                },
+              OverallDetailsGridView(),
+              const SizedBox(height: 30),
+              const Text(
+                "Doctor Appointment",
+                style: TextStyle(fontSize: 20),
               ),
+              const SizedBox(height: 15),
+              const DoctorVisitsCard(),
+              const SizedBox(height: 15),
             ],
           ),
         ),

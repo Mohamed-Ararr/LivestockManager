@@ -213,30 +213,6 @@ class _NewSheepInputsState extends State<NewSheepInputs> {
           ),
         ),
         const SizedBox(height: 20),
-        CustomTextField(
-          controller: issuesContr,
-          label: "Physical Issues",
-          hint: "Enter an issue",
-          widg: IconButton(
-            onPressed: () => issuesContr.text = "",
-            icon: const Icon(
-              FontAwesomeIcons.xmark,
-            ),
-          ),
-        ),
-        const SizedBox(height: 20),
-        CustomTextField(
-          controller: medsContr,
-          label: "Medicaments",
-          hint: "Enter a medicament",
-          widg: IconButton(
-            onPressed: () => medsContr.text = "",
-            icon: const Icon(
-              FontAwesomeIcons.xmark,
-            ),
-          ),
-        ),
-        const SizedBox(height: 20),
         const ConfirmButton(),
         const SizedBox(height: 20),
       ],
