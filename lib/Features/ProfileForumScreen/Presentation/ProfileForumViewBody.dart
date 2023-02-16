@@ -43,6 +43,7 @@ class _ProfileForumViewBodyState extends State<ProfileForumViewBody> {
                 )),
                 const SizedBox(height: 35),
                 CustomTextField(
+                  keyboardType: TextInputType.text,
                   controller: c1,
                   label: "First Name",
                   hint: "Enter Your Name",
@@ -55,6 +56,7 @@ class _ProfileForumViewBodyState extends State<ProfileForumViewBody> {
                 ),
                 const SizedBox(height: 15),
                 CustomTextField(
+                  keyboardType: TextInputType.text,
                   controller: c2,
                   label: "Last Name",
                   hint: "Enter Your Last Name",
