@@ -1,10 +1,13 @@
 // ignore_for_file: file_names
 
 import "package:flutter/material.dart";
+import "package:flutter_bloc/flutter_bloc.dart";
 import "package:font_awesome_flutter/font_awesome_flutter.dart";
 import "package:sheepmanager/Core/Utils/colors.dart";
 import "package:sheepmanager/Core/Utils/customDropdown.dart";
 import "package:sheepmanager/Core/Utils/customTextField.dart";
+import "package:sheepmanager/Features/HomeScreen/Data/Model/sheep_model.dart";
+import "package:sheepmanager/Features/HomeScreen/Presentation/Bloc%20Manager/cubit/add_sheep_cubit.dart";
 import "package:sheepmanager/constValues.dart";
 
 import "../../../../Core/Utils/confirmButton.dart";
@@ -216,8 +219,26 @@ class _NewSheepInputsState extends State<NewSheepInputs> {
                   selectedSexe != null &&
                   selectedNumb != null) {
                 formKey.currentState!.save();
+                String lastBirth =
+                    "${lastBirthDate.day} ${months[lastBirthDate.month]} ${lastBirthDate.year}";
+                String lastVisit =
+                    "${lastBirthDate.day} ${months[lastBirthDate.month]} ${lastBirthDate.year}";
+                var sheepModel = SheepModel(
+                  id: id!,
+                  state: selectedState!,
+                  sexe: selectedSexe!,
+                  weight: int.parse(weight!),
+                  age: int.parse(age!),
+                  lastBirth: lastBirth,
+                  children: int.parse(selectedNumb!),
+                  lastVisit: lastVisit,
+                );
+
+                BlocProvider.of<AddSheepCubit>(context).addNewSheep(sheepModel);
               } else {
-                validateMode = AutovalidateMode.always;
+                setState(() {
+                  validateMode = AutovalidateMode.always;
+                });
               }
             },
           ),

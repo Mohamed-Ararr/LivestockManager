@@ -14,10 +14,10 @@ class AddSheepCubit extends Cubit<AddSheepState> {
 
     try {
       var notesBox = Hive.box<SheepModel>(kSheepBox);
-      emit(AddSheepSuccess());
       await notesBox.add(sheep);
+      emit(AddSheepSuccess());
     } catch (e) {
-      emit(AddSheepFailure(errMsg: e.toString()));
+      emit(AddSheepFailure(e.toString()));
     }
   }
 }

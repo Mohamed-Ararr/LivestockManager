@@ -12,5 +12,5 @@ class AddSheepSuccess extends AddSheepState {}
 class AddSheepFailure extends AddSheepState {
   final String errMsg;
 
-  AddSheepFailure({required this.errMsg});
+  AddSheepFailure(this.errMsg);
 }

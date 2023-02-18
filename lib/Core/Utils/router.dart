@@ -1,4 +1,6 @@
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:sheepmanager/Features/HomeScreen/Presentation/Bloc%20Manager/cubit/add_sheep_cubit.dart';
 import 'package:sheepmanager/Features/HomeScreen/Presentation/EditSheepSreen/Presentation/EditSheepView.dart';
 import 'package:sheepmanager/Features/HomeScreen/Presentation/HomeView.dart';
 import 'package:sheepmanager/Features/HomeScreen/Presentation/ShowSheepInfo/Presentation/ShowSheepInfoView.dart';
@@ -6,6 +8,7 @@ import 'package:sheepmanager/Features/ProfileScreen/Presentation/ProfileView.dar
 import 'package:sheepmanager/Features/SplashScreen/Presentation/SplashView.dart';
 
 import '../../Features/AddNewSheepScreen/Presentation/AddNewSheepView.dart';
+import '../../Features/HomeScreen/Data/Model/sheep_model.dart';
 import '../../Features/ProfileForumScreen/Presentation/ProfileForumView.dart';
 
 class AppRouter {
@@ -36,7 +39,10 @@ class AppRouter {
       ),
       GoRoute(
         path: addNewSheepView,
-        builder: (context, state) => const AddNewSheepView(),
+        builder: (context, state) => BlocProvider(
+          create: (context) => AddSheepCubit(),
+          child: const AddNewSheepView(),
+        ),
       ),
       GoRoute(
         path: editSheepView,
