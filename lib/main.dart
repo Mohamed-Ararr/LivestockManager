@@ -9,10 +9,10 @@ import 'package:sheepmanager/constValues.dart';
 import 'Features/HomeScreen/Data/Model/sheep_model.dart';
 
 void main() async {
-  Bloc.observer = Observer();
   await Hive.initFlutter();
-  await Hive.openBox<SheepModel>(kSheepBox);
   Hive.registerAdapter(SheepModelAdapter());
+  await Hive.openBox<SheepModel>(kSheepBox);
+  Bloc.observer = SheepObserver();
   runApp(const SheepApp());
 }
 

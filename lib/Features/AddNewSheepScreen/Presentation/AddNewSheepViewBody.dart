@@ -6,8 +6,9 @@ import 'package:go_router/go_router.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import 'package:sheepmanager/Core/Utils/backButton.dart';
 import 'package:sheepmanager/Features/AddNewSheepScreen/Presentation/Widgets/newSheepInputs.dart';
-import 'package:sheepmanager/Features/HomeScreen/Presentation/Bloc%20Manager/cubit/add_sheep_cubit.dart';
 import 'package:sheepmanager/constValues.dart';
+
+import '../../HomeScreen/Presentation/Bloc Manager/AddSheepCubit/add_sheep_cubit.dart';
 
 class AddNewSheepViewBody extends StatelessWidget {
   const AddNewSheepViewBody({super.key});

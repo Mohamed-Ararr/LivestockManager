@@ -7,7 +7,7 @@ import "package:sheepmanager/Core/Utils/colors.dart";
 import "package:sheepmanager/Core/Utils/customDropdown.dart";
 import "package:sheepmanager/Core/Utils/customTextField.dart";
 import "package:sheepmanager/Features/HomeScreen/Data/Model/sheep_model.dart";
-import "package:sheepmanager/Features/HomeScreen/Presentation/Bloc%20Manager/cubit/add_sheep_cubit.dart";
+import "package:sheepmanager/Features/HomeScreen/Presentation/Bloc%20Manager/AddSheepCubit/add_sheep_cubit.dart";
 import "package:sheepmanager/constValues.dart";
 
 import "../../../../Core/Utils/confirmButton.dart";
