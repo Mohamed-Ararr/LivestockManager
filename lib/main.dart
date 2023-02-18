@@ -4,9 +4,12 @@ import 'package:hive_flutter/hive_flutter.dart';
 import 'package:sheepmanager/Core/Utils/router.dart';
 import 'package:sheepmanager/constValues.dart';
 
+import 'Features/HomeScreen/Data/Model/sheep_model.dart';
+
 void main() async {
   await Hive.initFlutter();
   await Hive.openBox(kSheepBox);
+  Hive.registerAdapter(SheepModelAdapter());
   runApp(const SheepApp());
 }
 
