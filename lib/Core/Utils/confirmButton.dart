@@ -6,7 +6,9 @@ import "../../constValues.dart";
 import "colors.dart";
 
 class ConfirmButton extends StatelessWidget {
-  const ConfirmButton({super.key});
+  const ConfirmButton({super.key, required this.onPressed});
+
+  final Function()? onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +21,7 @@ class ConfirmButton extends StatelessWidget {
           borderRadius: kBorderRadius,
         ),
       ),
-      onPressed: () {},
+      onPressed: onPressed,
       child: const Text(
         "Confirm",
         style: TextStyle(fontSize: 20),

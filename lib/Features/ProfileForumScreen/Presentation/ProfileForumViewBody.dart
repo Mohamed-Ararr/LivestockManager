@@ -43,8 +43,8 @@ class _ProfileForumViewBodyState extends State<ProfileForumViewBody> {
                 )),
                 const SizedBox(height: 35),
                 CustomTextField(
-                  keyboardType: TextInputType.text,
                   controller: c1,
+                  keyboardType: TextInputType.text,
                   label: "First Name",
                   hint: "Enter Your Name",
                   widg: IconButton(
@@ -56,8 +56,8 @@ class _ProfileForumViewBodyState extends State<ProfileForumViewBody> {
                 ),
                 const SizedBox(height: 15),
                 CustomTextField(
-                  keyboardType: TextInputType.text,
                   controller: c2,
+                  keyboardType: TextInputType.text,
                   label: "Last Name",
                   hint: "Enter Your Last Name",
                   widg: IconButton(
@@ -68,7 +68,7 @@ class _ProfileForumViewBodyState extends State<ProfileForumViewBody> {
                   ),
                 ),
                 const SizedBox(height: 35),
-                const ConfirmButton()
+                ConfirmButton(onPressed: () {})
               ],
             ),
           ),

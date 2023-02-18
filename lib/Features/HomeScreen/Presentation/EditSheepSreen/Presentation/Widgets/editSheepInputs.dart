@@ -15,15 +15,6 @@ class EditSheepInputs extends StatefulWidget {
 }
 
 class _EditSheepInputsState extends State<EditSheepInputs> {
-  TextEditingController idContr = TextEditingController();
-  TextEditingController ageContr = TextEditingController();
-  TextEditingController weightContr = TextEditingController();
-  TextEditingController issuesContr = TextEditingController();
-  TextEditingController medsContr = TextEditingController();
-
-  DateTime lastVisitDate = DateTime.now();
-  DateTime lastBirthDate = DateTime.now();
-
   List<String> months = [
     'January',
     'February',
@@ -39,6 +30,11 @@ class _EditSheepInputsState extends State<EditSheepInputs> {
     'December'
   ];
 
+  TextEditingController id = TextEditingController();
+  TextEditingController weight = TextEditingController();
+  TextEditingController age = TextEditingController();
+  DateTime lastVisitDate = DateTime.now();
+  DateTime lastBirthDate = DateTime.now();
   String? selectedState;
   String? selectedSexe;
   String? selectedNumb;
@@ -49,12 +45,12 @@ class _EditSheepInputsState extends State<EditSheepInputs> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         CustomTextField(
+          controller: id,
           keyboardType: TextInputType.text,
-          controller: idContr,
           label: "ID",
           hint: "Enter unique ID",
           widg: IconButton(
-            onPressed: () => idContr.text = "",
+            onPressed: () {},
             icon: const Icon(
               FontAwesomeIcons.xmark,
             ),
@@ -83,12 +79,12 @@ class _EditSheepInputsState extends State<EditSheepInputs> {
           children: [
             Expanded(
               child: CustomTextField(
+                controller: weight,
                 keyboardType: TextInputType.number,
-                controller: weightContr,
                 label: "Weight",
                 hint: "Enter Sheep Weight",
                 widg: IconButton(
-                  onPressed: () => weightContr.text = "",
+                  onPressed: () {},
                   icon: const Icon(
                     FontAwesomeIcons.xmark,
                   ),
@@ -98,12 +94,12 @@ class _EditSheepInputsState extends State<EditSheepInputs> {
             const SizedBox(width: 10),
             Expanded(
               child: CustomTextField(
+                controller: age,
                 keyboardType: TextInputType.number,
-                controller: ageContr,
                 label: "Age(Months)",
                 hint: "Enter Sheep Age",
                 widg: IconButton(
-                  onPressed: () => ageContr.text = "",
+                  onPressed: () {},
                   icon: const Icon(
                     FontAwesomeIcons.xmark,
                   ),
@@ -211,7 +207,7 @@ class _EditSheepInputsState extends State<EditSheepInputs> {
           ),
         ),
         const SizedBox(height: 20),
-        const ConfirmButton(),
+        ConfirmButton(onPressed: () {}),
         const SizedBox(height: 20),
       ],
     );

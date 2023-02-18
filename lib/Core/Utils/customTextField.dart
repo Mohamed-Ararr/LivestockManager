@@ -8,24 +8,34 @@ import '../../constValues.dart';
 class CustomTextField extends StatelessWidget {
   const CustomTextField({
     super.key,
-    required this.controller,
     required this.label,
     required this.hint,
-    required this.widg,
     required this.keyboardType,
+    this.widg,
+    this.onChanged,
+    this.controller,
   });
 
-  final TextEditingController controller;
   final String label;
   final String hint;
-  final Widget widg;
+  final Widget? widg;
   final TextInputType keyboardType;
+  final TextEditingController? controller;
+  final Function(String?)? onChanged;
 
   @override
   Widget build(BuildContext context) {
-    return TextField(
-      keyboardType: keyboardType,
+    return TextFormField(
       controller: controller,
+      onChanged: onChanged,
+      validator: (value) {
+        if (value != null && value.isNotEmpty) {
+          return null;
+        } else {
+          return "Required field. Fill it, please!";
+        }
+      },
+      keyboardType: keyboardType,
       decoration: InputDecoration(
         suffixIcon: widg,
         labelStyle: TextStyle(
@@ -41,6 +51,15 @@ class CustomTextField extends StatelessWidget {
           borderSide: BorderSide(
             color: AppColors.mainColor,
           ),
+        ),
+        errorBorder: OutlineInputBorder(
+          borderRadius: kBorderRadius,
+          borderSide: const BorderSide(
+            color: Colors.red,
+          ),
+        ),
+        border: OutlineInputBorder(
+          borderRadius: kBorderRadius,
         ),
       ),
     );
