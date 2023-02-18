@@ -9,7 +9,10 @@ import 'SheepCardInfo.dart';
 import 'SheepIconCard.dart';
 
 class SheepCard extends StatelessWidget {
-  const SheepCard({super.key});
+  const SheepCard({super.key, required this.id, required this.sheepState});
+
+  final String id;
+  final String sheepState;
 
   @override
   Widget build(BuildContext context) {
@@ -24,9 +27,9 @@ class SheepCard extends StatelessWidget {
           borderRadius: kBorderRadius,
         ),
         child: Row(
-          children: const [
-            SheepIconCard(),
-            SheepCardInfo(),
+          children: [
+            const SheepIconCard(),
+            SheepCardInfo(id: id, sheepState: sheepState),
           ],
         ),
       ),
