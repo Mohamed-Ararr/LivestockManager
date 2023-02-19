@@ -8,7 +8,7 @@ import '../../constValues.dart';
 class CustomTextField extends StatelessWidget {
   const CustomTextField({
     super.key,
-    required this.label,
+    this.label,
     required this.hint,
     required this.keyboardType,
     this.widg,
@@ -16,7 +16,7 @@ class CustomTextField extends StatelessWidget {
     this.controller,
   });
 
-  final String label;
+  final String? label;
   final String hint;
   final Widget? widg;
   final TextInputType keyboardType;

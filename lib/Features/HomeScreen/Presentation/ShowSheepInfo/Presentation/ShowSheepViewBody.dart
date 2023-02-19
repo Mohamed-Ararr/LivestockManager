@@ -24,7 +24,7 @@ class ShowSheepInfoViewBody extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const CustomAppBarInfo(),
+              CustomAppBarInfo(sheep: sheep),
               const SizedBox(height: 30),
               const Center(
                 child: Text(

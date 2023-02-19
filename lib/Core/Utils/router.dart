@@ -47,7 +47,10 @@ class AppRouter {
       ),
       GoRoute(
         path: editSheepView,
-        builder: (context, state) => const EditSheepView(),
+        builder: (context, state) => BlocProvider(
+          create: (context) => SheepsCubit(),
+          child: EditSheepView(sheep: state.extra as SheepModel),
+        ),
       ),
       GoRoute(
         path: showSheepInfoView,

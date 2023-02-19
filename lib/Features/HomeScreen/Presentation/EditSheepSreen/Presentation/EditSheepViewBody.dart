@@ -1,13 +1,16 @@
 // ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
+import 'package:sheepmanager/Features/HomeScreen/Data/Model/sheep_model.dart';
 import 'package:sheepmanager/constValues.dart';
 
 import '../../../../../Core/Utils/backButton.dart';
 import 'Widgets/editSheepInputs.dart';
 
 class EditSheepViewBody extends StatelessWidget {
-  const EditSheepViewBody({super.key});
+  const EditSheepViewBody({super.key, required this.sheep});
+
+  final SheepModel sheep;
 
   @override
   Widget build(BuildContext context) {
@@ -19,16 +22,16 @@ class EditSheepViewBody extends StatelessWidget {
             physics: const BouncingScrollPhysics(),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: const [
-                CustomBackButton(),
-                Center(
+              children: [
+                const CustomBackButton(),
+                const Center(
                   child: Text(
                     "Edit Sheep Information",
                     style: TextStyle(fontSize: 22),
                   ),
                 ),
-                SizedBox(height: 20),
-                EditSheepInputs(),
+                const SizedBox(height: 20),
+                EditSheepInputs(sheep: sheep),
               ],
             ),
           ),

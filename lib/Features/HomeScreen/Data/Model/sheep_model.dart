@@ -7,21 +7,21 @@ part 'sheep_model.g.dart';
 @HiveType(typeId: 0)
 class SheepModel extends HiveObject {
   @HiveField(0)
-  final String id;
+  String id;
   @HiveField(1)
-  final String state;
+  String state;
   @HiveField(2)
-  final String sexe;
+  String sexe;
   @HiveField(3)
-  final int weight;
+  int weight;
   @HiveField(4)
-  final int age;
+  int age;
   @HiveField(5)
-  final String lastBirth;
+  String lastBirth;
   @HiveField(6)
-  final int children;
+  int children;
   @HiveField(7)
-  final String lastVisit;
+  String lastVisit;
 
   SheepModel({
     required this.id,
