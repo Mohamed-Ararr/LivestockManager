@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 
 import '../../../../../../Core/Utils/colors.dart';
+import '../../../../Data/Model/sheep_model.dart';
 
 class DoctorVisitsCard extends StatelessWidget {
-  const DoctorVisitsCard({super.key});
+  const DoctorVisitsCard({super.key, required this.sheep});
+
+  final SheepModel sheep;
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +41,7 @@ class DoctorVisitsCard extends StatelessWidget {
               bottomRight: Radius.circular(10),
             ),
           ),
-          child: const Text("22 January 2023"),
+          child: Text(sheep.lastVisit),
         ),
       ],
     );

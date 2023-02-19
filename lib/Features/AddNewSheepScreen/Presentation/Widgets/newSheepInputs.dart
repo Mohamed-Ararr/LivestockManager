@@ -220,9 +220,9 @@ class _NewSheepInputsState extends State<NewSheepInputs> {
                   selectedNumb != null) {
                 formKey.currentState!.save();
                 String lastBirth =
-                    "${lastBirthDate.day} ${months[lastBirthDate.month]} ${lastBirthDate.year}";
+                    "${lastBirthDate.day} ${months[lastBirthDate.month - 1]} ${lastBirthDate.year}";
                 String lastVisit =
-                    "${lastBirthDate.day} ${months[lastBirthDate.month]} ${lastBirthDate.year}";
+                    "${lastVisitDate.day} ${months[lastVisitDate.month - 1]} ${lastVisitDate.year}";
                 var sheepModel = SheepModel(
                   id: id!,
                   state: selectedState!,

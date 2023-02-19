@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:sheepmanager/Features/HomeScreen/Data/Model/sheep_model.dart';
 
 import 'infoCard.dart';
 
 class OverallDetailsGridView extends StatelessWidget {
-  OverallDetailsGridView({super.key});
+  OverallDetailsGridView({super.key, required this.sheep});
+
+  final SheepModel sheep;
 
   final List<String> infos = [
     "ID",
@@ -15,18 +18,17 @@ class OverallDetailsGridView extends StatelessWidget {
     "Children",
   ];
 
-  final List infosContent = [
-    "1001",
-    "Available",
-    "Male",
-    "75 Kg",
-    "14 Months",
-    "22 January 2022",
-    "4",
-  ];
-
   @override
   Widget build(BuildContext context) {
+    final List infosContent = [
+      sheep.id,
+      sheep.state,
+      sheep.sexe,
+      sheep.weight.toString(),
+      sheep.age.toString(),
+      sheep.lastBirth,
+      sheep.children.toString(),
+    ];
     return GridView.builder(
       itemCount: infos.length,
       physics: const NeverScrollableScrollPhysics(),

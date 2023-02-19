@@ -3,11 +3,14 @@
 import "package:flutter/material.dart";
 import "package:flutter_bloc/flutter_bloc.dart";
 import "package:flutter_slidable/flutter_slidable.dart";
+import "package:go_router/go_router.dart";
 import "package:sheepmanager/Core/Utils/deleteOption.dart";
 import "package:sheepmanager/Core/Utils/soldOption.dart";
+import "package:sheepmanager/Features/HomeScreen/Data/Model/sheep_model.dart";
 import "package:sheepmanager/Features/HomeScreen/Presentation/Bloc%20Manager/SheepsCubit/sheeps_cubit.dart";
 
 import "../../../../Core/Utils/colors.dart";
+import "../../../../Core/Utils/router.dart";
 import "SheepCard.dart";
 
 class CardsListView extends StatelessWidget {
@@ -18,7 +21,6 @@ class CardsListView extends StatelessWidget {
     return BlocBuilder<SheepsCubit, SheepsState>(
       builder: (context, state) {
         if (state is SheepsSuccess) {
-          print("lenght ${state.sheepList.length}");
           return ListView.builder(
             shrinkWrap: true,
             physics: const NeverScrollableScrollPhysics(),
@@ -31,8 +33,11 @@ class CardsListView extends StatelessWidget {
                   SoldOption(),
                 ],
                 child: SheepCard(
-                  id: state.sheepList[index].id,
-                  sheepState: state.sheepList[index].state,
+                  sheep: state.sheepList[index],
+                  onTap: () => GoRouter.of(context).push(
+                    AppRouter.showSheepInfoView,
+                    extra: state.sheepList[index],
+                  ),
                 ),
               );
             },

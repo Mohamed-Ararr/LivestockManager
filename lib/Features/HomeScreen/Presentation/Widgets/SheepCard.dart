@@ -1,23 +1,26 @@
 // ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-import 'package:sheepmanager/Core/Utils/router.dart';
+import 'package:sheepmanager/Features/HomeScreen/Data/Model/sheep_model.dart';
 
 import '../../../../constValues.dart';
 import 'SheepCardInfo.dart';
 import 'SheepIconCard.dart';
 
 class SheepCard extends StatelessWidget {
-  const SheepCard({super.key, required this.id, required this.sheepState});
+  const SheepCard({
+    super.key,
+    required this.sheep,
+    required this.onTap,
+  });
 
-  final String id;
-  final String sheepState;
+  final SheepModel sheep;
+  final Function()? onTap;
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () => GoRouter.of(context).push(AppRouter.showSheepInfoView),
+      onTap: onTap,
       child: Container(
         margin: const EdgeInsets.symmetric(vertical: 8),
         decoration: BoxDecoration(
@@ -29,7 +32,7 @@ class SheepCard extends StatelessWidget {
         child: Row(
           children: [
             const SheepIconCard(),
-            SheepCardInfo(id: id, sheepState: sheepState),
+            SheepCardInfo(sheep: sheep),
           ],
         ),
       ),

@@ -1,6 +1,7 @@
 // ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
+import 'package:sheepmanager/Features/HomeScreen/Data/Model/sheep_model.dart';
 import 'package:sheepmanager/Features/HomeScreen/Presentation/ShowSheepInfo/Presentation/Widgets/customAppBarInfo.dart';
 import 'package:sheepmanager/Features/HomeScreen/Presentation/ShowSheepInfo/Presentation/Widgets/overallDetailsGridView.dart';
 import 'package:sheepmanager/constValues.dart';
@@ -8,7 +9,9 @@ import 'package:sheepmanager/constValues.dart';
 import 'Widgets/doctorAppoinCard.dart';
 
 class ShowSheepInfoViewBody extends StatelessWidget {
-  const ShowSheepInfoViewBody({super.key});
+  const ShowSheepInfoViewBody({super.key, required this.sheep});
+
+  final SheepModel sheep;
 
   @override
   Widget build(BuildContext context) {
@@ -38,14 +41,14 @@ class ShowSheepInfoViewBody extends StatelessWidget {
                 style: TextStyle(fontSize: 20),
               ),
               const SizedBox(height: 15),
-              OverallDetailsGridView(),
+              OverallDetailsGridView(sheep: sheep),
               const SizedBox(height: 30),
               const Text(
                 "Doctor Appointment",
                 style: TextStyle(fontSize: 20),
               ),
               const SizedBox(height: 15),
-              const DoctorVisitsCard(),
+              DoctorVisitsCard(sheep: sheep),
               const SizedBox(height: 15),
             ],
           ),
