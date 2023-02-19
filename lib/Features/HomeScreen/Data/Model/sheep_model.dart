@@ -5,7 +5,7 @@ import 'package:hive/hive.dart';
 part 'sheep_model.g.dart';
 
 @HiveType(typeId: 0)
-class SheepModel {
+class SheepModel extends HiveObject {
   @HiveField(0)
   final String id;
   @HiveField(1)

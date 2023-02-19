@@ -21,31 +21,43 @@ class CardsListView extends StatelessWidget {
     return BlocBuilder<SheepsCubit, SheepsState>(
       builder: (context, state) {
         if (state is SheepsSuccess) {
-          return ListView.builder(
-            shrinkWrap: true,
-            physics: const NeverScrollableScrollPhysics(),
-            itemCount: state.sheepList.length,
-            itemBuilder: (context, index) {
-              return Slidable(
-                actionPane: const SlidableDrawerActionPane(),
-                secondaryActions: [
-                  Container(
-                      margin: const EdgeInsets.only(left: 5),
-                      child: const DeleteOption()),
-                  const SoldOption(),
-                ],
-                child: SheepCard(
-                  sheep: state.sheepList[index],
-                  onTap: () => GoRouter.of(context).push(
-                    AppRouter.showSheepInfoView,
-                    extra: state.sheepList[index],
+          if (state.sheepList.isNotEmpty) {
+            return ListView.builder(
+              shrinkWrap: true,
+              physics: const NeverScrollableScrollPhysics(),
+              itemCount: state.sheepList.length,
+              itemBuilder: (context, index) {
+                return Slidable(
+                  actionPane: const SlidableDrawerActionPane(),
+                  secondaryActions: [
+                    Container(
+                        margin: const EdgeInsets.only(left: 5),
+                        child: DeleteOption(sheep: state.sheepList[index])),
+                    const SoldOption(),
+                  ],
+                  child: SheepCard(
+                    sheep: state.sheepList[index],
+                    onTap: () => GoRouter.of(context).push(
+                      AppRouter.showSheepInfoView,
+                      extra: state.sheepList[index],
+                    ),
                   ),
-                ),
-              );
-            },
-          );
-        } else if (state is SheepsFailed) {
-          return Text(state.errorMsg);
+                );
+              },
+            );
+          } else {
+            return Column(
+              children: const [
+                SizedBox(height: 50),
+                Center(
+                    child: Text(
+                  "No Sheep To Show :'(\nAdd New Sheep!",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(fontSize: 22),
+                )),
+              ],
+            );
+          }
         } else {
           return Center(
               child: CircularProgressIndicator(
