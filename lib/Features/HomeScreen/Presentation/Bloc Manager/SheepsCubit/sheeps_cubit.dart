@@ -12,12 +12,8 @@ class SheepsCubit extends Cubit<SheepsState> {
 
   fetchAllSheep() async {
     emit(SheepsLoading());
-    try {
-      var sheepBox = Hive.box<SheepModel>(kSheepBox);
-      List<SheepModel> sheepList = sheepBox.values.toList();
-      emit(SheepsSuccess(sheepList));
-    } catch (e) {
-      emit(SheepsFailed(e.toString()));
-    }
+    var sheepBox = Hive.box<SheepModel>(kSheepBox);
+    List<SheepModel> sheepList = sheepBox.values.toList();
+    emit(SheepsSuccess(sheepList));
   }
 }

@@ -12,9 +12,3 @@ class SheepsSuccess extends SheepsState {
 
   SheepsSuccess(this.sheepList);
 }
-
-class SheepsFailed extends SheepsState {
-  final String errorMsg;
-
-  SheepsFailed(this.errorMsg);
-}
