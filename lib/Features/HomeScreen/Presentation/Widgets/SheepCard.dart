@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:sheepmanager/Features/HomeScreen/Data/Model/sheep_model.dart';
 
+import '../../../../Core/Utils/colors.dart';
 import '../../../../constValues.dart';
 import 'SheepCardInfo.dart';
 import 'SheepIconCard.dart';
@@ -22,8 +23,18 @@ class SheepCard extends StatelessWidget {
     return InkWell(
       onTap: onTap,
       child: Container(
-        margin: const EdgeInsets.symmetric(vertical: 8),
+        margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 15),
         decoration: BoxDecoration(
+          color: Colors.white,
+          boxShadow: [
+            BoxShadow(
+              color: AppColors.secColor.withOpacity(0.2),
+              spreadRadius: 5,
+              blurRadius: 10,
+              offset: const Offset(0, 3),
+            ),
+          ],
+          // color: AppColors.secColor,
           // border: Border.all(
           //   color: Colors.black,
           // ),

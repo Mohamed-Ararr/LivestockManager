@@ -12,6 +12,10 @@ class DeleteOption extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.symmetric(vertical: 8),
       child: ClipRRect(
+        borderRadius: const BorderRadius.only(
+          topLeft: Radius.circular(10),
+          bottomLeft: Radius.circular(10),
+        ),
         child: IconSlideAction(
           onTap: () {},
           color: Colors.red,

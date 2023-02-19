@@ -13,38 +13,41 @@ class SearchCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 25),
-      decoration: BoxDecoration(
-        color: AppColors.secColor,
-        borderRadius: kBorderRadius,
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: const [
-              Text(
-                "Welcome, Nassim!",
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 19,
-                  letterSpacing: 1,
-                  color: Colors.white,
+    return Padding(
+      padding: kPaddingRightLeft,
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 25),
+        decoration: BoxDecoration(
+          color: AppColors.secColor,
+          borderRadius: kBorderRadius,
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: const [
+                Text(
+                  "Welcome, Nassim!",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 19,
+                    letterSpacing: 1,
+                    color: Colors.white,
+                  ),
                 ),
-              ),
-              SizedBox(height: 10),
-              Text(
-                "Find What you are looking for!",
-                style: TextStyle(
-                  color: Colors.white,
+                SizedBox(height: 10),
+                Text(
+                  "Find What you are looking for!",
+                  style: TextStyle(
+                    color: Colors.white,
+                  ),
                 ),
-              ),
-            ],
-          ),
-          const SearchButton(),
-        ],
+              ],
+            ),
+            const SearchButton(),
+          ],
+        ),
       ),
     );
   }

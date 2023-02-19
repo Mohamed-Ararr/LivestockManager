@@ -16,23 +16,22 @@ class HomeViewBody extends StatelessWidget {
     return Scaffold(
       floatingActionButton: const AddNewSheepButton(),
       body: SafeArea(
-        child: Padding(
-          padding: kPaddingRightLeft,
-          child: SingleChildScrollView(
-            physics: const BouncingScrollPhysics(),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: const [
-                CustomAppBar(),
-                SizedBox(height: 25),
-                SearchCard(),
-                SizedBox(height: 15),
-                SizedBox(height: 10),
-                Text("Livestock List"),
-                SizedBox(height: 10),
-                CardsListView(),
-              ],
-            ),
+        child: SingleChildScrollView(
+          physics: const BouncingScrollPhysics(),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: const [
+              CustomAppBar(),
+              SizedBox(height: 25),
+              SearchCard(),
+              SizedBox(height: 25),
+              Padding(
+                padding: kPaddingRightLeft,
+                child: Text("Livestock List", style: TextStyle(fontSize: 20)),
+              ),
+              SizedBox(height: 10),
+              CardsListView(),
+            ],
           ),
         ),
       ),

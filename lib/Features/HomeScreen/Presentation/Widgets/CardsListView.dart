@@ -28,9 +28,11 @@ class CardsListView extends StatelessWidget {
             itemBuilder: (context, index) {
               return Slidable(
                 actionPane: const SlidableDrawerActionPane(),
-                secondaryActions: const [
-                  DeleteOption(),
-                  SoldOption(),
+                secondaryActions: [
+                  Container(
+                      margin: const EdgeInsets.only(left: 5),
+                      child: const DeleteOption()),
+                  const SoldOption(),
                 ],
                 child: SheepCard(
                   sheep: state.sheepList[index],

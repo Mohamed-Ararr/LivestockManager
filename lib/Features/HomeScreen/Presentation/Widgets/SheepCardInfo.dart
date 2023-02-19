@@ -17,21 +17,31 @@ class SheepCardInfo extends StatelessWidget {
       builder: (context, state) {
         return Expanded(
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 15),
+            padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 20),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text("ID: ${sheep.id}"),
-                const SizedBox(height: 5),
-                Text("State: ${sheep.state}"),
-                const SizedBox(height: 5),
+                Text(
+                  "ID: ${sheep.id}",
+                  style: const TextStyle(fontWeight: FontWeight.bold),
+                ),
+                const SizedBox(height: 10),
+                Text(
+                  "State: ${sheep.state}",
+                  style: const TextStyle(fontWeight: FontWeight.bold),
+                ),
+                const SizedBox(height: 10),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: const [
-                    Text("Tap For More Information"),
+                    Text(
+                      "Tap For More Information",
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
                     Icon(
                       FontAwesomeIcons.anglesRight,
                       size: 18,
+                      // color: Colors.white,
                     ),
                   ],
                 ),
