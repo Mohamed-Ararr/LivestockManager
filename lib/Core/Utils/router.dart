@@ -5,12 +5,12 @@ import 'package:sheepmanager/Features/HomeScreen/Presentation/Bloc%20Manager/She
 import 'package:sheepmanager/Features/HomeScreen/Presentation/EditSheepSreen/Presentation/EditSheepView.dart';
 import 'package:sheepmanager/Features/HomeScreen/Presentation/HomeView.dart';
 import 'package:sheepmanager/Features/HomeScreen/Presentation/ShowSheepInfo/Presentation/ShowSheepInfoView.dart';
-import 'package:sheepmanager/Features/ProfileScreen/Presentation/ProfileView.dart';
+import 'package:sheepmanager/Features/ProfileScreen/Profile/Presentation/ProfileView.dart';
 import 'package:sheepmanager/Features/SplashScreen/Presentation/SplashView.dart';
 
 import '../../Features/AddNewSheepScreen/Presentation/AddNewSheepView.dart';
 import '../../Features/HomeScreen/Data/Model/sheep_model.dart';
-import '../../Features/ProfileForumScreen/Presentation/ProfileForumView.dart';
+import '../../Features/ProfileScreen/ProfileForumScreen/Presentation/ProfileForumView.dart';
 
 class AppRouter {
   static String homeView = "/homeView";

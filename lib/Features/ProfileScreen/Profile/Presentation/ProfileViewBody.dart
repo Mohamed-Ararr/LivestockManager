@@ -1,11 +1,11 @@
 // ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
-import 'package:sheepmanager/Features/ProfileScreen/Presentation/Widgets/informationTable.dart';
-import 'package:sheepmanager/Features/ProfileScreen/Presentation/Widgets/profileAvatar.dart';
-import 'package:sheepmanager/Features/ProfileScreen/Presentation/Widgets/profileCustomAppBar.dart';
+import 'package:sheepmanager/Features/ProfileScreen/Profile/Presentation/Widgets/informationTable.dart';
+import 'package:sheepmanager/Features/ProfileScreen/Profile/Presentation/Widgets/profileAvatar.dart';
+import 'package:sheepmanager/Features/ProfileScreen/Profile/Presentation/Widgets/profileCustomAppBar.dart';
 
-import '../../../constValues.dart';
+import '../../../../constValues.dart';
 
 class ProfileViewBody extends StatelessWidget {
   const ProfileViewBody({super.key});

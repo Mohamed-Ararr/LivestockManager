@@ -3,8 +3,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../../../../Core/Utils/colors.dart';
-import '../../../../constValues.dart';
+import '../../../../../Core/Utils/colors.dart';
+import '../../../../../constValues.dart';
 
 class ProfileAvatar extends StatelessWidget {
   const ProfileAvatar({super.key});

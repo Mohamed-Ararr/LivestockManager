@@ -28,7 +28,7 @@ class SearchCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: const [
                 Text(
-                  "Welcome, Nassim!",
+                  "Welcome, User!",
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 19,

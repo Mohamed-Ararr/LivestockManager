@@ -2,8 +2,8 @@
 
 import 'package:flutter/material.dart';
 
-import '../../../../Core/Utils/colors.dart';
-import '../../../../constValues.dart';
+import '../../../../../Core/Utils/colors.dart';
+import '../../../../../constValues.dart';
 
 class InformationTable extends StatelessWidget {
   const InformationTable({super.key});
@@ -40,7 +40,7 @@ class InformationTable extends StatelessWidget {
                 ),
               ),
               padding: const EdgeInsets.all(pad),
-              child: const Text("Nassim"),
+              child: const Text("User"),
             ),
           ],
         ),
@@ -64,7 +64,7 @@ class InformationTable extends StatelessWidget {
                 color: Color.fromARGB(255, 212, 212, 212),
               ),
               padding: const EdgeInsets.all(pad),
-              child: const Text("Boussaha"),
+              child: const Text("User"),
             ),
           ],
         ),
