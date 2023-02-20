@@ -7,6 +7,7 @@ import 'package:sheepmanager/Features/HomeScreen/Presentation/Widgets/CustomAppB
 import 'package:sheepmanager/Features/HomeScreen/Presentation/Widgets/addNewSheepButton.dart';
 import 'package:sheepmanager/constValues.dart';
 
+import '../Data/Model/sheep_model.dart';
 import 'Bloc Manager/SheepsCubit/sheeps_cubit.dart';
 import 'Widgets/searchCard.dart';
 

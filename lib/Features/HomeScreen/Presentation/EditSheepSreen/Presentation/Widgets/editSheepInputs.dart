@@ -1,5 +1,7 @@
 // ignore_for_file: file_names
 
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -60,7 +62,7 @@ class _EditSheepInputsState extends State<EditSheepInputs> {
             label: "ID",
             hint: widget.sheep.id,
             onChanged: (value) {
-              id = value;
+              widget.sheep.id = value ?? widget.sheep.id;
             },
           ),
           const SizedBox(height: 20),
@@ -221,12 +223,14 @@ class _EditSheepInputsState extends State<EditSheepInputs> {
           const SizedBox(height: 20),
           ConfirmButton(
             onPressed: () {
-              widget.sheep.id = id ?? widget.sheep.id;
+              // widget.sheep.id = id == "" ? widget.sheep.id : id;
               widget.sheep.state = selectedState ?? widget.sheep.state;
               widget.sheep.sexe = selectedSexe ?? widget.sheep.sexe;
               widget.sheep.weight =
-                  int.parse(weight ?? "${widget.sheep.weight}");
-              widget.sheep.age = int.parse(age ?? "${widget.sheep.age}");
+                  int.tryParse(weight ?? "${widget.sheep.weight}") ??
+                      Random().nextInt(168 - 72);
+              widget.sheep.age = int.tryParse(age ?? "${widget.sheep.age}") ??
+                  Random().nextInt(100);
               widget.sheep.children =
                   int.parse(selectedNumb ?? "${widget.sheep.children}");
 

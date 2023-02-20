@@ -3,6 +3,7 @@
 import "package:flutter/material.dart";
 import "package:flutter_bloc/flutter_bloc.dart";
 import "package:flutter_slidable/flutter_slidable.dart";
+import "package:flutter_staggered_animations/flutter_staggered_animations.dart";
 import "package:go_router/go_router.dart";
 import "package:sheepmanager/Core/Utils/deleteOption.dart";
 import "package:sheepmanager/Core/Utils/soldOption.dart";
@@ -27,19 +28,29 @@ class CardsListView extends StatelessWidget {
               physics: const NeverScrollableScrollPhysics(),
               itemCount: state.sheepList.length,
               itemBuilder: (context, index) {
-                return Slidable(
-                  actionPane: const SlidableDrawerActionPane(),
-                  secondaryActions: [
-                    Container(
-                        margin: const EdgeInsets.only(left: 5),
-                        child: DeleteOption(sheep: state.sheepList[index])),
-                    const SoldOption(),
-                  ],
-                  child: SheepCard(
-                    sheep: state.sheepList[index],
-                    onTap: () => GoRouter.of(context).push(
-                      AppRouter.showSheepInfoView,
-                      extra: state.sheepList[index],
+                return AnimationConfiguration.staggeredList(
+                  duration: const Duration(milliseconds: 1500),
+                  position: index,
+                  child: SlideAnimation(
+                    horizontalOffset: 300,
+                    child: FadeInAnimation(
+                      child: Slidable(
+                        actionPane: const SlidableDrawerActionPane(),
+                        secondaryActions: [
+                          DeleteOption(sheep: state.sheepList[index]),
+                          Container(
+                            margin: const EdgeInsets.only(right: 5),
+                            child: SoldOption(sheep: state.sheepList[index]),
+                          ),
+                        ],
+                        child: SheepCard(
+                          sheep: state.sheepList[index],
+                          onTap: () => GoRouter.of(context).push(
+                            AppRouter.showSheepInfoView,
+                            extra: state.sheepList[index],
+                          ),
+                        ),
+                      ),
                     ),
                   ),
                 );

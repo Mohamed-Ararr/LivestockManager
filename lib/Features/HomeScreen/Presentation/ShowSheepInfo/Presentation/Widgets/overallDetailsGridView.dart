@@ -24,8 +24,8 @@ class OverallDetailsGridView extends StatelessWidget {
       sheep.id,
       sheep.state,
       sheep.sexe,
-      sheep.weight.toString(),
-      sheep.age.toString(),
+      "${sheep.weight} KG",
+      "${sheep.age} Months",
       sheep.lastBirth,
       sheep.children.toString(),
     ];
