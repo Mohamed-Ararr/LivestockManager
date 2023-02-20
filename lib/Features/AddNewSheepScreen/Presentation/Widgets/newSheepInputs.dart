@@ -124,7 +124,7 @@ class _NewSheepInputsState extends State<NewSheepInputs> {
               context: context,
               initialDate: DateTime.now(),
               firstDate: DateTime(2020),
-              lastDate: DateTime(2100),
+              lastDate: DateTime.now(),
             ).then((value) {
               setState(() {
                 lastBirthDate = value ?? DateTime.now();
@@ -181,7 +181,7 @@ class _NewSheepInputsState extends State<NewSheepInputs> {
               context: context,
               initialDate: DateTime.now(),
               firstDate: DateTime(2020),
-              lastDate: DateTime(2100),
+              lastDate: DateTime.now(),
             ).then((value) {
               setState(() {
                 lastVisitDate = value ?? DateTime.now();
