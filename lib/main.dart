@@ -8,11 +8,14 @@ import 'package:sheepmanager/Features/HomeScreen/Presentation/Bloc%20Manager/She
 import 'package:sheepmanager/constValues.dart';
 
 import 'Features/HomeScreen/Data/Model/sheep_model.dart';
+import 'Features/ProfileScreen/Data/Model/user_model.dart';
 
 void main() async {
   await Hive.initFlutter();
   Hive.registerAdapter(SheepModelAdapter());
+  Hive.registerAdapter(UserModelAdapter());
   await Hive.openBox<SheepModel>(kSheepBox);
+  await Hive.openBox(kUserBox);
   Bloc.observer = SheepObserver();
   runApp(const SheepApp());
 }
