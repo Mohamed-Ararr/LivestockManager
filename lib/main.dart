@@ -15,7 +15,7 @@ void main() async {
   Hive.registerAdapter(SheepModelAdapter());
   Hive.registerAdapter(UserModelAdapter());
   await Hive.openBox<SheepModel>(kSheepBox);
-  await Hive.openBox(kUserBox);
+  await Hive.openBox<UserModel>(kUserBox);
   Bloc.observer = SheepObserver();
   runApp(const SheepApp());
 }
