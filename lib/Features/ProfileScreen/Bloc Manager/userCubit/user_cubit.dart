@@ -16,7 +16,6 @@ class UserCubit extends Cubit<UserState> {
     for (int i = 0; i < userList.length - 1; i++) {
       userList[i].delete();
     }
-    debugPrint("${userList.length}");
     String firstName = userList[0].firstName;
     String lastName = userList[0].lastName;
 

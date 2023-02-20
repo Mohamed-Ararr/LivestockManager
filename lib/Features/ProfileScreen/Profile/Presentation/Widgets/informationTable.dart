@@ -18,8 +18,6 @@ class _InformationTableState extends State<InformationTable> {
     return BlocBuilder<UserCubit, UserState>(
       builder: (context, state) {
         if (state is UserSuccess) {
-          // debugPrint(state.userList[state.userList.length - 1].firstName);
-          debugPrint(state.fistName);
           return TableRows(
             firstName: state.fistName,
             lastName: state.lastName,
