@@ -10,7 +10,7 @@ part 'sheeps_state.dart';
 class SheepsCubit extends Cubit<SheepsState> {
   SheepsCubit() : super(SheepsInitial());
 
-  fetchAllSheep() async {
+  fetchAllSheep() {
     emit(SheepsLoading());
     var sheepBox = Hive.box<SheepModel>(kSheepBox);
     List<SheepModel> sheepList = sheepBox.values.toList();

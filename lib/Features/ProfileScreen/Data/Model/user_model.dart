@@ -2,12 +2,12 @@ import 'package:hive_flutter/hive_flutter.dart';
 
 part "user_model.g.dart";
 
-@HiveType(typeId: 0)
+@HiveType(typeId: 1)
 class UserModel extends HiveObject {
   @HiveField(0)
-  String? firstName;
+  String firstName;
   @HiveField(1)
-  String? lastName;
+  String lastName;
 
-  UserModel({this.firstName, this.lastName});
+  UserModel(this.firstName, this.lastName);
 }
