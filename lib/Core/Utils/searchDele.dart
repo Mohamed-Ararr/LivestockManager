@@ -75,7 +75,7 @@ class SearchBar extends SearchDelegate {
             return result.contains(input);
           }).toList();
           return SingleChildScrollView(
-            physics: const NeverScrollableScrollPhysics(),
+            physics: const BouncingScrollPhysics(),
             child: Column(
               children: [
                 const SizedBox(height: 20),
@@ -86,7 +86,7 @@ class SearchBar extends SearchDelegate {
                 const SizedBox(height: 20),
                 ListView.builder(
                   shrinkWrap: true,
-                  physics: const BouncingScrollPhysics(),
+                  physics: const NeverScrollableScrollPhysics(),
                   itemCount: suggestions.length,
                   itemBuilder: (context, index) {
                     return AnimationConfiguration.staggeredList(

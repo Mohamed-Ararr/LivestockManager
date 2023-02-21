@@ -40,9 +40,10 @@ class SheepApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         routerConfig: AppRouter.routes,
         theme: ThemeData(
-          textTheme: GoogleFonts.armataTextTheme(
-            ThemeData.light().textTheme,
-          ),
+          fontFamily: "Armata",
+          // textTheme: GoogleFonts.armataTextTheme(
+          //   ThemeData.light().textTheme,
+          // ),
         ),
       ),
     );

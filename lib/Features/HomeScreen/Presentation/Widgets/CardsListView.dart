@@ -62,15 +62,16 @@ class CardsListView extends StatelessWidget {
               children: [
                 const SizedBox(height: 50),
                 SvgPicture.asset(
-                  logo,
-                  color: AppColors.secColor,
+                  emptySvg,
+                  color: AppColors.mainColor,
+                  width: 150,
                 ),
-                // const SizedBox(height: 50),
+                const SizedBox(height: 30),
                 const Center(
                     child: Text(
-                  "No Sheep To Show :'(\nAdd New Sheep!",
+                  "¯\\_(ツ)_/¯",
                   textAlign: TextAlign.center,
-                  style: TextStyle(fontSize: 20),
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                 )),
               ],
             );
