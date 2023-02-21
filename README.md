@@ -33,10 +33,10 @@ A list of the project's dependencies:
 
 If you would like to contribute to the project, please follow these steps:
 
-1- Fork the repository
-2- Create a new branch for your feature: git checkout -b feature-name
-3- Make your changes and commit them: git commit -am 'Added some new feature'
-4- Push your changes to your forked repository: git push origin feature-name
-5- Create a new pull request on the original repository.
+- Fork the repository
+- Create a new branch for your feature: git checkout -b feature-name
+- Make your changes and commit them: git commit -am 'Added some new feature'
+- Push your changes to your forked repository: git push origin feature-name
+- Create a new pull request on the original repository.
 
 Thank You!
