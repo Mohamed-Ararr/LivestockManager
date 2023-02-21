@@ -27,7 +27,7 @@ class DeleteOption extends StatelessWidget {
             sheep.delete();
             BlocProvider.of<SheepsCubit>(context).fetchAllSheep();
           },
-          color: Colors.red,
+          color: const Color.fromARGB(255, 230, 93, 84),
           caption: "Delete",
           iconWidget: const Padding(
             padding: EdgeInsets.only(bottom: 10),
