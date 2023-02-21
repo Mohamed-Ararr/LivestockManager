@@ -37,6 +37,7 @@ class SheepApp extends StatelessWidget {
         ),
       ],
       child: MaterialApp.router(
+        debugShowCheckedModeBanner: false,
         routerConfig: AppRouter.routes,
         theme: ThemeData(
           textTheme: GoogleFonts.armataTextTheme(
