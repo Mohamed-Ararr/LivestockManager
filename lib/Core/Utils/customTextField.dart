@@ -14,6 +14,7 @@ class CustomTextField extends StatelessWidget {
     this.widg,
     this.onChanged,
     this.controller,
+    this.maxLength,
   });
 
   final String? label;
@@ -22,10 +23,13 @@ class CustomTextField extends StatelessWidget {
   final TextInputType keyboardType;
   final TextEditingController? controller;
   final Function(String?)? onChanged;
+  final int? maxLength;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      maxLength: maxLength,
+      textCapitalization: TextCapitalization.words,
       controller: controller,
       onChanged: onChanged,
       validator: (value) {

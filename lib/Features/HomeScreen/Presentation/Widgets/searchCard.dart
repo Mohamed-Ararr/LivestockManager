@@ -38,13 +38,16 @@ class SearchCard extends StatelessWidget {
                     } else {
                       firstName = "User";
                     }
-                    return Text(
-                      'Welcome, $firstName!',
-                      style: const TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 19,
-                        letterSpacing: 1,
-                        color: Colors.white,
+                    return SizedBox(
+                      width: MediaQuery.of(context).size.width * 0.5,
+                      child: Text(
+                        'Welcome, $firstName!',
+                        style: const TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 19,
+                          letterSpacing: 1,
+                          color: Colors.white,
+                        ),
                       ),
                     );
                   },

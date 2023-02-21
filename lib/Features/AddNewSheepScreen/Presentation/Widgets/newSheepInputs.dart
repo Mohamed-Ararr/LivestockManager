@@ -56,6 +56,7 @@ class _NewSheepInputsState extends State<NewSheepInputs> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           CustomTextField(
+            maxLength: 20,
             onChanged: (idVal) {
               id = idVal;
             },
@@ -86,6 +87,7 @@ class _NewSheepInputsState extends State<NewSheepInputs> {
             children: [
               Expanded(
                 child: CustomTextField(
+                  maxLength: 3,
                   onChanged: (weightVal) {
                     // setState(() {
                     //   weight = weightVal;
@@ -100,6 +102,7 @@ class _NewSheepInputsState extends State<NewSheepInputs> {
               const SizedBox(width: 10),
               Expanded(
                 child: CustomTextField(
+                  maxLength: 3,
                   onChanged: (ageVal) {
                     // setState(() {
                     //   age = ageVal;

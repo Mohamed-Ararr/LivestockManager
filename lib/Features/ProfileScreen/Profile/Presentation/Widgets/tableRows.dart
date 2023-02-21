@@ -13,7 +13,8 @@ class TableRows extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const pad = 30.0;
+    const pad = 20.0;
+    const pad2 = 30.0;
     return Table(
       border: TableBorder.all(
         borderRadius: kBorderRadius,
@@ -32,7 +33,8 @@ class TableRows extends StatelessWidget {
                 ),
                 color: AppColors.mainColor.withAlpha(200),
               ),
-              padding: const EdgeInsets.all(pad),
+              padding:
+                  const EdgeInsets.symmetric(vertical: pad2, horizontal: pad),
               child: const Text("First Name"),
             ),
             Container(
@@ -42,8 +44,12 @@ class TableRows extends StatelessWidget {
                   topRight: Radius.circular(15),
                 ),
               ),
-              padding: const EdgeInsets.all(pad),
-              child: Text(firstName),
+              padding:
+                  const EdgeInsets.symmetric(vertical: pad2, horizontal: pad),
+              child: Text(
+                firstName,
+                style: const TextStyle(fontWeight: FontWeight.bold),
+              ),
             ),
           ],
         ),
@@ -56,7 +62,8 @@ class TableRows extends StatelessWidget {
                   bottomLeft: Radius.circular(15),
                 ),
               ),
-              padding: const EdgeInsets.all(pad),
+              padding:
+                  const EdgeInsets.symmetric(vertical: pad2, horizontal: pad),
               child: const Text("Last Name"),
             ),
             Container(
@@ -66,8 +73,12 @@ class TableRows extends StatelessWidget {
                 ),
                 color: Color.fromARGB(255, 212, 212, 212),
               ),
-              padding: const EdgeInsets.all(pad),
-              child: Text(lastName),
+              padding:
+                  const EdgeInsets.symmetric(vertical: pad2, horizontal: pad),
+              child: Text(
+                lastName,
+                style: const TextStyle(fontWeight: FontWeight.bold),
+              ),
             ),
           ],
         ),

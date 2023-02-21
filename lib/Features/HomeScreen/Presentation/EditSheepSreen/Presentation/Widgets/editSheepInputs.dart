@@ -58,6 +58,7 @@ class _EditSheepInputsState extends State<EditSheepInputs> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           CustomTextField(
+            maxLength: 20,
             keyboardType: TextInputType.text,
             label: "ID",
             hint: widget.sheep.id,
@@ -90,6 +91,7 @@ class _EditSheepInputsState extends State<EditSheepInputs> {
             children: [
               Expanded(
                 child: CustomTextField(
+                  maxLength: 3,
                   keyboardType: TextInputType.number,
                   label: "Weight",
                   hint: "${widget.sheep.weight}",
@@ -101,6 +103,7 @@ class _EditSheepInputsState extends State<EditSheepInputs> {
               const SizedBox(width: 10),
               Expanded(
                 child: CustomTextField(
+                  maxLength: 3,
                   keyboardType: TextInputType.number,
                   label: "Age(Months)",
                   hint: "${widget.sheep.age}",
