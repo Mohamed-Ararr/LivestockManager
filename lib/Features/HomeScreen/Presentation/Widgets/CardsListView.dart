@@ -7,7 +7,6 @@ import "package:flutter_staggered_animations/flutter_staggered_animations.dart";
 import "package:go_router/go_router.dart";
 import "package:sheepmanager/Core/Utils/deleteOption.dart";
 import "package:sheepmanager/Core/Utils/soldOption.dart";
-import "package:sheepmanager/Features/HomeScreen/Data/Model/sheep_model.dart";
 import "package:sheepmanager/Features/HomeScreen/Presentation/Bloc%20Manager/SheepsCubit/sheeps_cubit.dart";
 
 import "../../../../Core/Utils/colors.dart";
