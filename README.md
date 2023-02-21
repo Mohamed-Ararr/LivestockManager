@@ -4,8 +4,8 @@ Sheep Manager is a mobile application designed for farmers to manage their sheep
 
 ## Installation
 
-1- Clone this repository: git clone "https://github.com/Mohamed-Ararr/SheepManager.git"
-2- Install the required packages: "flutter pub get"
+- Clone this repository: git clone "https://github.com/Mohamed-Ararr/SheepManager.git"
+- Install the required packages: "flutter pub get"
 
 ## Dependencies
 
