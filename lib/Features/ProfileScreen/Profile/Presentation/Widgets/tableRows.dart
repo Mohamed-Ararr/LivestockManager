@@ -20,7 +20,7 @@ class TableRows extends StatelessWidget {
         color: Colors.white,
       ),
       columnWidths: const {
-        0: FlexColumnWidth(0.55),
+        0: FlexColumnWidth(0.57),
       },
       children: [
         TableRow(
