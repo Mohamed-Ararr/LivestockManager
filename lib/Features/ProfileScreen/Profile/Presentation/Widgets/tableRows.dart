@@ -13,7 +13,7 @@ class TableRows extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const pad = 20.0;
+    const pad = 30.0;
     return Table(
       border: TableBorder.all(
         borderRadius: kBorderRadius,
@@ -28,7 +28,7 @@ class TableRows extends StatelessWidget {
             Container(
               decoration: BoxDecoration(
                 borderRadius: const BorderRadius.only(
-                  topLeft: Radius.circular(10),
+                  topLeft: Radius.circular(15),
                 ),
                 color: AppColors.mainColor.withAlpha(200),
               ),
@@ -39,7 +39,7 @@ class TableRows extends StatelessWidget {
               decoration: const BoxDecoration(
                 color: Color.fromARGB(255, 212, 212, 212),
                 borderRadius: BorderRadius.only(
-                  topRight: Radius.circular(10),
+                  topRight: Radius.circular(15),
                 ),
               ),
               padding: const EdgeInsets.all(pad),
@@ -53,7 +53,7 @@ class TableRows extends StatelessWidget {
               decoration: BoxDecoration(
                 color: AppColors.mainColor.withAlpha(200),
                 borderRadius: const BorderRadius.only(
-                  bottomLeft: Radius.circular(10),
+                  bottomLeft: Radius.circular(15),
                 ),
               ),
               padding: const EdgeInsets.all(pad),
@@ -62,7 +62,7 @@ class TableRows extends StatelessWidget {
             Container(
               decoration: const BoxDecoration(
                 borderRadius: BorderRadius.only(
-                  bottomRight: Radius.circular(10),
+                  bottomRight: Radius.circular(15),
                 ),
                 color: Color.fromARGB(255, 212, 212, 212),
               ),

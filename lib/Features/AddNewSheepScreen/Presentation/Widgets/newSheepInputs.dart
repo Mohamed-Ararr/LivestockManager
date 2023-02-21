@@ -156,7 +156,7 @@ class _NewSheepInputsState extends State<NewSheepInputs> {
           ),
           const SizedBox(height: 20),
           CustomDropDown(
-            items: const ["1", "2", "3", "4", "5", "6"],
+            items: const ["0", "1", "2", "3", "4", "5", "6"],
             title: "Number of Lambs",
             height: 200,
             onChanged: (val) {
