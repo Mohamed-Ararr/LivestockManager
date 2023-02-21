@@ -13,14 +13,14 @@ class UserCubit extends Cubit<UserState> {
     emit(UserLoading());
     var userBox = Hive.box<UserModel>(kUserBox);
     var userList = userBox.values.toList();
-    for (int i = 0; i < userList.length - 1; i++) {
+    for (int i = userList.length - 2; i > 0; i--) {
       userList[i].delete();
     }
     String firstName;
     String lastName;
     if (userList.isNotEmpty) {
-      firstName = userList[0].firstName;
-      lastName = userList[0].lastName;
+      firstName = userList[userList.length - 1].firstName;
+      lastName = userList[userList.length - 1].lastName;
     } else {
       firstName = "User";
       lastName = "User";

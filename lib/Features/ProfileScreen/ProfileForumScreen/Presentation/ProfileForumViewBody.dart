@@ -81,7 +81,7 @@ class _ProfileForumViewBodyState extends State<ProfileForumViewBody> {
                             .addUser(user);
                         BlocProvider.of<UserCubit>(context).getActuallUser();
                         GoRouter.of(context).pop();
-                        user.delete();
+                        // user.delete();
                       } else {
                         setState(() {
                           validateMode = AutovalidateMode.always;
