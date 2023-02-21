@@ -4,6 +4,7 @@ import "package:flutter/material.dart";
 import "package:flutter_bloc/flutter_bloc.dart";
 import "package:flutter_slidable/flutter_slidable.dart";
 import "package:flutter_staggered_animations/flutter_staggered_animations.dart";
+import "package:flutter_svg/svg.dart";
 import "package:go_router/go_router.dart";
 import "package:sheepmanager/Core/Utils/deleteOption.dart";
 import "package:sheepmanager/Core/Utils/soldOption.dart";
@@ -11,6 +12,7 @@ import "package:sheepmanager/Features/HomeScreen/Presentation/Bloc%20Manager/She
 
 import "../../../../Core/Utils/colors.dart";
 import "../../../../Core/Utils/router.dart";
+import "../../../../constValues.dart";
 import "SheepCard.dart";
 
 class CardsListView extends StatelessWidget {
@@ -57,13 +59,18 @@ class CardsListView extends StatelessWidget {
             );
           } else {
             return Column(
-              children: const [
-                SizedBox(height: 50),
-                Center(
+              children: [
+                const SizedBox(height: 50),
+                SvgPicture.asset(
+                  logo,
+                  color: AppColors.secColor,
+                ),
+                // const SizedBox(height: 50),
+                const Center(
                     child: Text(
                   "No Sheep To Show :'(\nAdd New Sheep!",
                   textAlign: TextAlign.center,
-                  style: TextStyle(fontSize: 22),
+                  style: TextStyle(fontSize: 20),
                 )),
               ],
             );
