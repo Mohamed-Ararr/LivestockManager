@@ -1,19 +1,12 @@
 // ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:go_router/go_router.dart';
-import 'package:sheepmanager/Core/Utils/colors.dart';
 import 'package:sheepmanager/Core/Utils/fonts.dart';
-import 'package:sheepmanager/Core/Utils/router.dart';
-import 'package:sheepmanager/Features/HomeScreen/Presentation/Widgets/FarmBoxAttribute.dart';
 import 'package:sheepmanager/Features/HomeScreen/Presentation/Widgets/FarmShortBox.dart';
-import 'package:sheepmanager/Features/HomeScreen/Presentation/Widgets/FarmShortInfo.dart';
 
 import '../../../../constValues.dart';
 import 'CustomAppBar.dart';
 import 'SearchCard.dart';
-import 'TapMoreButton.dart';
 
 class HomeViewBody extends StatefulWidget {
   const HomeViewBody({super.key});
