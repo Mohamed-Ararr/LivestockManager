@@ -1,7 +1,9 @@
 // ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:sheepmanager/Core/Utils/fonts.dart';
+import 'package:sheepmanager/Core/Utils/router.dart';
 
 import '../../../../constValues.dart';
 import 'CustomAppBar.dart';
@@ -34,6 +36,11 @@ class _HomeViewBodyState extends State<HomeViewBody> {
                     Text("Registered Farms", style: AppFonts.regularBlackTitle),
               ),
               const SizedBox(height: 10),
+              ElevatedButton(
+                onPressed: () =>
+                    GoRouter.of(context).push(AppRouter.exploreLivestockView),
+                child: Text("heelos"),
+              ),
             ],
           ),
         ),

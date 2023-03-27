@@ -2,7 +2,13 @@
 
 import "package:flutter/material.dart";
 import "package:flutter_bloc/flutter_bloc.dart";
+import "package:font_awesome_flutter/font_awesome_flutter.dart";
+import "package:go_router/go_router.dart";
+import "package:sheepmanager/Core/Utils/colors.dart";
+import "package:sheepmanager/Core/Utils/searchDele.dart";
+import "package:sheepmanager/Features/ExploreLivestockScreen/Presentation/Widgets/ExploreStockAppBar.dart";
 
+import "../../../../Core/Utils/fonts.dart";
 import '../../../../constValues.dart';
 import "../Bloc Manager/SheepsCubit/sheeps_cubit.dart";
 import "CardsListView.dart";
@@ -34,17 +40,17 @@ class _ExploreLivestockViewBodyState extends State<ExploreLivestockViewBody> {
           physics: const BouncingScrollPhysics(),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: const [
-              CustomAppBar(),
-              SizedBox(height: 25),
-              SearchCard(),
-              SizedBox(height: 25),
+            children: [
+              const SizedBox(height: 10),
+              const ExploreStockAppBar(),
+              const SizedBox(height: 25),
               Padding(
                 padding: kPaddingRightLeft,
-                child: Text("Livestock List", style: TextStyle(fontSize: 20)),
+                child: Text("Explore Livestock",
+                    style: AppFonts.regularBlackTitle),
               ),
-              SizedBox(height: 10),
-              CardsListView(),
+              const SizedBox(height: 10),
+              const CardsListView(),
             ],
           ),
         ),
