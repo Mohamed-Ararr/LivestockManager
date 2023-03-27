@@ -7,6 +7,7 @@ import 'package:sheepmanager/Core/Utils/colors.dart';
 import 'package:sheepmanager/Core/Utils/fonts.dart';
 import 'package:sheepmanager/Core/Utils/router.dart';
 import 'package:sheepmanager/Features/HomeScreen/Presentation/Widgets/FarmBoxAttribute.dart';
+import 'package:sheepmanager/Features/HomeScreen/Presentation/Widgets/FarmShortBox.dart';
 import 'package:sheepmanager/Features/HomeScreen/Presentation/Widgets/FarmShortInfo.dart';
 
 import '../../../../constValues.dart';
@@ -47,15 +48,7 @@ class _HomeViewBodyState extends State<HomeViewBody> {
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
                 itemBuilder: (context, index) {
-                  return Container(
-                    margin: const EdgeInsets.symmetric(vertical: 10),
-                    child: Column(
-                      children: const [
-                        FarmShortInfo(),
-                        TapMoreButton(),
-                      ],
-                    ),
-                  );
+                  return const FarmShortBox();
                 },
               ),
             ],
