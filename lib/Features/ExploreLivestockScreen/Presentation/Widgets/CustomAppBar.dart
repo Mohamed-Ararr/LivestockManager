@@ -2,8 +2,8 @@
 
 import "package:flutter/material.dart";
 
-import "../../../../constValues.dart";
-import "../../../SplashScreen/Presentation/Widgets/logoImage.dart";
+import '../../../../constValues.dart';
+import '../../../SplashScreen/Presentation/Widgets/logoImage.dart';
 import "avatarWidget.dart";
 
 class CustomAppBar extends StatelessWidget {

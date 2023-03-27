@@ -9,8 +9,8 @@ import "package:sheepmanager/Core/Utils/customTextField.dart";
 import "package:sheepmanager/constValues.dart";
 
 import "../../../../Core/Utils/confirmButton.dart";
-import "../../../HomeScreen/Data/Model/sheep_model.dart";
-import "../../../HomeScreen/Presentation/Bloc Manager/AddSheepCubit/add_sheep_cubit.dart";
+import "../../../ExploreLivestockScreen/Data/Model/sheep_model.dart";
+import "../../../ExploreLivestockScreen/Presentation/Bloc Manager/AddSheepCubit/add_sheep_cubit.dart";
 
 class NewSheepInputs extends StatefulWidget {
   const NewSheepInputs({super.key});

@@ -3,12 +3,12 @@
 import "package:flutter/material.dart";
 import "package:flutter_bloc/flutter_bloc.dart";
 
-import "../../../../constValues.dart";
+import '../../../../constValues.dart';
 import "../Bloc Manager/SheepsCubit/sheeps_cubit.dart";
 import "CardsListView.dart";
 import "CustomAppBar.dart";
 import "addNewSheepButton.dart";
-import "searchCard.dart";
+import 'search_card.dart';
 
 class ExploreLivestockViewBody extends StatefulWidget {
   const ExploreLivestockViewBody({super.key});
