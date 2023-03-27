@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:sheepmanager/Features/HomeScreen/Data/Model/sheep_model.dart';
 import 'package:sheepmanager/constValues.dart';
+
+import '../../../Data/Model/sheep_model.dart';
 
 part 'add_sheep_state.dart';
 

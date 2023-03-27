@@ -6,11 +6,11 @@ import "package:font_awesome_flutter/font_awesome_flutter.dart";
 import "package:sheepmanager/Core/Utils/colors.dart";
 import "package:sheepmanager/Core/Utils/customDropdown.dart";
 import "package:sheepmanager/Core/Utils/customTextField.dart";
-import "package:sheepmanager/Features/HomeScreen/Data/Model/sheep_model.dart";
-import "package:sheepmanager/Features/HomeScreen/Presentation/Bloc%20Manager/AddSheepCubit/add_sheep_cubit.dart";
 import "package:sheepmanager/constValues.dart";
 
 import "../../../../Core/Utils/confirmButton.dart";
+import "../../../ExploreLivestockScreen/Data/Model/sheep_model.dart";
+import "../../../ExploreLivestockScreen/Presentation/Bloc Manager/AddSheepCubit/add_sheep_cubit.dart";
 
 class NewSheepInputs extends StatefulWidget {
   const NewSheepInputs({super.key});

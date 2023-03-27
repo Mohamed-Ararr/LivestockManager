@@ -1,10 +1,10 @@
 // ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
-import 'package:sheepmanager/Features/HomeScreen/Data/Model/sheep_model.dart';
 import 'package:sheepmanager/constValues.dart';
 
 import '../../../../../Core/Utils/backButton.dart';
+import '../../../Data/Model/sheep_model.dart';
 import 'Widgets/editSheepInputs.dart';
 
 class EditSheepViewBody extends StatelessWidget {

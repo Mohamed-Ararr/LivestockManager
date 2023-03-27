@@ -3,10 +3,10 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
-import 'package:sheepmanager/Features/HomeScreen/Data/Model/sheep_model.dart';
 
 import '../../../../../../Core/Utils/backButton.dart';
 import '../../../../../../Core/Utils/router.dart';
+import '../../../../Data/Model/sheep_model.dart';
 
 class CustomAppBarInfo extends StatelessWidget {
   const CustomAppBarInfo({super.key, required this.sheep});

@@ -3,12 +3,12 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:sheepmanager/Core/Utils/observer.dart';
 import 'package:sheepmanager/Core/Utils/router.dart';
-import 'package:sheepmanager/Features/HomeScreen/Presentation/Bloc%20Manager/SheepsCubit/sheeps_cubit.dart';
 import 'package:sheepmanager/Features/ProfileScreen/Bloc%20Manager/userCubit/user_cubit.dart';
 
 import 'package:sheepmanager/constValues.dart';
 
-import 'Features/HomeScreen/Data/Model/sheep_model.dart';
+import 'Features/ExploreLivestockScreen/Data/Model/sheep_model.dart';
+import 'Features/ExploreLivestockScreen/Presentation/Bloc Manager/SheepsCubit/sheeps_cubit.dart';
 import 'Features/ProfileScreen/Data/Model/user_model.dart';
 
 void main() async {
