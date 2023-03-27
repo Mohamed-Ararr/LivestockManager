@@ -4,7 +4,7 @@ import "package:flutter/material.dart";
 
 import '../../../../constValues.dart';
 import '../../../SplashScreen/Presentation/Widgets/logoImage.dart';
-import "avatarWidget.dart";
+import '../../../ExploreLivestockScreen/Presentation/Widgets/avatarWidget.dart';
 
 class CustomAppBar extends StatelessWidget {
   const CustomAppBar({super.key});
@@ -18,7 +18,7 @@ class CustomAppBar extends StatelessWidget {
         children: const [
           LogoImage(),
           Text(
-            "Sheep Manager",
+            "Farm Barn",
             style: TextStyle(
               fontWeight: FontWeight.bold,
               fontSize: 19,

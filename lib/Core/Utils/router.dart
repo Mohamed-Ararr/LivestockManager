@@ -10,6 +10,7 @@ import '../../Features/ExploreLivestockScreen/Data/Model/sheep_model.dart';
 import '../../Features/ExploreLivestockScreen/Presentation/Bloc Manager/AddSheepCubit/add_sheep_cubit.dart';
 import '../../Features/ExploreLivestockScreen/Presentation/Bloc Manager/SheepsCubit/sheeps_cubit.dart';
 import '../../Features/ExploreLivestockScreen/Presentation/EditSheepSreen/Presentation/EditSheepView.dart';
+import '../../Features/ExploreLivestockScreen/Presentation/ExploreLivestockView.dart';
 import '../../Features/ExploreLivestockScreen/Presentation/ShowSheepInfo/Presentation/ShowSheepInfoView.dart';
 import '../../Features/ProfileScreen/ProfileForumScreen/Presentation/ProfileForumView.dart';
 
@@ -20,6 +21,7 @@ class AppRouter {
   static String addNewSheepView = "/addNewSheepView";
   static String editSheepView = "/editSheepView";
   static String showSheepInfoView = "/showSheepInfoView";
+  static String exploreLivestockView = "/exploreLivestockView";
 
   static final routes = GoRouter(
     routes: <RouteBase>[
@@ -38,6 +40,10 @@ class AppRouter {
       GoRoute(
         path: profileForumView,
         builder: (context, state) => const ProfileForumView(),
+      ),
+      GoRoute(
+        path: exploreLivestockView,
+        builder: (context, state) => const ExploreLivestockView(),
       ),
       GoRoute(
         path: addNewSheepView,
