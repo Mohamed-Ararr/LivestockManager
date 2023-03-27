@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../Core/Utils/colors.dart';
 import '../../../../constValues.dart';
-import '../../Data/Model/sheep_model.dart';
+import '../../../HomeScreen/Data/Model/sheep_model.dart';
 import 'SheepCardInfo.dart';
 import 'SheepIconCard.dart';
 

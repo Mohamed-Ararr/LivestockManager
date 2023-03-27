@@ -9,9 +9,9 @@ import 'package:go_router/go_router.dart';
 import 'package:sheepmanager/Core/Utils/router.dart';
 import 'package:sheepmanager/Core/Utils/soldOption.dart';
 
-import '../../Features/ExploreLivestockScreen/Data/Model/sheep_model.dart';
-import '../../Features/ExploreLivestockScreen/Presentation/Bloc Manager/SheepsCubit/sheeps_cubit.dart';
 import '../../Features/ExploreLivestockScreen/Presentation/Widgets/SheepCard.dart';
+import '../../Features/HomeScreen/Data/Model/sheep_model.dart';
+import '../../Features/HomeScreen/Presentation/Bloc Manager/SheepsCubit/sheeps_cubit.dart';
 import 'colors.dart';
 import 'deleteOption.dart';
 

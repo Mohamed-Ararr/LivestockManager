@@ -1,17 +1,16 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-
-import 'package:sheepmanager/Features/ExploreLivestockScreen/Presentation/EditSheepSreen/Presentation/EditSheepView.dart';
 import 'package:sheepmanager/Features/HomeScreen/Presentation/HomeView.dart';
-import 'package:sheepmanager/Features/ExploreLivestockScreen/Presentation/ShowSheepInfo/Presentation/ShowSheepInfoView.dart';
 
 import 'package:sheepmanager/Features/ProfileScreen/Profile/Presentation/ProfileView.dart';
 import 'package:sheepmanager/Features/SplashScreen/Presentation/SplashView.dart';
 
 import '../../Features/AddNewSheepScreen/Presentation/AddNewSheepView.dart';
-import '../../Features/ExploreLivestockScreen/Data/Model/sheep_model.dart';
-import '../../Features/ExploreLivestockScreen/Presentation/Bloc Manager/AddSheepCubit/add_sheep_cubit.dart';
-import '../../Features/ExploreLivestockScreen/Presentation/Bloc Manager/SheepsCubit/sheeps_cubit.dart';
+import '../../Features/HomeScreen/Data/Model/sheep_model.dart';
+import '../../Features/HomeScreen/Presentation/Bloc Manager/AddSheepCubit/add_sheep_cubit.dart';
+import '../../Features/HomeScreen/Presentation/Bloc Manager/SheepsCubit/sheeps_cubit.dart';
+import '../../Features/HomeScreen/Presentation/EditSheepSreen/Presentation/EditSheepView.dart';
+import '../../Features/HomeScreen/Presentation/ShowSheepInfo/Presentation/ShowSheepInfoView.dart';
 import '../../Features/ProfileScreen/ProfileForumScreen/Presentation/ProfileForumView.dart';
 
 class AppRouter {

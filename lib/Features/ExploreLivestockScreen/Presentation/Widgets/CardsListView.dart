@@ -12,7 +12,7 @@ import "package:sheepmanager/Core/Utils/soldOption.dart";
 import "../../../../Core/Utils/colors.dart";
 import "../../../../Core/Utils/router.dart";
 import "../../../../constValues.dart";
-import "../Bloc Manager/SheepsCubit/sheeps_cubit.dart";
+import "../../../HomeScreen/Presentation/Bloc Manager/SheepsCubit/sheeps_cubit.dart";
 import "SheepCard.dart";
 
 class CardsListView extends StatelessWidget {
