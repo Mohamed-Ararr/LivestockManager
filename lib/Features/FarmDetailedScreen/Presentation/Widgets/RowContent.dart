@@ -15,10 +15,10 @@ class RowContent extends StatelessWidget {
         color: const Color.fromARGB(255, 212, 212, 212),
         borderRadius: borderRadius,
       ),
-      padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
+      padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
       child: Text(
         "Content",
-        style: AppFonts.regularText17Black,
+        style: AppFonts.regularTextBlack,
       ),
     );
   }

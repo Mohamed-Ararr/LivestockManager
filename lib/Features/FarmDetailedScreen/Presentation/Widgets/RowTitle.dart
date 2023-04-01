@@ -1,6 +1,7 @@
 // ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
+import 'package:sheepmanager/Core/Utils/fonts.dart';
 
 import '../../../../Core/Utils/colors.dart';
 
@@ -16,8 +17,9 @@ class RowTitle extends StatelessWidget {
         borderRadius: borderRadius,
         color: AppColors.mainColor.withAlpha(200),
       ),
-      padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
-      child: const Text("Title"),
+      padding: const EdgeInsets.symmetric(vertical: 20),
+      child: Text("Title",
+          style: AppFonts.regularRowTitle, textAlign: TextAlign.center),
     );
   }
 }
