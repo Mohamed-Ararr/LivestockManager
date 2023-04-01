@@ -1,9 +1,10 @@
 // ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:sheepmanager/Core/Utils/router.dart';
 import 'package:sheepmanager/constValues.dart';
 
-import '../../../../Core/Utils/colors.dart';
 import 'FarmShortInfo.dart';
 import 'TapMoreButton.dart';
 
@@ -26,7 +27,7 @@ class FarmShortBox extends StatelessWidget {
         ],
       ),
       child: InkWell(
-        onTap: () {},
+        onTap: () => GoRouter.of(context).push(AppRouter.farmDetailedView),
         borderRadius: kBorderRadius,
         child: Column(
           children: const [
