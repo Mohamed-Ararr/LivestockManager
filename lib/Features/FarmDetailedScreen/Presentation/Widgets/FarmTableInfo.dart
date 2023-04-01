@@ -42,6 +42,12 @@ class FarmTableInfo extends StatelessWidget {
         ),
         TableRow(
           children: [
+            RowTitle(),
+            RowContent(),
+          ],
+        ),
+        TableRow(
+          children: [
             RowTitle(
               borderRadius: BorderRadius.only(
                 bottomLeft: Radius.circular(15),
