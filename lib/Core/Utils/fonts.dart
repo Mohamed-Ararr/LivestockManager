@@ -20,4 +20,9 @@ class AppFonts {
     fontSize: 16,
     color: Colors.white,
   );
+
+  static TextStyle regularText17Black = const TextStyle(
+    color: Colors.black,
+    fontWeight: FontWeight.bold,
+  );
 }
