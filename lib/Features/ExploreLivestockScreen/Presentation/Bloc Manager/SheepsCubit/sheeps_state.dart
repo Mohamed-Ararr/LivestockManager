@@ -1,14 +1,14 @@
 part of 'sheeps_cubit.dart';
 
 @immutable
-abstract class SheepsState {}
+abstract class LivestockState {}
 
-class SheepsInitial extends SheepsState {}
+class LivestockInitial extends LivestockState {}
 
-class SheepsLoading extends SheepsState {}
+class LivestockLoading extends LivestockState {}
 
-class SheepsSuccess extends SheepsState {
-  final List<SheepModel> sheepList;
+class LivestockSuccess extends LivestockState {
+  final List<LivestockModel> livestockList;
 
-  SheepsSuccess(this.sheepList);
+  LivestockSuccess(this.livestockList);
 }

@@ -7,29 +7,29 @@ import 'package:sheepmanager/Features/ProfileScreen/Bloc%20Manager/userCubit/use
 
 import 'package:sheepmanager/constValues.dart';
 
-import 'Features/ExploreLivestockScreen/Data/Model/sheep_model.dart';
+import 'Features/ExploreLivestockScreen/Data/Model/livestock_model.dart';
 import 'Features/ExploreLivestockScreen/Presentation/Bloc Manager/SheepsCubit/sheeps_cubit.dart';
 import 'Features/ProfileScreen/Data/Model/user_model.dart';
 
 void main() async {
   await Hive.initFlutter();
-  Hive.registerAdapter(SheepModelAdapter());
+  Hive.registerAdapter(LivestockModelAdapter());
   Hive.registerAdapter(UserModelAdapter());
-  await Hive.openBox<SheepModel>(kSheepBox);
+  await Hive.openBox<LivestockModel>(kSheepBox);
   await Hive.openBox<UserModel>(kUserBox);
-  Bloc.observer = SheepObserver();
-  runApp(const SheepApp());
+  Bloc.observer = LivestockObserver();
+  runApp(const LivestockApp());
 }
 
-class SheepApp extends StatelessWidget {
-  const SheepApp({super.key});
+class LivestockApp extends StatelessWidget {
+  const LivestockApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
         BlocProvider(
-          create: (context) => SheepsCubit()..fetchAllSheep(),
+          create: (context) => LivestockCubit()..fetchAllSheep(),
         ),
         BlocProvider(
           create: (context) => UserCubit()..getActuallUser(),

@@ -5,13 +5,13 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-import '../../Features/ExploreLivestockScreen/Data/Model/sheep_model.dart';
+import '../../Features/ExploreLivestockScreen/Data/Model/livestock_model.dart';
 import '../../Features/ExploreLivestockScreen/Presentation/Bloc Manager/SheepsCubit/sheeps_cubit.dart';
 
 class DeleteOption extends StatelessWidget {
   const DeleteOption({super.key, required this.sheep});
 
-  final SheepModel sheep;
+  final LivestockModel sheep;
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +25,7 @@ class DeleteOption extends StatelessWidget {
         child: IconSlideAction(
           onTap: () {
             sheep.delete();
-            BlocProvider.of<SheepsCubit>(context).fetchAllSheep();
+            BlocProvider.of<LivestockCubit>(context).fetchAllSheep();
           },
           color: const Color.fromARGB(255, 230, 93, 84),
           caption: "Delete",

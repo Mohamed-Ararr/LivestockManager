@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../Core/Utils/colors.dart';
 import '../../../../constValues.dart';
-import '../../Data/Model/sheep_model.dart';
+import '../../Data/Model/livestock_model.dart';
 import 'SheepCardInfo.dart';
 import 'SheepIconCard.dart';
 
@@ -15,7 +15,7 @@ class SheepCard extends StatelessWidget {
     required this.onTap,
   });
 
-  final SheepModel sheep;
+  final LivestockModel sheep;
   final Function()? onTap;
 
   @override

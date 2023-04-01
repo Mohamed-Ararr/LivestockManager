@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class SheepObserver implements BlocObserver {
+class LivestockObserver implements BlocObserver {
   @override
   void onChange(BlocBase bloc, Change change) {}
 

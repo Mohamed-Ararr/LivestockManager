@@ -7,7 +7,6 @@ import "package:flutter_staggered_animations/flutter_staggered_animations.dart";
 import "package:flutter_svg/svg.dart";
 import "package:go_router/go_router.dart";
 import "package:sheepmanager/Core/Utils/deleteOption.dart";
-import "package:sheepmanager/Core/Utils/soldOption.dart";
 
 import '../../../../Core/Utils/colors.dart';
 import '../../../../Core/Utils/router.dart';
@@ -20,14 +19,14 @@ class CardsListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<SheepsCubit, SheepsState>(
+    return BlocBuilder<LivestockCubit, LivestockState>(
       builder: (context, state) {
-        if (state is SheepsSuccess) {
-          if (state.sheepList.isNotEmpty) {
+        if (state is LivestockSuccess) {
+          if (state.livestockList.isNotEmpty) {
             return ListView.builder(
               shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),
-              itemCount: state.sheepList.length,
+              itemCount: state.livestockList.length,
               itemBuilder: (context, index) {
                 return AnimationConfiguration.staggeredList(
                   duration: const Duration(milliseconds: 1500),
@@ -38,17 +37,13 @@ class CardsListView extends StatelessWidget {
                       child: Slidable(
                         actionPane: const SlidableDrawerActionPane(),
                         secondaryActions: [
-                          DeleteOption(sheep: state.sheepList[index]),
-                          Container(
-                            margin: const EdgeInsets.only(right: 5),
-                            child: SoldOption(sheep: state.sheepList[index]),
-                          ),
+                          DeleteOption(sheep: state.livestockList[index]),
                         ],
                         child: SheepCard(
-                          sheep: state.sheepList[index],
+                          sheep: state.livestockList[index],
                           onTap: () => GoRouter.of(context).push(
                             AppRouter.showSheepInfoView,
-                            extra: state.sheepList[index],
+                            extra: state.livestockList[index],
                           ),
                         ),
                       ),

@@ -1,11 +1,12 @@
-
 // ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
 import 'package:sheepmanager/Core/Utils/router.dart';
 
 import '../../../../Core/Utils/colors.dart';
+import '../../../../Core/Utils/fonts.dart';
 import '../../../../constValues.dart';
 
 class AddNewSheepButton extends StatelessWidget {
@@ -13,17 +14,25 @@ class AddNewSheepButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-      onPressed: () => GoRouter.of(context).push(AppRouter.addNewSheepView),
-      style: ElevatedButton.styleFrom(
-        backgroundColor: AppColors.secColor,
-        elevation: 0,
-        shape: RoundedRectangleBorder(
+    return InkWell(
+      onTap: () => GoRouter.of(context).push(AppRouter.addNewSheepView),
+      child: Container(
+        width: MediaQuery.of(context).size.width * 0.5,
+        padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 15),
+        decoration: BoxDecoration(
+          color: AppColors.secColor,
           borderRadius: kBorderRadius,
         ),
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text("Add Livestock", style: AppFonts.regularTextWhite),
+            const SizedBox(width: 10),
+            const Icon(FontAwesomeIcons.circleArrowRight,
+                size: 20, color: Colors.white),
+          ],
+        ),
       ),
-      child: const Text("Add New Sheep"),
     );
   }
 }

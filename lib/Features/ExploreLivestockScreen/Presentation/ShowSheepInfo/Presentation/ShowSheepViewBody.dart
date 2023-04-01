@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:sheepmanager/constValues.dart';
 
-import '../../../Data/Model/sheep_model.dart';
+import '../../../Data/Model/livestock_model.dart';
 import 'Widgets/customAppBarInfo.dart';
 import 'Widgets/doctorAppoinCard.dart';
 import 'Widgets/overallDetailsGridView.dart';
@@ -11,7 +11,7 @@ import 'Widgets/overallDetailsGridView.dart';
 class ShowSheepInfoViewBody extends StatelessWidget {
   const ShowSheepInfoViewBody({super.key, required this.sheep});
 
-  final SheepModel sheep;
+  final LivestockModel sheep;
 
   @override
   Widget build(BuildContext context) {

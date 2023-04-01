@@ -9,8 +9,8 @@ import "package:sheepmanager/Core/Utils/customTextField.dart";
 import "package:sheepmanager/constValues.dart";
 
 import "../../../../Core/Utils/confirmButton.dart";
-import "../../../ExploreLivestockScreen/Data/Model/sheep_model.dart";
-import "../../../ExploreLivestockScreen/Presentation/Bloc Manager/AddSheepCubit/add_sheep_cubit.dart";
+import '../../../ExploreLivestockScreen/Data/Model/livestock_model.dart';
+import '../../../ExploreLivestockScreen/Presentation/Bloc Manager/AddSheepCubit/add_livestock_cubit.dart';
 
 class NewSheepInputs extends StatefulWidget {
   const NewSheepInputs({super.key});
@@ -36,7 +36,7 @@ class _NewSheepInputsState extends State<NewSheepInputs> {
   ];
 
   String? id;
-  String? selectedState;
+  String? selectedType;
   String? selectedSexe;
   String? weight;
   String? age;
@@ -66,11 +66,11 @@ class _NewSheepInputsState extends State<NewSheepInputs> {
           ),
           const SizedBox(height: 20),
           CustomDropDown(
-            items: const ["Available", "Sold"],
-            title: "State",
+            items: const ["Sheep", "Cow"],
+            title: "Livestock Type",
             height: 120,
-            onChanged: (val) {
-              selectedState = val;
+            onChanged: (value) {
+              selectedType = value;
             },
           ),
           const SizedBox(height: 20),
@@ -218,7 +218,7 @@ class _NewSheepInputsState extends State<NewSheepInputs> {
           ConfirmButton(
             onPressed: () {
               if (formKey.currentState!.validate() &&
-                  selectedState != null &&
+                  selectedType != null &&
                   selectedSexe != null &&
                   selectedNumb != null) {
                 formKey.currentState!.save();
@@ -226,9 +226,9 @@ class _NewSheepInputsState extends State<NewSheepInputs> {
                     "${lastBirthDate.day} ${months[lastBirthDate.month - 1]} ${lastBirthDate.year}";
                 String lastVisit =
                     "${lastVisitDate.day} ${months[lastVisitDate.month - 1]} ${lastVisitDate.year}";
-                var sheepModel = SheepModel(
+                var livestockModel = LivestockModel(
                   id: id!,
-                  state: selectedState!,
+                  type: selectedType!,
                   sexe: selectedSexe!,
                   weight: int.parse(weight!),
                   age: int.parse(age!),
@@ -237,7 +237,8 @@ class _NewSheepInputsState extends State<NewSheepInputs> {
                   lastVisit: lastVisit,
                 );
 
-                BlocProvider.of<AddSheepCubit>(context).addNewSheep(sheepModel);
+                BlocProvider.of<AddLivestockCubit>(context)
+                    .addNewLivestock(livestockModel);
               } else {
                 setState(() {
                   validateMode = AutovalidateMode.always;

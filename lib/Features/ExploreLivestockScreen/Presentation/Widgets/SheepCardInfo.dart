@@ -3,17 +3,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import '../../Data/Model/sheep_model.dart';
+import '../../Data/Model/livestock_model.dart';
 import '../Bloc Manager/SheepsCubit/sheeps_cubit.dart';
 
 class SheepCardInfo extends StatelessWidget {
   const SheepCardInfo({super.key, required this.sheep});
 
-  final SheepModel sheep;
+  final LivestockModel sheep;
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<SheepsCubit, SheepsState>(
+    return BlocBuilder<LivestockCubit, LivestockState>(
       builder: (context, state) {
         return Expanded(
           child: Padding(
@@ -27,7 +27,7 @@ class SheepCardInfo extends StatelessWidget {
                 ),
                 const SizedBox(height: 10),
                 Text(
-                  "State: ${sheep.state}",
+                  "Type: ${sheep.type}",
                   style: const TextStyle(fontWeight: FontWeight.bold),
                 ),
                 const SizedBox(height: 10),

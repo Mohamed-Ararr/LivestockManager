@@ -2,13 +2,13 @@
 
 import 'package:flutter/material.dart';
 
-import '../../../Data/Model/sheep_model.dart';
+import '../../../Data/Model/livestock_model.dart';
 import 'EditSheepViewBody.dart';
 
 class EditSheepView extends StatelessWidget {
   const EditSheepView({super.key, required this.sheep});
 
-  final SheepModel sheep;
+  final LivestockModel sheep;
 
   @override
   Widget build(BuildContext context) {

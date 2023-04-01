@@ -8,7 +8,7 @@ import 'package:sheepmanager/Core/Utils/backButton.dart';
 import 'package:sheepmanager/Features/AddNewSheepScreen/Presentation/Widgets/newSheepInputs.dart';
 import 'package:sheepmanager/constValues.dart';
 
-import '../../ExploreLivestockScreen/Presentation/Bloc Manager/AddSheepCubit/add_sheep_cubit.dart';
+import '../../ExploreLivestockScreen/Presentation/Bloc Manager/AddSheepCubit/add_livestock_cubit.dart';
 import '../../ExploreLivestockScreen/Presentation/Bloc Manager/SheepsCubit/sheeps_cubit.dart';
 
 class AddNewSheepViewBody extends StatelessWidget {
@@ -16,14 +16,14 @@ class AddNewSheepViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocConsumer<AddSheepCubit, AddSheepState>(
+    return BlocConsumer<AddLivestockCubit, AddLivestockState>(
       listener: (context, state) {
-        if (state is AddSheepFailure) {
+        if (state is AddLivestockFailure) {
           debugPrint(state.errMsg);
         }
 
-        if (state is AddSheepSuccess) {
-          BlocProvider.of<SheepsCubit>(context).fetchAllSheep();
+        if (state is AddLivestockSuccess) {
+          BlocProvider.of<LivestockCubit>(context).fetchAllSheep();
           GoRouter.of(context).pop();
         }
       },
@@ -31,7 +31,7 @@ class AddNewSheepViewBody extends StatelessWidget {
         return ModalProgressHUD(
           opacity: 0.15,
           blur: 2,
-          inAsyncCall: state is AddSheepLoading ? true : false,
+          inAsyncCall: state is AddLivestockLoading ? true : false,
           child: Scaffold(
             body: SafeArea(
               child: SingleChildScrollView(

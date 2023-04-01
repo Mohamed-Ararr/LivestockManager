@@ -2,17 +2,17 @@
 
 import 'package:flutter/material.dart';
 
-import '../../../../Data/Model/sheep_model.dart';
+import '../../../../Data/Model/livestock_model.dart';
 import 'infoCard.dart';
 
 class OverallDetailsGridView extends StatelessWidget {
   OverallDetailsGridView({super.key, required this.sheep});
 
-  final SheepModel sheep;
+  final LivestockModel sheep;
 
   final List<String> infos = [
     "ID",
-    "State",
+    "Type",
     "Sexe",
     "Weight",
     "Age",
@@ -24,7 +24,7 @@ class OverallDetailsGridView extends StatelessWidget {
   Widget build(BuildContext context) {
     final List infosContent = [
       sheep.id,
-      sheep.state,
+      sheep.type,
       sheep.sexe,
       "${sheep.weight} KG",
       "${sheep.age} Months",

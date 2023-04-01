@@ -4,13 +4,13 @@ import 'package:flutter/material.dart';
 import 'package:sheepmanager/constValues.dart';
 
 import '../../../../../Core/Utils/backButton.dart';
-import '../../../Data/Model/sheep_model.dart';
+import '../../../Data/Model/livestock_model.dart';
 import 'Widgets/editSheepInputs.dart';
 
 class EditSheepViewBody extends StatelessWidget {
   const EditSheepViewBody({super.key, required this.sheep});
 
-  final SheepModel sheep;
+  final LivestockModel sheep;
 
   @override
   Widget build(BuildContext context) {

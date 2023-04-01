@@ -7,8 +7,7 @@ import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
 import 'package:sheepmanager/Core/Utils/router.dart';
-import 'package:sheepmanager/Core/Utils/soldOption.dart';
-import '../../Features/ExploreLivestockScreen/Data/Model/sheep_model.dart';
+import '../../Features/ExploreLivestockScreen/Data/Model/livestock_model.dart';
 import '../../Features/ExploreLivestockScreen/Presentation/Bloc Manager/SheepsCubit/sheeps_cubit.dart';
 import '../../Features/ExploreLivestockScreen/Presentation/Widgets/SheepCard.dart';
 import 'colors.dart';
@@ -51,7 +50,7 @@ class SearchBar extends SearchDelegate {
   Widget? buildLeading(BuildContext context) {
     return IconButton(
       onPressed: () {
-        BlocProvider.of<SheepsCubit>(context).fetchAllSheep();
+        BlocProvider.of<LivestockCubit>(context).fetchAllSheep();
         GoRouter.of(context).pop();
       },
       icon: const Icon(FontAwesomeIcons.arrowLeft),
@@ -65,10 +64,10 @@ class SearchBar extends SearchDelegate {
 
   @override
   Widget buildSuggestions(BuildContext context) {
-    return BlocBuilder<SheepsCubit, SheepsState>(
+    return BlocBuilder<LivestockCubit, LivestockState>(
       builder: (context, state) {
-        if (state is SheepsSuccess) {
-          List<SheepModel> suggestions = state.sheepList.where((sheep) {
+        if (state is LivestockSuccess) {
+          List<LivestockModel> suggestions = state.livestockList.where((sheep) {
             final result = sheep.id.toLowerCase();
             final input = query.toLowerCase();
             return result.contains(input);
@@ -98,16 +97,12 @@ class SearchBar extends SearchDelegate {
                             actionPane: const SlidableDrawerActionPane(),
                             secondaryActions: [
                               DeleteOption(sheep: suggestions[index]),
-                              Container(
-                                margin: const EdgeInsets.only(right: 5),
-                                child: SoldOption(sheep: suggestions[index]),
-                              ),
                             ],
                             child: SheepCard(
                               sheep: suggestions[index],
                               onTap: () => GoRouter.of(context).push(
                                 AppRouter.showSheepInfoView,
-                                extra: state.sheepList[index],
+                                extra: state.livestockList[index],
                               ),
                             ),
                           ),

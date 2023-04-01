@@ -11,12 +11,12 @@ import '../../../../../../Core/Utils/confirmButton.dart';
 import '../../../../../../Core/Utils/customDropdown.dart';
 import '../../../../../../Core/Utils/customTextField.dart';
 import '../../../../../../constValues.dart';
-import '../../../../Data/Model/sheep_model.dart';
+import '../../../../Data/Model/livestock_model.dart';
 
 class EditSheepInputs extends StatefulWidget {
   const EditSheepInputs({super.key, required this.sheep});
 
-  final SheepModel sheep;
+  final LivestockModel sheep;
 
   @override
   State<EditSheepInputs> createState() => _EditSheepInputsState();
@@ -70,7 +70,7 @@ class _EditSheepInputsState extends State<EditSheepInputs> {
             items: const ["Available", "Sold"],
             title: "State",
             height: 120,
-            selectedItem: widget.sheep.state,
+            selectedItem: widget.sheep.type,
             onChanged: (val) {
               selectedState = val;
             },
@@ -226,7 +226,7 @@ class _EditSheepInputsState extends State<EditSheepInputs> {
           ConfirmButton(
             onPressed: () {
               // widget.sheep.id = id == "" ? widget.sheep.id : id;
-              widget.sheep.state = selectedState ?? widget.sheep.state;
+              widget.sheep.type = selectedState ?? widget.sheep.type;
               widget.sheep.sexe = selectedSexe ?? widget.sheep.sexe;
               widget.sheep.weight =
                   int.tryParse(weight ?? "${widget.sheep.weight}") ??

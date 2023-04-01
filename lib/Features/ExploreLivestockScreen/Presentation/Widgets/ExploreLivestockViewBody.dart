@@ -21,7 +21,7 @@ class ExploreLivestockViewBody extends StatefulWidget {
 class _ExploreLivestockViewBodyState extends State<ExploreLivestockViewBody> {
   @override
   void initState() {
-    BlocProvider.of<SheepsCubit>(context).fetchAllSheep();
+    BlocProvider.of<LivestockCubit>(context).fetchAllSheep();
     super.initState();
   }
 

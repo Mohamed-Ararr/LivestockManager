@@ -3,17 +3,17 @@ import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:sheepmanager/constValues.dart';
 
-import '../../../Data/Model/sheep_model.dart';
+import '../../../Data/Model/livestock_model.dart';
 
 part 'sheeps_state.dart';
 
-class SheepsCubit extends Cubit<SheepsState> {
-  SheepsCubit() : super(SheepsInitial());
+class LivestockCubit extends Cubit<LivestockState> {
+  LivestockCubit() : super(LivestockInitial());
 
   fetchAllSheep() {
-    emit(SheepsLoading());
-    var sheepBox = Hive.box<SheepModel>(kSheepBox);
-    List<SheepModel> sheepList = sheepBox.values.toList();
-    emit(SheepsSuccess(sheepList));
+    emit(LivestockLoading());
+    var sheepBox = Hive.box<LivestockModel>(kSheepBox);
+    List<LivestockModel> sheepList = sheepBox.values.toList();
+    emit(LivestockSuccess(sheepList));
   }
 }

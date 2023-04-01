@@ -1,24 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'sheep_model.dart';
+part of 'livestock_model.dart';
 
 // **************************************************************************
 // TypeAdapterGenerator
 // **************************************************************************
 
-class SheepModelAdapter extends TypeAdapter<SheepModel> {
+class LivestockModelAdapter extends TypeAdapter<LivestockModel> {
   @override
   final int typeId = 0;
 
   @override
-  SheepModel read(BinaryReader reader) {
+  LivestockModel read(BinaryReader reader) {
     final numOfFields = reader.readByte();
     final fields = <int, dynamic>{
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
-    return SheepModel(
+    return LivestockModel(
       id: fields[0] as String,
-      state: fields[1] as String,
+      type: fields[1] as String,
       sexe: fields[2] as String,
       weight: fields[3] as int,
       age: fields[4] as int,
@@ -29,13 +29,13 @@ class SheepModelAdapter extends TypeAdapter<SheepModel> {
   }
 
   @override
-  void write(BinaryWriter writer, SheepModel obj) {
+  void write(BinaryWriter writer, LivestockModel obj) {
     writer
       ..writeByte(8)
       ..writeByte(0)
       ..write(obj.id)
       ..writeByte(1)
-      ..write(obj.state)
+      ..write(obj.type)
       ..writeByte(2)
       ..write(obj.sexe)
       ..writeByte(3)
@@ -56,7 +56,7 @@ class SheepModelAdapter extends TypeAdapter<SheepModel> {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is SheepModelAdapter &&
+      other is LivestockModelAdapter &&
           runtimeType == other.runtimeType &&
           typeId == other.typeId;
 }

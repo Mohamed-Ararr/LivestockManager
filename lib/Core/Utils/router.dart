@@ -7,8 +7,8 @@ import 'package:sheepmanager/Features/ProfileScreen/Profile/Presentation/Profile
 import 'package:sheepmanager/Features/SplashScreen/Presentation/SplashView.dart';
 
 import '../../Features/AddNewSheepScreen/Presentation/AddNewSheepView.dart';
-import '../../Features/ExploreLivestockScreen/Data/Model/sheep_model.dart';
-import '../../Features/ExploreLivestockScreen/Presentation/Bloc Manager/AddSheepCubit/add_sheep_cubit.dart';
+import '../../Features/ExploreLivestockScreen/Data/Model/livestock_model.dart';
+import '../../Features/ExploreLivestockScreen/Presentation/Bloc Manager/AddSheepCubit/add_livestock_cubit.dart';
 import '../../Features/ExploreLivestockScreen/Presentation/Bloc Manager/SheepsCubit/sheeps_cubit.dart';
 import '../../Features/ExploreLivestockScreen/Presentation/EditSheepSreen/Presentation/EditSheepView.dart';
 import '../../Features/ExploreLivestockScreen/Presentation/ExploreLivestockView.dart';
@@ -54,22 +54,22 @@ class AppRouter {
       GoRoute(
         path: addNewSheepView,
         builder: (context, state) => BlocProvider(
-          create: (context) => AddSheepCubit(),
+          create: (context) => AddLivestockCubit(),
           child: const AddNewSheepView(),
         ),
       ),
       GoRoute(
         path: editSheepView,
         builder: (context, state) => BlocProvider(
-          create: (context) => SheepsCubit(),
-          child: EditSheepView(sheep: state.extra as SheepModel),
+          create: (context) => LivestockCubit(),
+          child: EditSheepView(sheep: state.extra as LivestockModel),
         ),
       ),
       GoRoute(
         path: showSheepInfoView,
         builder: (context, state) => BlocProvider(
-          create: (context) => SheepsCubit(),
-          child: ShowSheepInfoView(sheep: state.extra as SheepModel),
+          create: (context) => LivestockCubit(),
+          child: ShowSheepInfoView(sheep: state.extra as LivestockModel),
         ),
       ),
     ],
