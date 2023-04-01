@@ -5,7 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import 'package:sheepmanager/Core/Utils/backButton.dart';
-import 'package:sheepmanager/Features/AddNewSheepScreen/Presentation/Widgets/newSheepInputs.dart';
+import 'package:sheepmanager/Features/AddNewLivestockScreen/Presentation/Widgets/newLivestockInputs.dart';
 import 'package:sheepmanager/constValues.dart';
 
 import '../../ExploreLivestockScreen/Presentation/Bloc Manager/AddSheepCubit/add_livestock_cubit.dart';
@@ -49,7 +49,7 @@ class AddNewSheepViewBody extends StatelessWidget {
                         ),
                       ),
                       SizedBox(height: 25),
-                      NewSheepInputs(),
+                      NewLivestockInputs(),
                     ],
                   ),
                 ),

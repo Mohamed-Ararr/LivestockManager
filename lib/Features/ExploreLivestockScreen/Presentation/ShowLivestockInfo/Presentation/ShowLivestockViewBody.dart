@@ -8,8 +8,8 @@ import 'Widgets/customAppBarInfo.dart';
 import 'Widgets/doctorAppoinCard.dart';
 import 'Widgets/overallDetailsGridView.dart';
 
-class ShowSheepInfoViewBody extends StatelessWidget {
-  const ShowSheepInfoViewBody({super.key, required this.sheep});
+class ShowLivestockInfoViewBody extends StatelessWidget {
+  const ShowLivestockInfoViewBody({super.key, required this.sheep});
 
   final LivestockModel sheep;
 

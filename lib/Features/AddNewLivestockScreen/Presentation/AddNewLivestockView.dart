@@ -1,7 +1,7 @@
 // ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
-import 'package:sheepmanager/Features/AddNewSheepScreen/Presentation/AddNewSheepViewBody.dart';
+import 'package:sheepmanager/Features/AddNewLivestockScreen/Presentation/AddNewLivestockViewBody.dart';
 
 class AddNewSheepView extends StatelessWidget {
   const AddNewSheepView({super.key});

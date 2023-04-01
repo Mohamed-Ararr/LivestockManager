@@ -3,15 +3,15 @@
 import 'package:flutter/material.dart';
 
 import '../../../Data/Model/livestock_model.dart';
-import 'ShowSheepViewBody.dart';
+import 'ShowLivestockViewBody.dart';
 
-class ShowSheepInfoView extends StatelessWidget {
-  const ShowSheepInfoView({super.key, required this.sheep});
+class ShowLivestockInfoView extends StatelessWidget {
+  const ShowLivestockInfoView({super.key, required this.sheep});
 
   final LivestockModel sheep;
 
   @override
   Widget build(BuildContext context) {
-    return ShowSheepInfoViewBody(sheep: sheep);
+    return ShowLivestockInfoViewBody(sheep: sheep);
   }
 }

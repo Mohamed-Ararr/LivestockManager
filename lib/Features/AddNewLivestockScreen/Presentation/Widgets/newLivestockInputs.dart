@@ -8,18 +8,18 @@ import "package:sheepmanager/Core/Utils/customDropdown.dart";
 import "package:sheepmanager/Core/Utils/customTextField.dart";
 import "package:sheepmanager/constValues.dart";
 
-import "../../../../Core/Utils/confirmButton.dart";
+import '../../../../Core/Utils/confirmButton.dart';
 import '../../../ExploreLivestockScreen/Data/Model/livestock_model.dart';
 import '../../../ExploreLivestockScreen/Presentation/Bloc Manager/AddSheepCubit/add_livestock_cubit.dart';
 
-class NewSheepInputs extends StatefulWidget {
-  const NewSheepInputs({super.key});
+class NewLivestockInputs extends StatefulWidget {
+  const NewLivestockInputs({super.key});
 
   @override
-  State<NewSheepInputs> createState() => _NewSheepInputsState();
+  State<NewLivestockInputs> createState() => _NewLivestockInputsState();
 }
 
-class _NewSheepInputsState extends State<NewSheepInputs> {
+class _NewLivestockInputsState extends State<NewLivestockInputs> {
   List<String> months = [
     'January',
     'February',

@@ -6,13 +6,13 @@ import 'package:sheepmanager/Features/HomeScreen/Presentation/HomeView.dart';
 import 'package:sheepmanager/Features/ProfileScreen/Profile/Presentation/ProfileView.dart';
 import 'package:sheepmanager/Features/SplashScreen/Presentation/SplashView.dart';
 
-import '../../Features/AddNewSheepScreen/Presentation/AddNewSheepView.dart';
+import '../../Features/AddNewLivestockScreen/Presentation/AddNewLivestockView.dart';
 import '../../Features/ExploreLivestockScreen/Data/Model/livestock_model.dart';
 import '../../Features/ExploreLivestockScreen/Presentation/Bloc Manager/AddSheepCubit/add_livestock_cubit.dart';
 import '../../Features/ExploreLivestockScreen/Presentation/Bloc Manager/SheepsCubit/sheeps_cubit.dart';
 import '../../Features/ExploreLivestockScreen/Presentation/EditSheepSreen/Presentation/EditSheepView.dart';
 import '../../Features/ExploreLivestockScreen/Presentation/ExploreLivestockView.dart';
-import '../../Features/ExploreLivestockScreen/Presentation/ShowSheepInfo/Presentation/ShowSheepInfoView.dart';
+import '../../Features/ExploreLivestockScreen/Presentation/ShowLivestockInfo/Presentation/ShowLivestockInfoView.dart';
 import '../../Features/ProfileScreen/ProfileForumScreen/Presentation/ProfileForumView.dart';
 
 class AppRouter {
@@ -69,7 +69,7 @@ class AppRouter {
         path: showSheepInfoView,
         builder: (context, state) => BlocProvider(
           create: (context) => LivestockCubit(),
-          child: ShowSheepInfoView(sheep: state.extra as LivestockModel),
+          child: ShowLivestockInfoView(sheep: state.extra as LivestockModel),
         ),
       ),
     ],
