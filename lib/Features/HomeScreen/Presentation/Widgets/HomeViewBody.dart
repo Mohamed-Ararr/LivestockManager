@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:sheepmanager/Core/Utils/fonts.dart';
+import 'package:sheepmanager/Features/HomeScreen/Presentation/Widgets/FarmListView.dart';
 import 'package:sheepmanager/Features/HomeScreen/Presentation/Widgets/FarmShortBox.dart';
 
 import '../../../../constValues.dart';
@@ -35,15 +36,7 @@ class _HomeViewBodyState extends State<HomeViewBody> {
                     Text("Registered Farms", style: AppFonts.regularBlackTitle),
               ),
               const SizedBox(height: 10),
-              ListView.builder(
-                padding: kPaddingRightLeft,
-                itemCount: 10,
-                shrinkWrap: true,
-                physics: const NeverScrollableScrollPhysics(),
-                itemBuilder: (context, index) {
-                  return const FarmShortBox();
-                },
-              ),
+              const FarmListView(),
             ],
           ),
         ),
