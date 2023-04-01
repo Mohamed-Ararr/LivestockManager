@@ -1,13 +1,16 @@
 // ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
+import 'package:sheepmanager/Core/Utils/colors.dart';
 import 'package:sheepmanager/Core/Utils/fonts.dart';
+import 'package:sheepmanager/Features/FarmDetailedScreen/Presentation/Widgets/StatsTable.dart';
 import 'package:sheepmanager/Features/FarmDetailedScreen/Presentation/Widgets/customFarmDetailedAppBar.dart';
 import 'package:sheepmanager/constValues.dart';
 
 import 'FarmTableInfo.dart';
 import 'RowContent.dart';
 import 'RowTitle.dart';
+import 'TableRowTitle.dart';
 
 class FarmDetailedViewBody extends StatelessWidget {
   const FarmDetailedViewBody({super.key});
@@ -26,6 +29,16 @@ class FarmDetailedViewBody extends StatelessWidget {
                 Text("Farm Information", style: AppFonts.regularBlackTitle),
                 const SizedBox(height: 10),
                 const FarmTableInfo(),
+                const SizedBox(height: 20),
+                Text("Sheep Statistics", style: AppFonts.regularBlackTitle),
+                const SizedBox(height: 10),
+                const StatsTable(
+                    maleNumb: "2", femaleNumb: "4", childrenNumb: "6"),
+                const SizedBox(height: 20),
+                Text("Cows Statistics", style: AppFonts.regularBlackTitle),
+                const SizedBox(height: 10),
+                const StatsTable(
+                    maleNumb: "1", femaleNumb: "3", childrenNumb: "6"),
               ],
             ),
           ),

@@ -16,6 +16,11 @@ class AppFonts {
     color: Colors.white,
   );
 
+  static TextStyle regularRowTitleBlack = const TextStyle(
+    fontSize: 13,
+    color: Colors.black,
+  );
+
   static TextStyle farmBoxInput = const TextStyle(
     fontSize: 16,
     fontWeight: FontWeight.bold,

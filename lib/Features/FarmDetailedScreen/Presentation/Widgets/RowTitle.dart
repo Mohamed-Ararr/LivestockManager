@@ -15,7 +15,7 @@ class RowTitle extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         borderRadius: borderRadius,
-        color: AppColors.mainColor.withAlpha(200),
+        color: AppColors.mainColor,
       ),
       padding: const EdgeInsets.symmetric(vertical: 20),
       child: Text("Title",
