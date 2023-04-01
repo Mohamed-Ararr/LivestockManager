@@ -1,5 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:sheepmanager/Features/FarmDetailedScreen/Presentation/FarmDetailedView.dart';
 import 'package:sheepmanager/Features/HomeScreen/Presentation/HomeView.dart';
 
 import 'package:sheepmanager/Features/ProfileScreen/Profile/Presentation/ProfileView.dart';
@@ -22,6 +23,7 @@ class AppRouter {
   static String editSheepView = "/editSheepView";
   static String showSheepInfoView = "/showSheepInfoView";
   static String exploreLivestockView = "/exploreLivestockView";
+  static String farmDetailedView = "/farmDetailedView";
 
   static final routes = GoRouter(
     routes: <RouteBase>[
@@ -44,6 +46,10 @@ class AppRouter {
       GoRoute(
         path: exploreLivestockView,
         builder: (context, state) => const ExploreLivestockView(),
+      ),
+      GoRoute(
+        path: farmDetailedView,
+        builder: (context, state) => const FarmDetailedView(),
       ),
       GoRoute(
         path: addNewSheepView,
