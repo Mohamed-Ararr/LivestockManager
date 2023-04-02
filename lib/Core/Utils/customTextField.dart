@@ -15,6 +15,9 @@ class CustomTextField extends StatelessWidget {
     this.onChanged,
     this.controller,
     this.maxLength,
+    this.enabled = true,
+    this.filled = false,
+    this.fillColor,
   });
 
   final String? label;
@@ -24,10 +27,14 @@ class CustomTextField extends StatelessWidget {
   final TextEditingController? controller;
   final Function(String?)? onChanged;
   final int? maxLength;
+  final bool? enabled;
+  final bool? filled;
+  final Color? fillColor;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      enabled: enabled,
       maxLength: maxLength,
       textCapitalization: TextCapitalization.words,
       controller: controller,
@@ -41,9 +48,11 @@ class CustomTextField extends StatelessWidget {
       },
       keyboardType: keyboardType,
       decoration: InputDecoration(
+        filled: filled,
+        fillColor: fillColor,
         suffixIcon: widg,
-        labelStyle: TextStyle(
-          color: AppColors.secColor,
+        labelStyle: const TextStyle(
+          color: Colors.black,
         ),
         labelText: label,
         hintText: hint,
@@ -60,6 +69,12 @@ class CustomTextField extends StatelessWidget {
           borderRadius: kBorderRadius,
           borderSide: const BorderSide(
             color: Colors.red,
+          ),
+        ),
+        disabledBorder: OutlineInputBorder(
+          borderRadius: kBorderRadius,
+          borderSide: const BorderSide(
+            color: Colors.grey,
           ),
         ),
         border: OutlineInputBorder(

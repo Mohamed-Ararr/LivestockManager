@@ -69,7 +69,7 @@ class _EditSheepInputsState extends State<EditSheepInputs> {
           CustomDropDown(
             items: const ["Sheep", "Cow"],
             title: "Livestock Type",
-            height: 120,
+            // height: 120,
             selectedItem: widget.sheep.type,
             onChanged: (val) {
               selectedType = val;
@@ -79,7 +79,7 @@ class _EditSheepInputsState extends State<EditSheepInputs> {
           CustomDropDown(
             items: const ["Male", "Female"],
             title: "Sexe",
-            height: 120,
+            // height: 120,
             selectedItem: widget.sheep.sexe,
             onChanged: (value) {
               selectedSexe = value;
@@ -162,8 +162,8 @@ class _EditSheepInputsState extends State<EditSheepInputs> {
           const SizedBox(height: 20),
           CustomDropDown(
             items: const ["0", "1", "2", "3", "4", "5", "6"],
-            title: "Number of Lambs",
-            height: 200,
+            title: "Number of Children",
+            // height: 200,
             selectedItem: "${widget.sheep.children}",
             onChanged: (value) {
               selectedNumb = value;

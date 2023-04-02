@@ -38,6 +38,8 @@ class _NewLivestockInputsState extends State<NewLivestockInputs> {
   String? id;
   String? selectedType;
   String? selectedSexe;
+  String? selectedGestation;
+  String? pregnancyProgress;
   String? weight;
   String? age;
   String? selectedNumb;
@@ -68,7 +70,7 @@ class _NewLivestockInputsState extends State<NewLivestockInputs> {
           CustomDropDown(
             items: const ["Sheep", "Cow"],
             title: "Livestock Type",
-            height: 120,
+            // height: 120,
             onChanged: (value) {
               selectedType = value;
             },
@@ -77,9 +79,31 @@ class _NewLivestockInputsState extends State<NewLivestockInputs> {
           CustomDropDown(
             items: const ["Male", "Female"],
             title: "Sexe",
-            height: 120,
+            // height: 120,
             onChanged: (value) {
               selectedSexe = value;
+            },
+          ),
+          const SizedBox(height: 20),
+          CustomDropDown(
+            items: const ["Yes", "No"],
+            title: "Gestation",
+            // height: 100,
+            onChanged: (gestation) {
+              selectedGestation = gestation;
+            },
+          ),
+          const SizedBox(height: 20),
+          CustomTextField(
+            label: "Pregnancy Progress (Months)",
+            hint: "Add Pregnancy Progress",
+            filled: true,
+            fillColor: const Color.fromARGB(255, 189, 189, 189),
+            keyboardType: TextInputType.number,
+            enabled: false,
+            maxLength: 1,
+            onChanged: (pregnancy) {
+              pregnancyProgress = pregnancy;
             },
           ),
           const SizedBox(height: 20),
@@ -160,8 +184,8 @@ class _NewLivestockInputsState extends State<NewLivestockInputs> {
           const SizedBox(height: 20),
           CustomDropDown(
             items: const ["0", "1", "2", "3", "4", "5", "6"],
-            title: "Number of Lambs",
-            height: 200,
+            title: "Number of Children",
+            // height: 200,
             onChanged: (val) {
               selectedNumb = val;
             },
@@ -220,6 +244,7 @@ class _NewLivestockInputsState extends State<NewLivestockInputs> {
               if (formKey.currentState!.validate() &&
                   selectedType != null &&
                   selectedSexe != null &&
+                  selectedGestation != null &&
                   selectedNumb != null) {
                 formKey.currentState!.save();
                 String lastBirth =
