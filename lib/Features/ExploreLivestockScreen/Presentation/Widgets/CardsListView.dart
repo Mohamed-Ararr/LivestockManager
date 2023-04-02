@@ -64,7 +64,7 @@ class CardsListView extends StatelessWidget {
                 const SizedBox(height: 30),
                 const Center(
                     child: Text(
-                  "¯\\_(ツ)_/¯",
+                  "¯\\_(ツ)_/¯\n\nAdd Livestock using the button bellow",
                   textAlign: TextAlign.center,
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                 )),

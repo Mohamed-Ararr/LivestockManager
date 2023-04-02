@@ -23,6 +23,7 @@ class FarmTableInfo extends StatelessWidget {
         TableRow(
           children: [
             RowTitle(
+              title: "Farm ID",
               borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(15),
               ),
@@ -36,19 +37,20 @@ class FarmTableInfo extends StatelessWidget {
         ),
         TableRow(
           children: [
-            RowTitle(),
+            RowTitle(title: "Farm Owner"),
             RowContent(),
           ],
         ),
         TableRow(
           children: [
-            RowTitle(),
+            RowTitle(title: "Farm Address"),
             RowContent(),
           ],
         ),
         TableRow(
           children: [
             RowTitle(
+              title: "Last Visit",
               borderRadius: BorderRadius.only(
                 bottomLeft: Radius.circular(15),
               ),

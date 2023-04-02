@@ -6,9 +6,10 @@ import 'package:sheepmanager/Core/Utils/fonts.dart';
 import '../../../../Core/Utils/colors.dart';
 
 class RowTitle extends StatelessWidget {
-  const RowTitle({super.key, this.borderRadius});
+  const RowTitle({super.key, this.borderRadius, required this.title});
 
   final BorderRadiusGeometry? borderRadius;
+  final String title;
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +19,7 @@ class RowTitle extends StatelessWidget {
         color: AppColors.mainColor,
       ),
       padding: const EdgeInsets.symmetric(vertical: 20),
-      child: Text("Title",
+      child: Text(title,
           style: AppFonts.regularRowTitle, textAlign: TextAlign.center),
     );
   }

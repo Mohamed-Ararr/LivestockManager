@@ -39,7 +39,7 @@ class _EditSheepInputsState extends State<EditSheepInputs> {
   ];
 
   String? id;
-  String? selectedState;
+  String? selectedType;
   String? selectedSexe;
   String? weight;
   String? age;
@@ -67,12 +67,12 @@ class _EditSheepInputsState extends State<EditSheepInputs> {
           ),
           const SizedBox(height: 20),
           CustomDropDown(
-            items: const ["Available", "Sold"],
-            title: "State",
+            items: const ["Sheep", "Cow"],
+            title: "Livestock Type",
             height: 120,
             selectedItem: widget.sheep.type,
             onChanged: (val) {
-              selectedState = val;
+              selectedType = val;
             },
           ),
           const SizedBox(height: 20),
@@ -226,7 +226,7 @@ class _EditSheepInputsState extends State<EditSheepInputs> {
           ConfirmButton(
             onPressed: () {
               // widget.sheep.id = id == "" ? widget.sheep.id : id;
-              widget.sheep.type = selectedState ?? widget.sheep.type;
+              widget.sheep.type = selectedType ?? widget.sheep.type;
               widget.sheep.sexe = selectedSexe ?? widget.sheep.sexe;
               widget.sheep.weight =
                   int.tryParse(weight ?? "${widget.sheep.weight}") ??
