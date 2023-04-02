@@ -11,5 +11,9 @@ class FarmModel extends HiveObject {
   @HiveField(2)
   String address;
 
-  FarmModel({required this.farmID, required this.owner, required this.address});
+  FarmModel({
+    required this.farmID,
+    required this.owner,
+    required this.address,
+  });
 }
