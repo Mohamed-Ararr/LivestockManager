@@ -15,7 +15,7 @@ class AddNewFarmButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () => GoRouter.of(context).push(AppRouter.exploreLivestockView),
+      onTap: () => GoRouter.of(context).push(AppRouter.addNewFarmView),
       child: Container(
         width: MediaQuery.of(context).size.width * 0.5,
         padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 15),
