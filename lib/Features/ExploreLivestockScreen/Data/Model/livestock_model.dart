@@ -22,6 +22,10 @@ class LivestockModel extends HiveObject {
   int children;
   @HiveField(7)
   String lastVisit;
+  @HiveField(8)
+  bool gestation;
+  @HiveField(9)
+  String pregenancyProgress;
 
   LivestockModel({
     required this.id,
@@ -32,5 +36,7 @@ class LivestockModel extends HiveObject {
     required this.lastBirth,
     required this.children,
     required this.lastVisit,
+    required this.gestation,
+    required this.pregenancyProgress,
   });
 }
