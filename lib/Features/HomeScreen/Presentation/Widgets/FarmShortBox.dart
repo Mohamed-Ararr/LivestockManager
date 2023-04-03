@@ -3,21 +3,25 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:sheepmanager/Core/Utils/router.dart';
+import 'package:sheepmanager/Features/HomeScreen/Data/Models/farm_model.dart';
 import 'package:sheepmanager/constValues.dart';
 
 import 'FarmShortInfo.dart';
 import 'TapMoreButton.dart';
 
 class FarmShortBox extends StatelessWidget {
-  const FarmShortBox(
-      {super.key,
-      required this.farmID,
-      required this.farmOwner,
-      required this.farmAddress});
+  const FarmShortBox({
+    super.key,
+    required this.farmID,
+    required this.farmOwner,
+    required this.farmAddress,
+    required this.farm,
+  });
 
   final String farmID;
   final String farmOwner;
   final String farmAddress;
+  final FarmModel farm;
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +39,8 @@ class FarmShortBox extends StatelessWidget {
         ],
       ),
       child: InkWell(
-        onTap: () => GoRouter.of(context).push(AppRouter.farmDetailedView),
+        onTap: () =>
+            GoRouter.of(context).push(AppRouter.farmDetailedView, extra: farm),
         borderRadius: kBorderRadius,
         child: Column(
           children: [

@@ -4,9 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:sheepmanager/Core/Utils/fonts.dart';
 
 class RowContent extends StatelessWidget {
-  const RowContent({super.key, this.borderRadius});
+  const RowContent({super.key, this.borderRadius, required this.content});
 
   final BorderRadiusGeometry? borderRadius;
+  final String content;
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +18,7 @@ class RowContent extends StatelessWidget {
       ),
       padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
       child: Text(
-        "Content",
+        content,
         style: AppFonts.regularTextBlack,
       ),
     );

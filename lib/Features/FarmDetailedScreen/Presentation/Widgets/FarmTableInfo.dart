@@ -7,7 +7,17 @@ import 'RowContent.dart';
 import 'RowTitle.dart';
 
 class FarmTableInfo extends StatelessWidget {
-  const FarmTableInfo({super.key});
+  const FarmTableInfo(
+      {super.key,
+      required this.farmID,
+      required this.farmOwner,
+      required this.farmAddress,
+      required this.x});
+
+  final String farmID;
+  final String farmOwner;
+  final String farmAddress;
+  final String x;
 
   @override
   Widget build(BuildContext context) {
@@ -19,17 +29,18 @@ class FarmTableInfo extends StatelessWidget {
       columnWidths: const {
         0: FlexColumnWidth(0.57),
       },
-      children: const [
+      children: [
         TableRow(
           children: [
-            RowTitle(
+            const RowTitle(
               title: "Farm ID",
               borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(15),
               ),
             ),
             RowContent(
-              borderRadius: BorderRadius.only(
+              content: farmID,
+              borderRadius: const BorderRadius.only(
                 topRight: Radius.circular(15),
               ),
             ),
@@ -37,17 +48,17 @@ class FarmTableInfo extends StatelessWidget {
         ),
         TableRow(
           children: [
-            RowTitle(title: "Farm Owner"),
-            RowContent(),
+            const RowTitle(title: "Farm Owner"),
+            RowContent(content: farmOwner),
           ],
         ),
         TableRow(
           children: [
-            RowTitle(title: "Farm Address"),
-            RowContent(),
+            const RowTitle(title: "Farm Address"),
+            RowContent(content: farmAddress),
           ],
         ),
-        TableRow(
+        const TableRow(
           children: [
             RowTitle(
               title: "Last Visit",
@@ -56,6 +67,7 @@ class FarmTableInfo extends StatelessWidget {
               ),
             ),
             RowContent(
+              content: "xxxx",
               borderRadius: BorderRadius.only(
                 bottomRight: Radius.circular(15),
               ),

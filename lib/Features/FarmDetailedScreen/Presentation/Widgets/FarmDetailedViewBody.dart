@@ -5,12 +5,15 @@ import 'package:sheepmanager/Core/Utils/fonts.dart';
 import 'package:sheepmanager/Features/FarmDetailedScreen/Presentation/Widgets/StatsTable.dart';
 import 'package:sheepmanager/Features/FarmDetailedScreen/Presentation/Widgets/consultFlockButton.dart';
 import 'package:sheepmanager/Features/FarmDetailedScreen/Presentation/Widgets/customFarmDetailedAppBar.dart';
+import 'package:sheepmanager/Features/HomeScreen/Data/Models/farm_model.dart';
 import 'package:sheepmanager/constValues.dart';
 
 import 'FarmTableInfo.dart';
 
 class FarmDetailedViewBody extends StatelessWidget {
-  const FarmDetailedViewBody({super.key});
+  const FarmDetailedViewBody({super.key, required this.farm});
+
+  final FarmModel farm;
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +29,12 @@ class FarmDetailedViewBody extends StatelessWidget {
                 const SizedBox(height: 20),
                 Text("Farm Information", style: AppFonts.regularBlackTitle),
                 const SizedBox(height: 10),
-                const FarmTableInfo(),
+                FarmTableInfo(
+                  farmID: farm.farmID!,
+                  farmOwner: farm.owner!,
+                  farmAddress: farm.address!,
+                  x: "hello",
+                ),
                 const SizedBox(height: 20),
                 Text("Sheep Statistics", style: AppFonts.regularBlackTitle),
                 const SizedBox(height: 10),

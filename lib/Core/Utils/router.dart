@@ -2,7 +2,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:sheepmanager/Features/AddNewFarmScreen/Presentation/AddNewFarmView.dart';
 import 'package:sheepmanager/Features/FarmDetailedScreen/Presentation/FarmDetailedView.dart';
+import 'package:sheepmanager/Features/HomeScreen/Data/Models/farm_model.dart';
 import 'package:sheepmanager/Features/HomeScreen/Presentation/Bloc%20Manager/Add%20Farm%20Cubit/cubit/add_farm_cubit.dart';
+import 'package:sheepmanager/Features/HomeScreen/Presentation/Bloc%20Manager/Farm%20Cubit/cubit/farm_cubit_cubit.dart';
 import 'package:sheepmanager/Features/HomeScreen/Presentation/HomeView.dart';
 
 import 'package:sheepmanager/Features/ProfileScreen/Profile/Presentation/ProfileView.dart';
@@ -56,7 +58,10 @@ class AppRouter {
       ),
       GoRoute(
         path: farmDetailedView,
-        builder: (context, state) => const FarmDetailedView(),
+        builder: (context, state) => BlocProvider(
+          create: (context) => FarmCubitCubit(),
+          child: FarmDetailedView(farm: state.extra as FarmModel),
+        ),
       ),
       GoRoute(
         path: addNewFarmView,
