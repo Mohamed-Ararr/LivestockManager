@@ -5,8 +5,8 @@ import 'package:flutter/material.dart';
 import '../../../../Core/Utils/colors.dart';
 import '../../../../constValues.dart';
 import '../../Data/Model/livestock_model.dart';
-import 'SheepCardInfo.dart';
-import 'SheepIconCard.dart';
+import 'LivestockCardInfo.dart';
+import 'LivestockIconCard.dart';
 
 class SheepCard extends StatelessWidget {
   const SheepCard({
@@ -43,7 +43,7 @@ class SheepCard extends StatelessWidget {
         child: Row(
           children: [
             const SheepIconCard(),
-            SheepCardInfo(sheep: sheep),
+            LivestockCardInfo(sheep: sheep),
           ],
         ),
       ),

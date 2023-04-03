@@ -11,8 +11,8 @@ import "package:sheepmanager/Core/Utils/deleteOption.dart";
 import '../../../../Core/Utils/colors.dart';
 import '../../../../Core/Utils/router.dart';
 import '../../../../constValues.dart';
-import "../Bloc Manager/SheepsCubit/sheeps_cubit.dart";
-import "SheepCard.dart";
+import "../Bloc Manager/LivestockCubit/Livestock_cubit.dart";
+import 'LivestockCard.dart';
 
 class CardsListView extends StatelessWidget {
   const CardsListView({super.key});

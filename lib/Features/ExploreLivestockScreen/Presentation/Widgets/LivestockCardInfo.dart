@@ -4,10 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../../Data/Model/livestock_model.dart';
-import '../Bloc Manager/SheepsCubit/sheeps_cubit.dart';
+import '../Bloc Manager/LivestockCubit/Livestock_cubit.dart';
 
-class SheepCardInfo extends StatelessWidget {
-  const SheepCardInfo({super.key, required this.sheep});
+class LivestockCardInfo extends StatelessWidget {
+  const LivestockCardInfo({super.key, required this.sheep});
 
   final LivestockModel sheep;
 

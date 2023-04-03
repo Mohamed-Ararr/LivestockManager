@@ -7,8 +7,8 @@ import '../../../../../Core/Utils/backButton.dart';
 import '../../../Data/Model/livestock_model.dart';
 import 'Widgets/editSheepInputs.dart';
 
-class EditSheepViewBody extends StatelessWidget {
-  const EditSheepViewBody({super.key, required this.sheep});
+class EditLivestockViewBody extends StatelessWidget {
+  const EditLivestockViewBody({super.key, required this.sheep});
 
   final LivestockModel sheep;
 

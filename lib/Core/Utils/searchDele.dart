@@ -8,8 +8,8 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
 import 'package:sheepmanager/Core/Utils/router.dart';
 import '../../Features/ExploreLivestockScreen/Data/Model/livestock_model.dart';
-import '../../Features/ExploreLivestockScreen/Presentation/Bloc Manager/SheepsCubit/sheeps_cubit.dart';
-import '../../Features/ExploreLivestockScreen/Presentation/Widgets/SheepCard.dart';
+import '../../Features/ExploreLivestockScreen/Presentation/Bloc Manager/LivestockCubit/Livestock_cubit.dart';
+import '../../Features/ExploreLivestockScreen/Presentation/Widgets/LivestockCard.dart';
 import 'colors.dart';
 import 'deleteOption.dart';
 

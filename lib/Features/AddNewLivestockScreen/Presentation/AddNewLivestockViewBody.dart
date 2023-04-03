@@ -8,8 +8,8 @@ import 'package:sheepmanager/Core/Utils/backButton.dart';
 import 'package:sheepmanager/Features/AddNewLivestockScreen/Presentation/Widgets/newLivestockInputs.dart';
 import 'package:sheepmanager/constValues.dart';
 
-import '../../ExploreLivestockScreen/Presentation/Bloc Manager/AddSheepCubit/add_livestock_cubit.dart';
-import '../../ExploreLivestockScreen/Presentation/Bloc Manager/SheepsCubit/sheeps_cubit.dart';
+import '../../ExploreLivestockScreen/Presentation/Bloc Manager/AddLivestockCubit/add_livestock_cubit.dart';
+import '../../ExploreLivestockScreen/Presentation/Bloc Manager/LivestockCubit/Livestock_cubit.dart';
 
 class AddNewSheepViewBody extends StatelessWidget {
   const AddNewSheepViewBody({super.key});

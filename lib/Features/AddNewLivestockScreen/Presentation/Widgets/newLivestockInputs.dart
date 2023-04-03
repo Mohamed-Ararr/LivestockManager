@@ -10,7 +10,7 @@ import "package:sheepmanager/constValues.dart";
 
 import '../../../../Core/Utils/confirmButton.dart';
 import '../../../ExploreLivestockScreen/Data/Model/livestock_model.dart';
-import '../../../ExploreLivestockScreen/Presentation/Bloc Manager/AddSheepCubit/add_livestock_cubit.dart';
+import "../../../ExploreLivestockScreen/Presentation/Bloc Manager/AddLivestockCubit/add_livestock_cubit.dart";
 
 class NewLivestockInputs extends StatefulWidget {
   const NewLivestockInputs({super.key});

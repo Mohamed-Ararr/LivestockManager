@@ -7,7 +7,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:sheepmanager/constValues.dart';
 
 import '../../Features/ExploreLivestockScreen/Data/Model/livestock_model.dart';
-import '../../Features/ExploreLivestockScreen/Presentation/Bloc Manager/SheepsCubit/sheeps_cubit.dart';
+import '../../Features/ExploreLivestockScreen/Presentation/Bloc Manager/LivestockCubit/Livestock_cubit.dart';
 
 class DeleteOption extends StatelessWidget {
   const DeleteOption({super.key, required this.sheep});
