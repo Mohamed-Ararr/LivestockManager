@@ -22,11 +22,13 @@ class _AddNewFarmInputsState extends State<AddNewFarmInputs> {
   String? farmOwner;
   String? farmAddress;
   GlobalKey<FormState> key = GlobalKey();
+  AutovalidateMode? validateMode = AutovalidateMode.disabled;
 
   @override
   Widget build(BuildContext context) {
     return Form(
       key: key,
+      autovalidateMode: validateMode,
       child: Column(
         children: [
           CustomTextField(
@@ -57,10 +59,16 @@ class _AddNewFarmInputsState extends State<AddNewFarmInputs> {
             if (key.currentState!.validate()) {
               key.currentState!.save();
               FarmModel farm = FarmModel(
-                  farmID: farmID!, owner: farmOwner!, address: farmAddress!);
+                farmID: farmID!,
+                owner: farmOwner!,
+                address: farmAddress!,
+              );
 
               BlocProvider.of<AddFarmCubit>(context).addNewFarm(farm);
+              BlocProvider.of<FarmCubitCubit>(context).fetchAllFarms();
               GoRouter.of(context).pop();
+            } else {
+              validateMode = AutovalidateMode.always;
             }
           }),
         ],

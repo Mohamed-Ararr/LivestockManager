@@ -5,15 +5,15 @@ part 'farm_model.g.dart';
 @HiveType(typeId: 2)
 class FarmModel extends HiveObject {
   @HiveField(0)
-  String farmID;
+  String? farmID;
   @HiveField(1)
-  String owner;
+  String? owner;
   @HiveField(2)
-  String address;
+  String? address;
 
   FarmModel({
-    required this.farmID,
-    required this.owner,
-    required this.address,
+    this.farmID,
+    this.owner,
+    this.address,
   });
 }

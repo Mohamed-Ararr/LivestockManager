@@ -9,7 +9,15 @@ import 'FarmShortInfo.dart';
 import 'TapMoreButton.dart';
 
 class FarmShortBox extends StatelessWidget {
-  const FarmShortBox({super.key});
+  const FarmShortBox(
+      {super.key,
+      required this.farmID,
+      required this.farmOwner,
+      required this.farmAddress});
+
+  final String farmID;
+  final String farmOwner;
+  final String farmAddress;
 
   @override
   Widget build(BuildContext context) {
@@ -30,9 +38,13 @@ class FarmShortBox extends StatelessWidget {
         onTap: () => GoRouter.of(context).push(AppRouter.farmDetailedView),
         borderRadius: kBorderRadius,
         child: Column(
-          children: const [
-            FarmShortInfo(),
-            TapMoreButton(),
+          children: [
+            FarmShortInfo(
+              farmID: farmID,
+              farmOwner: farmOwner,
+              farmAddress: farmAddress,
+            ),
+            const TapMoreButton(),
           ],
         ),
       ),

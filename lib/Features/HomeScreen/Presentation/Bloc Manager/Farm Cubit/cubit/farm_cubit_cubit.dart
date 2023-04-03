@@ -9,8 +9,8 @@ part 'farm_cubit_state.dart';
 class FarmCubitCubit extends Cubit<FarmCubitState> {
   FarmCubitCubit() : super(FarmCubitInitial());
 
-  fetchAllFarms() {
-    emit(FarmCubitInitial());
+  fetchAllFarms() async {
+    emit(FarmCubitLoading());
     var farmBox = Hive.box<FarmModel>(kFarmBox);
     List<FarmModel> farmList = farmBox.values.toList();
     emit(FarmCubitSuccess(farmList));

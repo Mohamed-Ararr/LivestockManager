@@ -6,7 +6,15 @@ import '../../../../Core/Utils/colors.dart';
 import 'FarmBoxAttribute.dart';
 
 class FarmShortInfo extends StatelessWidget {
-  const FarmShortInfo({super.key});
+  const FarmShortInfo(
+      {super.key,
+      required this.farmID,
+      required this.farmOwner,
+      required this.farmAddress});
+
+  final String farmID;
+  final String farmOwner;
+  final String farmAddress;
 
   @override
   Widget build(BuildContext context) {
@@ -23,20 +31,20 @@ class FarmShortInfo extends StatelessWidget {
       // margin: const EdgeInsets.symmetric(vertical: 10),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: const [
+        children: [
           FarmBoxAttribute(
             title: "Farm ID",
-            input: "1024648",
+            input: farmID,
           ),
-          SizedBox(height: 15),
+          const SizedBox(height: 15),
           FarmBoxAttribute(
             title: "Farm Owner",
-            input: "Mohamed arar",
+            input: farmOwner,
           ),
-          SizedBox(height: 15),
+          const SizedBox(height: 15),
           FarmBoxAttribute(
             title: "Farm Address",
-            input: "Regai Bachir",
+            input: farmAddress,
           ),
         ],
       ),

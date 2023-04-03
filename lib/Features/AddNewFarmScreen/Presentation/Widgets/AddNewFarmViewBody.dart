@@ -17,14 +17,16 @@ class AddNewFarmViewBody extends StatelessWidget {
       body: SafeArea(
         child: Padding(
           padding: kPaddingRightLeft,
-          child: Column(
-            children: [
-              const AddNewFarmAppBar(),
-              const SizedBox(height: 20),
-              Text("Add New Farm", style: AppFonts.regularBlackTitle),
-              const SizedBox(height: 20),
-              const AddNewFarmInputs(),
-            ],
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                const AddNewFarmAppBar(),
+                const SizedBox(height: 20),
+                Text("Add New Farm", style: AppFonts.regularBlackTitle),
+                const SizedBox(height: 20),
+                const AddNewFarmInputs(),
+              ],
+            ),
           ),
         ),
       ),
