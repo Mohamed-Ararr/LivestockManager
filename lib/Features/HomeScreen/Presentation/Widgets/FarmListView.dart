@@ -2,6 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_slidable/flutter_slidable.dart';
+import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:sheepmanager/Features/HomeScreen/Presentation/Bloc%20Manager/Farm%20Cubit/cubit/farm_cubit_cubit.dart';
 
 import '../../../../constValues.dart';
@@ -21,11 +23,23 @@ class FarmListView extends StatelessWidget {
             shrinkWrap: true,
             physics: const NeverScrollableScrollPhysics(),
             itemBuilder: (context, index) {
-              return FarmShortBox(
-                farm: state.farmList[index],
-                farmID: state.farmList[index].farmID!,
-                farmOwner: state.farmList[index].owner!,
-                farmAddress: state.farmList[index].address!,
+              return AnimationConfiguration.staggeredList(
+                duration: const Duration(milliseconds: 1500),
+                position: index,
+                child: SlideAnimation(
+                  horizontalOffset: 300,
+                  child: FadeInAnimation(
+                    child: Slidable(
+                      actionPane: const SlidableDrawerActionPane(),
+                      child: FarmShortBox(
+                        farm: state.farmList[index],
+                        farmID: state.farmList[index].farmID!,
+                        farmOwner: state.farmList[index].owner!,
+                        farmAddress: state.farmList[index].address!,
+                      ),
+                    ),
+                  ),
+                ),
               );
             },
           );
