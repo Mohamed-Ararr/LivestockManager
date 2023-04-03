@@ -97,7 +97,7 @@ class _NewLivestockInputsState extends State<NewLivestockInputs> {
           CustomTextField(
             label: "Pregnancy Progress (Months)",
             hint: "Add Pregnancy Progress",
-            filled: true,
+            filled: false,
             fillColor: const Color.fromARGB(255, 189, 189, 189),
             keyboardType: TextInputType.number,
             enabled: false,
@@ -260,10 +260,14 @@ class _NewLivestockInputsState extends State<NewLivestockInputs> {
                   lastBirth: lastBirth,
                   children: int.parse(selectedNumb!),
                   lastVisit: lastVisit,
+                  gestation: selectedGestation!,
+                  pregenancyProgress: pregnancyProgress ?? "Not Available",
                 );
 
                 BlocProvider.of<AddLivestockCubit>(context)
                     .addNewLivestock(livestockModel);
+
+                print(livestockModel);
               } else {
                 setState(() {
                   validateMode = AutovalidateMode.always;

@@ -68,7 +68,7 @@ class SearchBar extends SearchDelegate {
       builder: (context, state) {
         if (state is LivestockSuccess) {
           List<LivestockModel> suggestions = state.livestockList.where((sheep) {
-            final result = sheep.id.toLowerCase();
+            final result = sheep.id!.toLowerCase();
             final input = query.toLowerCase();
             return result.contains(input);
           }).toList();

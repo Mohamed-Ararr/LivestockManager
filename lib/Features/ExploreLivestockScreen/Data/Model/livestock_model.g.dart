@@ -17,21 +17,23 @@ class LivestockModelAdapter extends TypeAdapter<LivestockModel> {
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
     return LivestockModel(
-      id: fields[0] as String,
-      type: fields[1] as String,
-      sexe: fields[2] as String,
-      weight: fields[3] as int,
-      age: fields[4] as int,
-      lastBirth: fields[5] as String,
-      children: fields[6] as int,
-      lastVisit: fields[7] as String,
+      id: fields[0] as String?,
+      type: fields[1] as String?,
+      sexe: fields[2] as String?,
+      weight: fields[3] as int?,
+      age: fields[4] as int?,
+      lastBirth: fields[5] as String?,
+      children: fields[6] as int?,
+      lastVisit: fields[7] as String?,
+      gestation: fields[8] as String?,
+      pregenancyProgress: fields[9] as String?,
     );
   }
 
   @override
   void write(BinaryWriter writer, LivestockModel obj) {
     writer
-      ..writeByte(8)
+      ..writeByte(10)
       ..writeByte(0)
       ..write(obj.id)
       ..writeByte(1)
@@ -47,7 +49,11 @@ class LivestockModelAdapter extends TypeAdapter<LivestockModel> {
       ..writeByte(6)
       ..write(obj.children)
       ..writeByte(7)
-      ..write(obj.lastVisit);
+      ..write(obj.lastVisit)
+      ..writeByte(8)
+      ..write(obj.gestation)
+      ..writeByte(9)
+      ..write(obj.pregenancyProgress);
   }
 
   @override

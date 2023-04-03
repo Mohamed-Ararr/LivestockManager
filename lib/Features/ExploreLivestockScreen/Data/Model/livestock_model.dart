@@ -7,25 +7,25 @@ part 'livestock_model.g.dart';
 @HiveType(typeId: 0)
 class LivestockModel extends HiveObject {
   @HiveField(0)
-  String id;
+  String? id;
   @HiveField(1)
-  String type;
+  String? type;
   @HiveField(2)
-  String sexe;
+  String? sexe;
   @HiveField(3)
-  int weight;
+  int? weight;
   @HiveField(4)
-  int age;
+  int? age;
   @HiveField(5)
-  String lastBirth;
+  String? lastBirth;
   @HiveField(6)
-  int children;
+  int? children;
   @HiveField(7)
-  String lastVisit;
+  String? lastVisit;
   @HiveField(8)
-  bool gestation;
+  String? gestation;
   @HiveField(9)
-  String pregenancyProgress;
+  String? pregenancyProgress;
 
   LivestockModel({
     required this.id,

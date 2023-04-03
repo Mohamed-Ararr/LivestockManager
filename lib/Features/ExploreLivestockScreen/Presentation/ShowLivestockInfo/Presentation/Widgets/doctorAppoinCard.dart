@@ -43,7 +43,7 @@ class DoctorVisitsCard extends StatelessWidget {
               bottomRight: Radius.circular(10),
             ),
           ),
-          child: Text(sheep.lastVisit),
+          child: Text(sheep.lastVisit!),
         ),
       ],
     );

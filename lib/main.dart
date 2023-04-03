@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:sheepmanager/Core/Utils/observer.dart';
 import 'package:sheepmanager/Core/Utils/router.dart';
+import 'package:sheepmanager/Features/HomeScreen/Data/Models/farm_model.dart';
 import 'package:sheepmanager/Features/ProfileScreen/Bloc%20Manager/userCubit/user_cubit.dart';
 
 import 'package:sheepmanager/constValues.dart';
@@ -15,8 +16,10 @@ void main() async {
   await Hive.initFlutter();
   Hive.registerAdapter(LivestockModelAdapter());
   Hive.registerAdapter(UserModelAdapter());
+  Hive.registerAdapter(FarmModelAdapter());
   await Hive.openBox<LivestockModel>(kSheepBox);
   await Hive.openBox<UserModel>(kUserBox);
+  await Hive.openBox<FarmModel>(kFarmBox);
   Bloc.observer = LivestockObserver();
   runApp(const LivestockApp());
 }

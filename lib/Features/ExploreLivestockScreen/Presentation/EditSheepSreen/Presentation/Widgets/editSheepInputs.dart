@@ -60,7 +60,7 @@ class _EditSheepInputsState extends State<EditSheepInputs> {
             maxLength: 20,
             keyboardType: TextInputType.text,
             label: "ID",
-            hint: widget.sheep.id,
+            hint: widget.sheep.id!,
             onChanged: (value) {
               widget.sheep.id = value ?? widget.sheep.id;
             },
@@ -145,7 +145,7 @@ class _EditSheepInputsState extends State<EditSheepInputs> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    widget.sheep.lastBirth,
+                    widget.sheep.lastBirth!,
                     style: TextStyle(
                       fontSize: 17,
                       color: AppColors.secColor,
@@ -208,7 +208,7 @@ class _EditSheepInputsState extends State<EditSheepInputs> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    widget.sheep.lastVisit,
+                    widget.sheep.lastVisit!,
                     style: TextStyle(
                       fontSize: 17,
                       color: AppColors.secColor,
