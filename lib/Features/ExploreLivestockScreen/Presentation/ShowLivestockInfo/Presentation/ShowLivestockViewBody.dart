@@ -1,6 +1,7 @@
 // ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
+import 'package:sheepmanager/Core/Utils/fonts.dart';
 import 'package:sheepmanager/constValues.dart';
 
 import '../../../Data/Model/livestock_model.dart';
@@ -26,13 +27,10 @@ class ShowLivestockInfoViewBody extends StatelessWidget {
             children: [
               CustomAppBarInfo(sheep: sheep),
               const SizedBox(height: 30),
-              const Center(
+              Center(
                 child: Text(
-                  "Sheep Infomation",
-                  style: TextStyle(
-                    fontSize: 22,
-                    fontWeight: FontWeight.bold,
-                  ),
+                  "${sheep.type} Infomation",
+                  style: AppFonts.regularBlackTitle,
                 ),
               ),
               const SizedBox(height: 30),

@@ -26,6 +26,7 @@ class InfoCard extends StatelessWidget {
               alignment: Alignment.center,
               child: Text(
                 infoTitle,
+                textAlign: TextAlign.center,
                 style: const TextStyle(
                   fontSize: 20,
                   color: Colors.white,

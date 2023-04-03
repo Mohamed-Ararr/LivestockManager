@@ -90,17 +90,19 @@ class _NewLivestockInputsState extends State<NewLivestockInputs> {
             title: "Gestation",
             // height: 100,
             onChanged: (gestation) {
-              selectedGestation = gestation;
+              setState(() {
+                selectedGestation = gestation;
+              });
             },
           ),
           const SizedBox(height: 20),
           CustomTextField(
             label: "Pregnancy Progress (Months)",
             hint: "Add Pregnancy Progress",
-            filled: false,
+            filled: selectedGestation == "Yes" ? false : true,
             fillColor: const Color.fromARGB(255, 189, 189, 189),
             keyboardType: TextInputType.number,
-            enabled: false,
+            enabled: selectedGestation == "Yes" ? true : false,
             maxLength: 1,
             onChanged: (pregnancy) {
               pregnancyProgress = pregnancy;
