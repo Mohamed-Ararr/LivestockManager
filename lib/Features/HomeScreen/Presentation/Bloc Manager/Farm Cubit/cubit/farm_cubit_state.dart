@@ -8,7 +8,7 @@ class FarmCubitInitial extends FarmCubitState {}
 class FarmCubitLoading extends FarmCubitState {}
 
 class FarmCubitSuccess extends FarmCubitState {
-  List<FarmModel> farmList;
+  final List<FarmModel> farmList;
 
   FarmCubitSuccess(this.farmList);
 }

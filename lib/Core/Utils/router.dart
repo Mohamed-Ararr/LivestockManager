@@ -3,7 +3,6 @@ import 'package:go_router/go_router.dart';
 import 'package:sheepmanager/Features/AddNewFarmScreen/Presentation/AddNewFarmView.dart';
 import 'package:sheepmanager/Features/FarmDetailedScreen/Presentation/FarmDetailedView.dart';
 import 'package:sheepmanager/Features/HomeScreen/Presentation/Bloc%20Manager/Add%20Farm%20Cubit/cubit/add_farm_cubit.dart';
-import 'package:sheepmanager/Features/HomeScreen/Presentation/Bloc%20Manager/Farm%20Cubit/cubit/farm_cubit_cubit.dart';
 import 'package:sheepmanager/Features/HomeScreen/Presentation/HomeView.dart';
 
 import 'package:sheepmanager/Features/ProfileScreen/Profile/Presentation/ProfileView.dart';
@@ -17,7 +16,6 @@ import '../../Features/ExploreLivestockScreen/Presentation/Bloc Manager/Livestoc
 import '../../Features/ExploreLivestockScreen/Presentation/EditLivestockSreen/Presentation/EditLivestockView.dart';
 import '../../Features/ExploreLivestockScreen/Presentation/ExploreLivestockView.dart';
 import '../../Features/ExploreLivestockScreen/Presentation/ShowLivestockInfo/Presentation/ShowLivestockInfoView.dart';
-import '../../Features/HomeScreen/Data/Models/farm_model.dart';
 import '../../Features/ProfileScreen/ProfileForumScreen/Presentation/ProfileForumView.dart';
 
 class AppRouter {

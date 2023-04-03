@@ -6,7 +6,7 @@ import "package:sheepmanager/Features/ExploreLivestockScreen/Presentation/Widget
 
 import "../../../../Core/Utils/fonts.dart";
 import '../../../../constValues.dart';
-import "../Bloc Manager/LivestockCubit/Livestock_cubit.dart";
+import '../Bloc Manager/LivestockCubit/Livestock_cubit.dart';
 import "CardsListView.dart";
 import 'addNewLivestockButton.dart';
 
