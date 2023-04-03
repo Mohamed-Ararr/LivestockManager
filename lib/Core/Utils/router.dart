@@ -12,7 +12,7 @@ import '../../Features/ExploreLivestockScreen/Data/Model/livestock_model.dart';
 import '../../Features/ExploreLivestockScreen/Presentation/Bloc Manager/AddLivestockCubit/add_livestock_cubit.dart';
 import '../../Features/ExploreLivestockScreen/Presentation/Bloc Manager/LivestockCubit/Livestock_cubit.dart';
 
-import '../../Features/ExploreLivestockScreen/Presentation/EditLivestockSreen/Presentation/EditSheepView.dart';
+import '../../Features/ExploreLivestockScreen/Presentation/EditLivestockSreen/Presentation/EditLivestockView.dart';
 import '../../Features/ExploreLivestockScreen/Presentation/ExploreLivestockView.dart';
 import '../../Features/ExploreLivestockScreen/Presentation/ShowLivestockInfo/Presentation/ShowLivestockInfoView.dart';
 import '../../Features/ProfileScreen/ProfileForumScreen/Presentation/ProfileForumView.dart';

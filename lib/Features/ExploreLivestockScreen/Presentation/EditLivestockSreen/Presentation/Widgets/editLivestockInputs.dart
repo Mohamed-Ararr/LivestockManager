@@ -13,16 +13,16 @@ import '../../../../../../Core/Utils/customTextField.dart';
 import '../../../../../../constValues.dart';
 import '../../../../Data/Model/livestock_model.dart';
 
-class EditSheepInputs extends StatefulWidget {
-  const EditSheepInputs({super.key, required this.sheep});
+class EditLivestockInputs extends StatefulWidget {
+  const EditLivestockInputs({super.key, required this.sheep});
 
   final LivestockModel sheep;
 
   @override
-  State<EditSheepInputs> createState() => _EditSheepInputsState();
+  State<EditLivestockInputs> createState() => _EditLivestockInputsState();
 }
 
-class _EditSheepInputsState extends State<EditSheepInputs> {
+class _EditLivestockInputsState extends State<EditLivestockInputs> {
   List<String> months = [
     'January',
     'February',
@@ -262,10 +262,8 @@ class _EditSheepInputsState extends State<EditSheepInputs> {
               widget.sheep.pregenancyProgress =
                   pregnancyProgress ?? widget.sheep.pregenancyProgress;
               widget.sheep.weight =
-                  int.tryParse(weight ?? "${widget.sheep.weight}") ??
-                      Random().nextInt(168 - 72);
-              widget.sheep.age = int.tryParse(age ?? "${widget.sheep.age}") ??
-                  Random().nextInt(100);
+                  int.tryParse(weight ?? "${widget.sheep.weight}");
+              widget.sheep.age = int.tryParse(age ?? "${widget.sheep.age}");
               widget.sheep.children =
                   int.parse(selectedNumb ?? "${widget.sheep.children}");
 

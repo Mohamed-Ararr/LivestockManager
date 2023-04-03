@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../Data/Model/livestock_model.dart';
-import 'EditSheepViewBody.dart';
+import 'EditLivestockViewBody.dart';
 
 class EditLivestockView extends StatelessWidget {
   const EditLivestockView({super.key, required this.sheep});

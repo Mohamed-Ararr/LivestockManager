@@ -5,7 +5,7 @@ import 'package:sheepmanager/constValues.dart';
 
 import '../../../../../Core/Utils/backButton.dart';
 import '../../../Data/Model/livestock_model.dart';
-import 'Widgets/editSheepInputs.dart';
+import 'Widgets/editLivestockInputs.dart';
 
 class EditLivestockViewBody extends StatelessWidget {
   const EditLivestockViewBody({super.key, required this.sheep});
@@ -31,7 +31,7 @@ class EditLivestockViewBody extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 20),
-                EditSheepInputs(sheep: sheep),
+                EditLivestockInputs(sheep: sheep),
               ],
             ),
           ),
