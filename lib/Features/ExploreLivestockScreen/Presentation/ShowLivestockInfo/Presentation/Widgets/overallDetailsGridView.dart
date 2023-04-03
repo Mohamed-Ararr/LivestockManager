@@ -29,7 +29,7 @@ class OverallDetailsGridView extends StatelessWidget {
       sheep.type,
       sheep.sexe,
       sheep.gestation,
-      "${sheep.pregenancyProgress} Months",
+      "${sheep.pregenancyProgress}",
       "${sheep.weight} KG",
       "${sheep.age} Months",
       sheep.lastBirth,

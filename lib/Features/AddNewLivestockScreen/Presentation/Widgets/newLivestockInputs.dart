@@ -96,18 +96,19 @@ class _NewLivestockInputsState extends State<NewLivestockInputs> {
             },
           ),
           const SizedBox(height: 20),
-          CustomTextField(
-            label: "Pregnancy Progress (Months)",
-            hint: "Add Pregnancy Progress",
-            filled: selectedGestation == "Yes" ? false : true,
-            fillColor: const Color.fromARGB(255, 189, 189, 189),
-            keyboardType: TextInputType.number,
-            enabled: selectedGestation == "Yes" ? true : false,
-            maxLength: 1,
-            onChanged: (pregnancy) {
-              pregnancyProgress = pregnancy;
-            },
-          ),
+          if (selectedGestation == "Yes")
+            CustomTextField(
+              label: "Pregnancy Progress (Months)",
+              hint: "Add Pregnancy Progress",
+              filled: selectedGestation == "Yes" ? false : true,
+              fillColor: const Color.fromARGB(255, 189, 189, 189),
+              keyboardType: TextInputType.number,
+              enabled: selectedGestation == "Yes" ? true : false,
+              maxLength: 1,
+              onChanged: (pregnancy) {
+                pregnancyProgress = pregnancy;
+              },
+            ),
           const SizedBox(height: 20),
           Row(
             children: [
@@ -263,13 +264,13 @@ class _NewLivestockInputsState extends State<NewLivestockInputs> {
                   children: int.parse(selectedNumb!),
                   lastVisit: lastVisit,
                   gestation: selectedGestation!,
-                  pregenancyProgress: pregnancyProgress ?? "Not Available",
+                  pregenancyProgress: pregnancyProgress == null
+                      ? "Not Pregnant"
+                      : "$pregnancyProgress Months",
                 );
 
                 BlocProvider.of<AddLivestockCubit>(context)
                     .addNewLivestock(livestockModel);
-
-                print(livestockModel);
               } else {
                 setState(() {
                   validateMode = AutovalidateMode.always;
