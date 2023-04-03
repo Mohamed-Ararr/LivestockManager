@@ -41,6 +41,8 @@ class _EditSheepInputsState extends State<EditSheepInputs> {
   String? id;
   String? selectedType;
   String? selectedSexe;
+  String? selectedGestation;
+  String? pregnancyProgress;
   String? weight;
   String? age;
   String? selectedNumb;
@@ -85,6 +87,33 @@ class _EditSheepInputsState extends State<EditSheepInputs> {
               selectedSexe = value;
             },
           ),
+          const SizedBox(height: 20),
+          CustomDropDown(
+            items: const ["Yes", "No"],
+            title: "Gestation",
+            // height: 100,
+            selectedItem: widget.sheep.gestation,
+            onChanged: (gestation) {
+              setState(() {
+                selectedGestation = gestation;
+              });
+            },
+          ),
+          const SizedBox(height: 20),
+          if (selectedGestation == "Yes")
+            CustomTextField(
+              label: "Pregnancy Progress (Months)",
+              filled: selectedGestation == "Yes" ? false : true,
+              fillColor: const Color.fromARGB(255, 189, 189, 189),
+              keyboardType: TextInputType.number,
+              enabled: selectedGestation == "Yes" ? true : false,
+              maxLength: 1,
+              hint: widget.sheep.pregenancyProgress!,
+              onChanged: (value) {
+                widget.sheep.pregenancyProgress =
+                    value ?? widget.sheep.pregenancyProgress;
+              },
+            ),
           const SizedBox(height: 20),
           Row(
             children: [
@@ -228,6 +257,10 @@ class _EditSheepInputsState extends State<EditSheepInputs> {
               // widget.sheep.id = id == "" ? widget.sheep.id : id;
               widget.sheep.type = selectedType ?? widget.sheep.type;
               widget.sheep.sexe = selectedSexe ?? widget.sheep.sexe;
+              widget.sheep.gestation =
+                  selectedGestation ?? widget.sheep.gestation;
+              widget.sheep.pregenancyProgress =
+                  pregnancyProgress ?? widget.sheep.pregenancyProgress;
               widget.sheep.weight =
                   int.tryParse(weight ?? "${widget.sheep.weight}") ??
                       Random().nextInt(168 - 72);
