@@ -26,7 +26,7 @@ class FarmModelAdapter extends TypeAdapter<FarmModel> {
   @override
   void write(BinaryWriter writer, FarmModel obj) {
     writer
-      ..writeByte(8)
+      ..writeByte(3)
       ..writeByte(0)
       ..write(obj.farmID)
       ..writeByte(1)
