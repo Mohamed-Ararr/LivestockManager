@@ -11,6 +11,7 @@ import 'package:sheepmanager/Features/ProfileScreen/Profile/Presentation/Profile
 import 'package:sheepmanager/Features/SplashScreen/Presentation/SplashView.dart';
 
 import '../../Features/AddNewLivestockScreen/Presentation/AddNewLivestockView.dart';
+import '../../Features/EditFarmScreen/Presentation/EditFarmView.dart';
 import '../../Features/ExploreLivestockScreen/Data/Model/livestock_model.dart';
 import '../../Features/ExploreLivestockScreen/Presentation/Bloc Manager/AddLivestockCubit/add_livestock_cubit.dart';
 import '../../Features/ExploreLivestockScreen/Presentation/Bloc Manager/LivestockCubit/Livestock_cubit.dart';
@@ -30,6 +31,7 @@ class AppRouter {
   static String exploreLivestockView = "/exploreLivestockView";
   static String farmDetailedView = "/farmDetailedView";
   static String addNewFarmView = "/addNewFarmView";
+  static String editFarmView = "/editFarmView";
 
   static final routes = GoRouter(
     routes: <RouteBase>[
@@ -87,6 +89,10 @@ class AppRouter {
           create: (context) => LivestockCubit(),
           child: ShowLivestockInfoView(sheep: state.extra as LivestockModel),
         ),
+      ),
+      GoRoute(
+        path: editFarmView,
+        builder: (context, state) => const EditFarmView(),
       ),
     ],
   );

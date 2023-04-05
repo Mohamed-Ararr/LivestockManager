@@ -25,7 +25,7 @@ class FarmDetailedViewBody extends StatelessWidget {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                const CustomFarmDetailedAppBar(),
+                CustomFarmDetailedAppBar(farm: farm),
                 const SizedBox(height: 20),
                 Text("Farm Information", style: AppFonts.regularBlackTitle),
                 const SizedBox(height: 10),

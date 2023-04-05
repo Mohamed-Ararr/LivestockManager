@@ -19,7 +19,7 @@ class ExploreStockAppBar extends StatelessWidget {
           margin: const EdgeInsets.only(left: 5),
           child: IconButton(
             onPressed: () => GoRouter.of(context).pop(),
-            icon: const Icon(FontAwesomeIcons.circleXmark, size: 28),
+            icon: const Icon(FontAwesomeIcons.circleXmark),
           ),
         ),
         Container(
