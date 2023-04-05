@@ -7,13 +7,17 @@ import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
 import 'package:sheepmanager/Core/Utils/router.dart';
+import 'package:sheepmanager/Features/HomeScreen/Data/Models/farm_model.dart';
+import 'package:sheepmanager/Features/HomeScreen/Presentation/Bloc%20Manager/Farm%20Cubit/cubit/farm_cubit_cubit.dart';
+import 'package:sheepmanager/constValues.dart';
 import '../../Features/ExploreLivestockScreen/Data/Model/livestock_model.dart';
 import '../../Features/ExploreLivestockScreen/Presentation/Bloc Manager/LivestockCubit/Livestock_cubit.dart';
 import '../../Features/ExploreLivestockScreen/Presentation/Widgets/LivestockCard.dart';
+import '../../Features/HomeScreen/Presentation/Widgets/FarmShortBox.dart';
 import 'colors.dart';
 import 'deleteOption.dart';
 
-class SearchBar extends SearchDelegate {
+class SearchBarForFarms extends SearchDelegate {
   @override
   TextStyle? get searchFieldStyle {
     return const TextStyle(
@@ -50,7 +54,7 @@ class SearchBar extends SearchDelegate {
   Widget? buildLeading(BuildContext context) {
     return IconButton(
       onPressed: () {
-        BlocProvider.of<LivestockCubit>(context).fetchAllSheep();
+        BlocProvider.of<FarmCubitCubit>(context).fetchAllFarms();
         GoRouter.of(context).pop();
       },
       icon: const Icon(FontAwesomeIcons.arrowLeft),
@@ -64,11 +68,11 @@ class SearchBar extends SearchDelegate {
 
   @override
   Widget buildSuggestions(BuildContext context) {
-    return BlocBuilder<LivestockCubit, LivestockState>(
+    return BlocBuilder<FarmCubitCubit, FarmCubitState>(
       builder: (context, state) {
-        if (state is LivestockSuccess) {
-          List<LivestockModel> suggestions = state.livestockList.where((sheep) {
-            final result = sheep.id!.toLowerCase();
+        if (state is FarmCubitSuccess) {
+          List<FarmModel> suggestions = state.farmList.where((farm) {
+            final result = farm.farmID!.toLowerCase();
             final input = query.toLowerCase();
             return result.contains(input);
           }).toList();
@@ -97,13 +101,15 @@ class SearchBar extends SearchDelegate {
                             actionPane: const SlidableDrawerActionPane(),
                             secondaryActions: [
                               DeleteOption(
-                                  livestock: suggestions[index], isFarm: false),
+                                  farm: suggestions[index], isFarm: true),
                             ],
-                            child: SheepCard(
-                              sheep: suggestions[index],
-                              onTap: () => GoRouter.of(context).push(
-                                AppRouter.showSheepInfoView,
-                                extra: state.livestockList[index],
+                            child: Padding(
+                              padding: kPaddingRightLeft,
+                              child: FarmShortBox(
+                                farm: state.farmList[index],
+                                farmID: state.farmList[index].farmID!,
+                                farmOwner: state.farmList[index].owner!,
+                                farmAddress: state.farmList[index].address!,
                               ),
                             ),
                           ),

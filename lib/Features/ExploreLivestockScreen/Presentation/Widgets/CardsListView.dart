@@ -37,7 +37,9 @@ class CardsListView extends StatelessWidget {
                       child: Slidable(
                         actionPane: const SlidableDrawerActionPane(),
                         secondaryActions: [
-                          DeleteOption(sheep: state.livestockList[index]),
+                          DeleteOption(
+                              livestock: state.livestockList[index],
+                              isFarm: false),
                         ],
                         child: SheepCard(
                           sheep: state.livestockList[index],

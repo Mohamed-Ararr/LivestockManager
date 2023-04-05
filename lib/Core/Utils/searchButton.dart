@@ -7,12 +7,14 @@ import 'package:sheepmanager/Core/Utils/searchDele.dart';
 import 'colors.dart';
 
 class SearchButton extends StatelessWidget {
-  const SearchButton({super.key});
+  const SearchButton({super.key, this.onTap});
+
+  final Function()? onTap;
 
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      onPressed: () => showSearch(context: context, delegate: SearchBar()),
+      onPressed: onTap,
       style: IconButton.styleFrom(
         padding: const EdgeInsets.all(20),
         shape: RoundedRectangleBorder(

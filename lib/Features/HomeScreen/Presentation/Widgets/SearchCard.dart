@@ -6,6 +6,7 @@ import 'package:sheepmanager/Core/Utils/searchButton.dart';
 import 'package:sheepmanager/Features/ProfileScreen/Bloc%20Manager/userCubit/user_cubit.dart';
 
 import '../../../../Core/Utils/colors.dart';
+import '../../../../Core/Utils/searchDeleForFarms.dart';
 import '../../../../constValues.dart';
 
 class SearchCard extends StatelessWidget {
@@ -61,7 +62,9 @@ class SearchCard extends StatelessWidget {
                 ),
               ],
             ),
-            const SearchButton(),
+            SearchButton(
+                onTap: () => showSearch(
+                    context: context, delegate: SearchBarForFarms())),
           ],
         ),
       ),

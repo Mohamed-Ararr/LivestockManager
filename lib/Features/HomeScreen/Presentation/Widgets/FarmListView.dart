@@ -6,6 +6,7 @@ import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:sheepmanager/Features/HomeScreen/Presentation/Bloc%20Manager/Farm%20Cubit/cubit/farm_cubit_cubit.dart';
 
+import '../../../../Core/Utils/deleteOption.dart';
 import '../../../../constValues.dart';
 import 'FarmShortBox.dart';
 
@@ -18,7 +19,6 @@ class FarmListView extends StatelessWidget {
       builder: (context, state) {
         if (state is FarmCubitSuccess) {
           return ListView.builder(
-            padding: kPaddingRightLeft,
             itemCount: state.farmList.length,
             shrinkWrap: true,
             physics: const NeverScrollableScrollPhysics(),
@@ -31,11 +31,17 @@ class FarmListView extends StatelessWidget {
                   child: FadeInAnimation(
                     child: Slidable(
                       actionPane: const SlidableDrawerActionPane(),
-                      child: FarmShortBox(
-                        farm: state.farmList[index],
-                        farmID: state.farmList[index].farmID!,
-                        farmOwner: state.farmList[index].owner!,
-                        farmAddress: state.farmList[index].address!,
+                      secondaryActions: [
+                        DeleteOption(farm: state.farmList[index], isFarm: true),
+                      ],
+                      child: Padding(
+                        padding: kPaddingRightLeft,
+                        child: FarmShortBox(
+                          farm: state.farmList[index],
+                          farmID: state.farmList[index].farmID!,
+                          farmOwner: state.farmList[index].owner!,
+                          farmAddress: state.farmList[index].address!,
+                        ),
                       ),
                     ),
                   ),
