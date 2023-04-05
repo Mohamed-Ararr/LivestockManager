@@ -6,6 +6,8 @@ import "package:flutter_slidable/flutter_slidable.dart";
 import "package:flutter_staggered_animations/flutter_staggered_animations.dart";
 import "package:flutter_svg/svg.dart";
 import "package:go_router/go_router.dart";
+import "package:sheepmanager/Core/Utils/EmptyList.dart";
+import "package:sheepmanager/Core/Utils/LoadingWidget.dart";
 import "package:sheepmanager/Core/Utils/deleteOption.dart";
 
 import '../../../../Core/Utils/colors.dart';
@@ -55,29 +57,10 @@ class CardsListView extends StatelessWidget {
               },
             );
           } else {
-            return Column(
-              children: [
-                const SizedBox(height: 50),
-                SvgPicture.asset(
-                  emptySvg,
-                  color: AppColors.mainColor,
-                  width: 150,
-                ),
-                const SizedBox(height: 30),
-                const Center(
-                    child: Text(
-                  "¯\\_(ツ)_/¯\n\nAdd Livestock using the button bellow",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                )),
-              ],
-            );
+            return const EmptyListWidget();
           }
         } else {
-          return Center(
-              child: CircularProgressIndicator(
-            color: AppColors.secColor,
-          ));
+          return const LoadingWidget();
         }
       },
     );
