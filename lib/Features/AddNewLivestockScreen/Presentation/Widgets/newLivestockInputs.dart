@@ -3,9 +3,11 @@
 import "package:flutter/material.dart";
 import "package:flutter_bloc/flutter_bloc.dart";
 import "package:font_awesome_flutter/font_awesome_flutter.dart";
+import "package:go_router/go_router.dart";
 import "package:sheepmanager/Core/Utils/colors.dart";
 import "package:sheepmanager/Core/Utils/customDropdown.dart";
 import "package:sheepmanager/Core/Utils/customTextField.dart";
+import "package:sheepmanager/Features/ExploreLivestockScreen/Presentation/Bloc%20Manager/LivestockCubit/Livestock_cubit.dart";
 import "package:sheepmanager/constValues.dart";
 
 import '../../../../Core/Utils/confirmButton.dart';
@@ -271,6 +273,8 @@ class _NewLivestockInputsState extends State<NewLivestockInputs> {
 
                 BlocProvider.of<AddLivestockCubit>(context)
                     .addNewLivestock(livestockModel);
+                BlocProvider.of<LivestockCubit>(context).fetchAllSheep();
+                GoRouter.of(context).pop();
               } else {
                 setState(() {
                   validateMode = AutovalidateMode.always;

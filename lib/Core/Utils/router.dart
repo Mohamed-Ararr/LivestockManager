@@ -51,10 +51,7 @@ class AppRouter {
       ),
       GoRoute(
         path: exploreLivestockView,
-        builder: (context, state) => BlocProvider(
-          create: (context) => LivestockCubit()..fetchAllSheep(),
-          child: const ExploreLivestockView(),
-        ),
+        builder: (context, state) => const ExploreLivestockView(),
       ),
       GoRoute(
         path: farmDetailedView,
