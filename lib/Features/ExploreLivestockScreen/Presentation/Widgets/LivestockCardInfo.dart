@@ -13,43 +13,39 @@ class LivestockCardInfo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<LivestockCubit, LivestockState>(
-      builder: (context, state) {
-        return Expanded(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 20),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
+    return Expanded(
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 20),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              "ID: ${sheep.id}",
+              style: const TextStyle(fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(height: 10),
+            Text(
+              "Type: ${sheep.type}",
+              style: const TextStyle(fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(height: 10),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: const [
                 Text(
-                  "ID: ${sheep.id}",
-                  style: const TextStyle(fontWeight: FontWeight.bold),
+                  "Tap For More Information",
+                  style: TextStyle(fontWeight: FontWeight.bold),
                 ),
-                const SizedBox(height: 10),
-                Text(
-                  "Type: ${sheep.type}",
-                  style: const TextStyle(fontWeight: FontWeight.bold),
-                ),
-                const SizedBox(height: 10),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: const [
-                    Text(
-                      "Tap For More Information",
-                      style: TextStyle(fontWeight: FontWeight.bold),
-                    ),
-                    Icon(
-                      FontAwesomeIcons.anglesRight,
-                      size: 18,
-                      // color: Colors.white,
-                    ),
-                  ],
+                Icon(
+                  FontAwesomeIcons.anglesRight,
+                  size: 18,
+                  // color: Colors.white,
                 ),
               ],
             ),
-          ),
-        );
-      },
+          ],
+        ),
+      ),
     );
   }
 }

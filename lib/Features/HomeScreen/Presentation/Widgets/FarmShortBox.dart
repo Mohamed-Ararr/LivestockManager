@@ -37,22 +37,15 @@ class FarmShortBox extends StatelessWidget {
         onTap: () =>
             GoRouter.of(context).push(AppRouter.farmDetailedView, extra: farm),
         borderRadius: kBorderRadius,
-        child: BlocConsumer<FarmCubitCubit, FarmCubitState>(
-          listener: (context, state) {
-            // TODO: implement listener
-          },
-          builder: (context, state) {
-            return Column(
-              children: [
-                FarmShortInfo(
-                  farmID: farm.farmID!,
-                  farmOwner: farm.owner!,
-                  farmAddress: farm.address!,
-                ),
-                const TapMoreButton(),
-              ],
-            );
-          },
+        child: Column(
+          children: [
+            FarmShortInfo(
+              farmID: farm.farmID!,
+              farmOwner: farm.owner!,
+              farmAddress: farm.address!,
+            ),
+            const TapMoreButton(),
+          ],
         ),
       ),
     );
