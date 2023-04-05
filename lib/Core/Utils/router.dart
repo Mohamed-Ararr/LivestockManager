@@ -92,7 +92,10 @@ class AppRouter {
       ),
       GoRoute(
         path: editFarmView,
-        builder: (context, state) => const EditFarmView(),
+        builder: (context, state) => BlocProvider(
+          create: (context) => FarmCubitCubit(),
+          child: EditFarmView(farm: state.extra as FarmModel),
+        ),
       ),
     ],
   );

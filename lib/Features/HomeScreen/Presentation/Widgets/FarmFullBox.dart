@@ -39,9 +39,6 @@ class FarmFullBox extends StatelessWidget {
               padding: kPaddingRightLeft,
               child: FarmShortBox(
                 farm: farm,
-                farmID: farm.farmID!,
-                farmOwner: farm.owner!,
-                farmAddress: farm.address!,
               ),
             ),
           ),
