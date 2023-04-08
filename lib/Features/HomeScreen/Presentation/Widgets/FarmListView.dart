@@ -28,11 +28,9 @@ class FarmListView extends StatelessWidget {
               physics: const NeverScrollableScrollPhysics(),
               itemBuilder: (context, index) {
                 return FarmFullBox(
-                    index: index,
-                    farm: state.farmList[index],
-                    farmID: state.farmList[index].farmID!,
-                    farmOwner: state.farmList[index].owner!,
-                    farmAddress: state.farmList[index].address!);
+                  index: index,
+                  farm: state.farmList[index],
+                );
               },
             );
           } else {

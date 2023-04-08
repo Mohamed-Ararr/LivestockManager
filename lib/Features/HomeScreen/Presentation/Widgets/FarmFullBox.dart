@@ -8,19 +8,10 @@ import '../../../../constValues.dart';
 import 'FarmShortBox.dart';
 
 class FarmFullBox extends StatelessWidget {
-  const FarmFullBox(
-      {super.key,
-      required this.index,
-      required this.farm,
-      required this.farmID,
-      required this.farmOwner,
-      required this.farmAddress});
+  const FarmFullBox({super.key, required this.index, required this.farm});
 
   final int index;
   final FarmModel farm;
-  final String farmID;
-  final String farmOwner;
-  final String farmAddress;
 
   @override
   Widget build(BuildContext context) {
