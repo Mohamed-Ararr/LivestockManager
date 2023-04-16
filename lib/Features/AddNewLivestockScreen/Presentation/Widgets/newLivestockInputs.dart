@@ -90,11 +90,14 @@ class _NewLivestockInputsState extends State<NewLivestockInputs> {
             title: "Sexe",
             // height: 120,
             onChanged: (value) {
-              selectedSexe = value;
+              setState(() {
+                selectedSexe = value;
+              });
             },
           ),
           const SizedBox(height: 20),
           CustomDropDown(
+            enabled: selectedSexe == "Male" ? false : true,
             items: const ["Yes", "No"],
             title: "Gestation",
             // height: 100,
@@ -109,10 +112,7 @@ class _NewLivestockInputsState extends State<NewLivestockInputs> {
             CustomTextField(
               label: "Pregnancy Progress (Months)",
               hint: "Add Pregnancy Progress",
-              filled: selectedGestation == "Yes" ? false : true,
-              fillColor: const Color.fromARGB(255, 189, 189, 189),
               keyboardType: TextInputType.number,
-              enabled: selectedGestation == "Yes" ? true : false,
               maxLength: 1,
               onChanged: (pregnancy) {
                 pregnancyProgress = pregnancy;
@@ -256,7 +256,6 @@ class _NewLivestockInputsState extends State<NewLivestockInputs> {
               if (formKey.currentState!.validate() &&
                   selectedType != null &&
                   selectedSexe != null &&
-                  selectedGestation != null &&
                   selectedNumb != null) {
                 formKey.currentState!.save();
                 String lastBirth =
@@ -272,7 +271,7 @@ class _NewLivestockInputsState extends State<NewLivestockInputs> {
                   lastBirth: lastBirth,
                   children: int.parse(selectedNumb!),
                   lastVisit: lastVisit,
-                  gestation: selectedGestation!,
+                  gestation: selectedGestation ?? "No",
                   pregenancyProgress: pregnancyProgress == null
                       ? "Not Pregnant"
                       : "$pregnancyProgress Months",
@@ -288,7 +287,6 @@ class _NewLivestockInputsState extends State<NewLivestockInputs> {
                   widget.farm.livestockList?.add(livestockModel);
                 }
                 widget.farm.save();
-                print(widget.farm.livestockList);
                 GoRouter.of(context).pop();
               } else {
                 setState(() {
