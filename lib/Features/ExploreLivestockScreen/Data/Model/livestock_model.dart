@@ -28,15 +28,15 @@ class LivestockModel extends HiveObject {
   String? pregenancyProgress;
 
   LivestockModel({
-    required this.id,
-    required this.type,
-    required this.sexe,
-    required this.weight,
-    required this.age,
-    required this.lastBirth,
-    required this.children,
-    required this.lastVisit,
-    required this.gestation,
-    required this.pregenancyProgress,
+    this.id,
+    this.type,
+    this.sexe,
+    this.weight,
+    this.age,
+    this.lastBirth,
+    this.children,
+    this.lastVisit,
+    this.gestation,
+    this.pregenancyProgress,
   });
 }

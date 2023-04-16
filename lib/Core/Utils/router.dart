@@ -53,7 +53,10 @@ class AppRouter {
       ),
       GoRoute(
         path: exploreLivestockView,
-        builder: (context, state) => const ExploreLivestockView(),
+        builder: (context, state) => BlocProvider(
+          create: (context) => FarmCubitCubit(),
+          child: ExploreLivestockView(farm: state.extra as FarmModel),
+        ),
       ),
       GoRoute(
         path: farmDetailedView,
@@ -73,22 +76,34 @@ class AppRouter {
         path: addNewSheepView,
         builder: (context, state) => BlocProvider(
           create: (context) => AddLivestockCubit(),
-          child: const AddNewSheepView(),
+          child: AddNewSheepView(farm: state.extra as FarmModel),
         ),
       ),
       GoRoute(
         path: editSheepView,
-        builder: (context, state) => BlocProvider(
-          create: (context) => LivestockCubit(),
-          child: EditLivestockView(sheep: state.extra as LivestockModel),
-        ),
+        builder: (context, state) {
+          var extraPar = state.extra as Map<String, dynamic>;
+          return BlocProvider(
+            create: (context) => LivestockCubit(),
+            child: EditLivestockView(
+              sheep: extraPar["livestock"] as LivestockModel,
+              farm: extraPar["farm"] as FarmModel,
+            ),
+          );
+        },
       ),
       GoRoute(
         path: showSheepInfoView,
-        builder: (context, state) => BlocProvider(
-          create: (context) => LivestockCubit(),
-          child: ShowLivestockInfoView(sheep: state.extra as LivestockModel),
-        ),
+        builder: (context, state) {
+          var extraPar = state.extra as Map<String, dynamic>;
+          return BlocProvider(
+            create: (context) => LivestockCubit(),
+            child: ShowLivestockInfoView(
+              sheep: extraPar["livestock"] as LivestockModel,
+              farm: extraPar["farm"] as FarmModel,
+            ),
+          );
+        },
       ),
       GoRoute(
         path: editFarmView,

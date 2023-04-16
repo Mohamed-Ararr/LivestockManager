@@ -10,12 +10,14 @@ import '../../../../Core/Utils/fonts.dart';
 import '../../../../constValues.dart';
 
 class ConsultButton extends StatelessWidget {
-  const ConsultButton({super.key});
+  const ConsultButton({super.key, this.onTap});
+
+  final Function()? onTap;
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () => GoRouter.of(context).push(AppRouter.exploreLivestockView),
+      onTap: onTap,
       child: Container(
         width: MediaQuery.of(context).size.width * 0.5,
         padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 15),

@@ -17,22 +17,28 @@ class FarmModelAdapter extends TypeAdapter<FarmModel> {
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
     return FarmModel(
-      farmID: fields[0] as String,
-      owner: fields[1] as String,
-      address: fields[2] as String,
+      farmID: fields[0] as String?,
+      owner: fields[1] as String?,
+      address: fields[2] as String?,
+      livestockList: fields[3] as dynamic,
+      livestock: fields[4] as LivestockModel?,
     );
   }
 
   @override
   void write(BinaryWriter writer, FarmModel obj) {
     writer
-      ..writeByte(3)
+      ..writeByte(5)
       ..writeByte(0)
       ..write(obj.farmID)
       ..writeByte(1)
       ..write(obj.owner)
       ..writeByte(2)
-      ..write(obj.address);
+      ..write(obj.address)
+      ..writeByte(3)
+      ..write(obj.livestockList)
+      ..writeByte(4)
+      ..write(obj.livestock);
   }
 
   @override

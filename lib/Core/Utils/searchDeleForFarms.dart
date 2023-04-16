@@ -101,7 +101,10 @@ class SearchBarForFarms extends SearchDelegate {
                             actionPane: const SlidableDrawerActionPane(),
                             secondaryActions: [
                               DeleteOption(
-                                  farm: suggestions[index], isFarm: true),
+                                farm: suggestions[index],
+                                isFarm: true,
+                                index: index,
+                              ),
                             ],
                             child: Padding(
                               padding: kPaddingRightLeft,

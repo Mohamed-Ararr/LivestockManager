@@ -1,6 +1,7 @@
 // ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
+import 'package:sheepmanager/Features/HomeScreen/Data/Models/farm_model.dart';
 
 import '../../../../Core/Utils/colors.dart';
 import '../../../../constValues.dart';
@@ -11,11 +12,11 @@ import 'LivestockIconCard.dart';
 class SheepCard extends StatelessWidget {
   const SheepCard({
     super.key,
-    required this.sheep,
+    this.livestock,
     required this.onTap,
   });
 
-  final LivestockModel sheep;
+  final LivestockModel? livestock;
   final Function()? onTap;
 
   @override
@@ -43,7 +44,7 @@ class SheepCard extends StatelessWidget {
         child: Row(
           children: [
             const SheepIconCard(),
-            LivestockCardInfo(sheep: sheep),
+            LivestockCardInfo(livestock: livestock),
           ],
         ),
       ),

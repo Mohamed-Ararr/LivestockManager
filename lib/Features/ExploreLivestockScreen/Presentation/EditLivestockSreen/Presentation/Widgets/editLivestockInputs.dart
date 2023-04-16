@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
+import 'package:sheepmanager/Features/HomeScreen/Data/Models/farm_model.dart';
 
 import '../../../../../../Core/Utils/colors.dart';
 import '../../../../../../Core/Utils/confirmButton.dart';
@@ -12,9 +13,11 @@ import '../../../../../../constValues.dart';
 import '../../../../Data/Model/livestock_model.dart';
 
 class EditLivestockInputs extends StatefulWidget {
-  const EditLivestockInputs({super.key, required this.sheep});
+  const EditLivestockInputs(
+      {super.key, required this.sheep, required this.farm});
 
   final LivestockModel sheep;
+  final FarmModel farm;
 
   @override
   State<EditLivestockInputs> createState() => _EditLivestockInputsState();
@@ -265,7 +268,9 @@ class _EditLivestockInputsState extends State<EditLivestockInputs> {
               widget.sheep.children =
                   int.parse(selectedNumb ?? "${widget.sheep.children}");
 
-              widget.sheep.save();
+              // widget.sheep.save();
+              widget.farm.livestock = widget.sheep;
+              widget.farm.save();
               GoRouter.of(context).pop();
             },
           ),

@@ -9,26 +9,35 @@ import "package:go_router/go_router.dart";
 import "package:sheepmanager/Core/Utils/EmptyList.dart";
 import "package:sheepmanager/Core/Utils/LoadingWidget.dart";
 import "package:sheepmanager/Core/Utils/deleteOption.dart";
+import "package:sheepmanager/Features/HomeScreen/Presentation/Bloc%20Manager/Farm%20Cubit/cubit/farm_cubit_cubit.dart";
 
 import '../../../../Core/Utils/colors.dart';
 import '../../../../Core/Utils/router.dart';
 import '../../../../constValues.dart';
+import "../../../HomeScreen/Data/Models/farm_model.dart";
 import "../Bloc Manager/LivestockCubit/Livestock_cubit.dart";
 import 'LivestockCard.dart';
 
 class CardsListView extends StatelessWidget {
-  const CardsListView({super.key});
+  const CardsListView({super.key, required this.farm});
+
+  final FarmModel farm;
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<LivestockCubit, LivestockState>(
+    return BlocBuilder<FarmCubitCubit, FarmCubitState>(
       builder: (context, state) {
-        if (state is LivestockSuccess) {
-          if (state.livestockList.isNotEmpty) {
+        debugPrint("the state is $state");
+        if (state is FarmCubitSuccess) {
+          print(farm.livestockList?.length);
+          if (farm.livestockList?.length == null) {
+            return const EmptyListWidget();
+          } else {
             return ListView.builder(
               shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),
-              itemCount: state.livestockList.length,
+              // itemCount: state.livestockList.length,
+              itemCount: farm.livestockList?.length,
               itemBuilder: (context, index) {
                 return AnimationConfiguration.staggeredList(
                   duration: const Duration(milliseconds: 1500),
@@ -38,16 +47,24 @@ class CardsListView extends StatelessWidget {
                     child: FadeInAnimation(
                       child: Slidable(
                         actionPane: const SlidableDrawerActionPane(),
-                        secondaryActions: [
-                          DeleteOption(
-                              livestock: state.livestockList[index],
-                              isFarm: false),
+                        secondaryActions: const [
+                          // DeleteOption(
+                          //   index: index,
+                          //   livestock: farm.livestockList?[index],
+                          //   farm: farm,
+                          //   isFarm: false,
+                          // ),
                         ],
                         child: SheepCard(
-                          sheep: state.livestockList[index],
+                          // livestock: state.livestockList[index],
+                          livestock: farm.livestockList?[index],
                           onTap: () => GoRouter.of(context).push(
                             AppRouter.showSheepInfoView,
-                            extra: state.livestockList[index],
+                            // extra: state.livestockList[index],
+                            extra: {
+                              "livestock": farm.livestockList?[index],
+                              "farm": farm,
+                            },
                           ),
                         ),
                       ),
@@ -56,11 +73,9 @@ class CardsListView extends StatelessWidget {
                 );
               },
             );
-          } else {
-            return const EmptyListWidget();
           }
         } else {
-          return const LoadingWidget();
+          return const EmptyListWidget();
         }
       },
     );

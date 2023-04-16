@@ -24,7 +24,7 @@ class FarmFullBox extends StatelessWidget {
           child: Slidable(
             actionPane: const SlidableDrawerActionPane(),
             secondaryActions: [
-              DeleteOption(farm: farm, isFarm: true),
+              DeleteOption(farm: farm, isFarm: true, index: index),
             ],
             child: Padding(
               padding: kPaddingRightLeft,

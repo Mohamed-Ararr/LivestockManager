@@ -13,11 +13,16 @@ import '../../Features/ExploreLivestockScreen/Presentation/Bloc Manager/Livestoc
 
 class DeleteOption extends StatelessWidget {
   const DeleteOption(
-      {super.key, this.livestock, this.farm, required this.isFarm});
+      {super.key,
+      this.livestock,
+      this.farm,
+      required this.isFarm,
+      required this.index});
 
   final LivestockModel? livestock;
   final FarmModel? farm;
   final bool isFarm;
+  final int index;
 
   @override
   Widget build(BuildContext context) {

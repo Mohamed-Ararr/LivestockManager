@@ -1,4 +1,5 @@
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:sheepmanager/Features/ExploreLivestockScreen/Data/Model/livestock_model.dart';
 
 part 'farm_model.g.dart';
 
@@ -10,10 +11,16 @@ class FarmModel extends HiveObject {
   String? owner;
   @HiveField(2)
   String? address;
+  @HiveField(3)
+  List<dynamic>? livestockList = [LivestockModel()];
+  @HiveField(4)
+  LivestockModel? livestock;
 
   FarmModel({
     this.farmID,
     this.owner,
     this.address,
+    this.livestockList,
+    this.livestock,
   });
 }

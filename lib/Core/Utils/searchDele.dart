@@ -7,6 +7,8 @@ import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
 import 'package:sheepmanager/Core/Utils/router.dart';
+import 'package:sheepmanager/Features/HomeScreen/Data/Models/farm_model.dart';
+import 'package:sheepmanager/Features/HomeScreen/Presentation/Bloc%20Manager/Farm%20Cubit/cubit/farm_cubit_cubit.dart';
 import '../../Features/ExploreLivestockScreen/Data/Model/livestock_model.dart';
 import '../../Features/ExploreLivestockScreen/Presentation/Bloc Manager/LivestockCubit/Livestock_cubit.dart';
 import '../../Features/ExploreLivestockScreen/Presentation/Widgets/LivestockCard.dart';
@@ -97,10 +99,13 @@ class SearchBar extends SearchDelegate {
                             actionPane: const SlidableDrawerActionPane(),
                             secondaryActions: [
                               DeleteOption(
-                                  livestock: suggestions[index], isFarm: false),
+                                livestock: suggestions[index],
+                                isFarm: false,
+                                index: index,
+                              ),
                             ],
                             child: SheepCard(
-                              sheep: suggestions[index],
+                              livestock: suggestions[index],
                               onTap: () => GoRouter.of(context).push(
                                 AppRouter.showSheepInfoView,
                                 extra: state.livestockList[index],

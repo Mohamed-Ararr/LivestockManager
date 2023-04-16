@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:sheepmanager/Core/Utils/fonts.dart';
+import 'package:sheepmanager/Features/HomeScreen/Data/Models/farm_model.dart';
 import 'package:sheepmanager/constValues.dart';
 
 import '../../../Data/Model/livestock_model.dart';
@@ -10,9 +11,11 @@ import 'Widgets/doctorAppoinCard.dart';
 import 'Widgets/overallDetailsGridView.dart';
 
 class ShowLivestockInfoViewBody extends StatelessWidget {
-  const ShowLivestockInfoViewBody({super.key, required this.sheep});
+  const ShowLivestockInfoViewBody(
+      {super.key, required this.sheep, required this.farm});
 
   final LivestockModel sheep;
+  final FarmModel farm;
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +28,7 @@ class ShowLivestockInfoViewBody extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              CustomAppBarInfo(sheep: sheep),
+              CustomAppBarInfo(sheep: sheep, farm: farm),
               const SizedBox(height: 30),
               Center(
                 child: Text(

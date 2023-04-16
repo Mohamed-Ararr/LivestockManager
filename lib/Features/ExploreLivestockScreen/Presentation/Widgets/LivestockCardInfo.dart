@@ -3,13 +3,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:sheepmanager/Features/HomeScreen/Data/Models/farm_model.dart';
 import '../../Data/Model/livestock_model.dart';
 import '../Bloc Manager/LivestockCubit/Livestock_cubit.dart';
 
 class LivestockCardInfo extends StatelessWidget {
-  const LivestockCardInfo({super.key, required this.sheep});
+  const LivestockCardInfo({super.key, required this.livestock});
 
-  final LivestockModel sheep;
+  final LivestockModel? livestock;
 
   @override
   Widget build(BuildContext context) {
@@ -20,12 +21,12 @@ class LivestockCardInfo extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              "ID: ${sheep.id}",
+              "ID: ${livestock?.id}",
               style: const TextStyle(fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 10),
             Text(
-              "Type: ${sheep.type}",
+              "Type: ${livestock?.type}",
               style: const TextStyle(fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 10),

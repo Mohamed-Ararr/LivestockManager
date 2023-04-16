@@ -23,8 +23,8 @@ class ExploreStockAppBar extends StatelessWidget {
           ),
         ),
         Container(
-          width: 50,
-          height: 50,
+          width: 40,
+          height: 40,
           margin: const EdgeInsets.only(right: 15),
           decoration: BoxDecoration(
             color: AppColors.mainColor,
@@ -37,6 +37,7 @@ class ExploreStockAppBar extends StatelessWidget {
             icon: const Icon(
               FontAwesomeIcons.magnifyingGlass,
               color: Colors.white,
+              size: 20,
             ),
           ),
         ),

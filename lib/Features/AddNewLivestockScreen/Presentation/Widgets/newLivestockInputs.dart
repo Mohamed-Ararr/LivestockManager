@@ -1,5 +1,8 @@
 // ignore_for_file: file_names
 
+import "dart:ffi";
+import "dart:typed_data";
+
 import "package:flutter/material.dart";
 import "package:flutter_bloc/flutter_bloc.dart";
 import "package:font_awesome_flutter/font_awesome_flutter.dart";
@@ -8,6 +11,8 @@ import "package:sheepmanager/Core/Utils/colors.dart";
 import "package:sheepmanager/Core/Utils/customDropdown.dart";
 import "package:sheepmanager/Core/Utils/customTextField.dart";
 import "package:sheepmanager/Features/ExploreLivestockScreen/Presentation/Bloc%20Manager/LivestockCubit/Livestock_cubit.dart";
+import "package:sheepmanager/Features/HomeScreen/Data/Models/farm_model.dart";
+import "package:sheepmanager/Features/HomeScreen/Presentation/Bloc%20Manager/Farm%20Cubit/cubit/farm_cubit_cubit.dart";
 import "package:sheepmanager/constValues.dart";
 
 import '../../../../Core/Utils/confirmButton.dart';
@@ -15,7 +20,9 @@ import '../../../ExploreLivestockScreen/Data/Model/livestock_model.dart';
 import "../../../ExploreLivestockScreen/Presentation/Bloc Manager/AddLivestockCubit/add_livestock_cubit.dart";
 
 class NewLivestockInputs extends StatefulWidget {
-  const NewLivestockInputs({super.key});
+  const NewLivestockInputs({super.key, required this.farm});
+
+  final FarmModel farm;
 
   @override
   State<NewLivestockInputs> createState() => _NewLivestockInputsState();
@@ -270,10 +277,18 @@ class _NewLivestockInputsState extends State<NewLivestockInputs> {
                       ? "Not Pregnant"
                       : "$pregnancyProgress Months",
                 );
-
                 BlocProvider.of<AddLivestockCubit>(context)
                     .addNewLivestock(livestockModel);
+
                 BlocProvider.of<LivestockCubit>(context).fetchAllSheep();
+                widget.farm.livestock = livestockModel;
+                if (widget.farm.livestockList?.length == null) {
+                  widget.farm.livestockList = [livestockModel];
+                } else {
+                  widget.farm.livestockList?.add(livestockModel);
+                }
+                widget.farm.save();
+                print(widget.farm.livestockList);
                 GoRouter.of(context).pop();
               } else {
                 setState(() {

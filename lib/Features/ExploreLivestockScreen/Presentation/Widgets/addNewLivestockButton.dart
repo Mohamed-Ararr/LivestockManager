@@ -10,12 +10,14 @@ import '../../../../Core/Utils/fonts.dart';
 import '../../../../constValues.dart';
 
 class AddNewSheepButton extends StatelessWidget {
-  const AddNewSheepButton({super.key});
+  const AddNewSheepButton({super.key, this.onTap});
+
+  final Function()? onTap;
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () => GoRouter.of(context).push(AppRouter.addNewSheepView),
+      onTap: onTap,
       child: Container(
         width: MediaQuery.of(context).size.width * 0.5,
         padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 15),
