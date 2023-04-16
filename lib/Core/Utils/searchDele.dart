@@ -12,10 +12,15 @@ import 'package:sheepmanager/Features/HomeScreen/Presentation/Bloc%20Manager/Far
 import '../../Features/ExploreLivestockScreen/Data/Model/livestock_model.dart';
 import '../../Features/ExploreLivestockScreen/Presentation/Bloc Manager/LivestockCubit/Livestock_cubit.dart';
 import '../../Features/ExploreLivestockScreen/Presentation/Widgets/LivestockCard.dart';
+import 'EmptyList.dart';
 import 'colors.dart';
 import 'deleteOption.dart';
 
 class SearchBar extends SearchDelegate {
+  final FarmModel farm;
+
+  SearchBar(this.farm);
+
   @override
   TextStyle? get searchFieldStyle {
     return const TextStyle(
@@ -66,62 +71,69 @@ class SearchBar extends SearchDelegate {
 
   @override
   Widget buildSuggestions(BuildContext context) {
-    return BlocBuilder<LivestockCubit, LivestockState>(
+    return BlocBuilder<FarmCubitCubit, FarmCubitState>(
       builder: (context, state) {
-        if (state is LivestockSuccess) {
-          List<LivestockModel> suggestions = state.livestockList.where((sheep) {
-            final result = sheep.id!.toLowerCase();
-            final input = query.toLowerCase();
-            return result.contains(input);
-          }).toList();
-          return SingleChildScrollView(
-            physics: const BouncingScrollPhysics(),
-            child: Column(
-              children: [
-                const SizedBox(height: 20),
-                const Text(
-                  "Suggestions",
-                  style: TextStyle(fontSize: 20),
-                ),
-                const SizedBox(height: 20),
-                ListView.builder(
-                  shrinkWrap: true,
-                  physics: const NeverScrollableScrollPhysics(),
-                  itemCount: suggestions.length,
-                  itemBuilder: (context, index) {
-                    return AnimationConfiguration.staggeredList(
-                      duration: const Duration(milliseconds: 1500),
-                      position: index,
-                      child: SlideAnimation(
-                        horizontalOffset: 300,
-                        child: FadeInAnimation(
-                          child: Slidable(
-                            actionPane: const SlidableDrawerActionPane(),
-                            secondaryActions: [
-                              DeleteOption(
-                                livestock: suggestions[index],
-                                isFarm: false,
-                                index: index,
-                              ),
-                            ],
-                            child: SheepCard(
-                              livestock: suggestions[index],
-                              onTap: () => GoRouter.of(context).push(
-                                AppRouter.showSheepInfoView,
-                                extra: state.livestockList[index],
+        debugPrint("the state is $state");
+        if (state is FarmCubitSuccess) {
+          if (farm.livestockList?.length == null) {
+            return const EmptyListWidget();
+          } else {
+            return SingleChildScrollView(
+              physics: const BouncingScrollPhysics(),
+              child: Column(
+                children: [
+                  const SizedBox(height: 20),
+                  const Text(
+                    "Suggestions",
+                    style: TextStyle(fontSize: 20),
+                  ),
+                  const SizedBox(height: 20),
+                  ListView.builder(
+                    shrinkWrap: true,
+                    physics: const NeverScrollableScrollPhysics(),
+                    // itemCount: state.livestockList.length,
+                    itemCount: farm.livestockList?.length,
+                    itemBuilder: (context, index) {
+                      return AnimationConfiguration.staggeredList(
+                        duration: const Duration(milliseconds: 1500),
+                        position: index,
+                        child: SlideAnimation(
+                          horizontalOffset: 300,
+                          child: FadeInAnimation(
+                            child: Slidable(
+                              actionPane: const SlidableDrawerActionPane(),
+                              secondaryActions: const [
+                                // DeleteOption(
+                                //   index: index,
+                                //   livestock: farm.livestockList?[index],
+                                //   farm: farm,
+                                //   isFarm: false,
+                                // ),
+                              ],
+                              child: SheepCard(
+                                // livestock: state.livestockList[index],
+                                livestock: farm.livestockList?[index],
+                                onTap: () => GoRouter.of(context).push(
+                                  AppRouter.showSheepInfoView,
+                                  // extra: state.livestockList[index],
+                                  extra: {
+                                    "livestock": farm.livestockList?[index],
+                                    "farm": farm,
+                                  },
+                                ),
                               ),
                             ),
                           ),
                         ),
-                      ),
-                    );
-                  },
-                )
-              ],
-            ),
-          );
+                      );
+                    },
+                  ),
+                ],
+              ),
+            );
+          }
         } else {
-          return const Center(child: CircularProgressIndicator());
+          return const EmptyListWidget();
         }
       },
     );

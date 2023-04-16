@@ -38,7 +38,7 @@ class _ExploreLivestockViewBodyState extends State<ExploreLivestockViewBody> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const ExploreStockAppBar(),
+              ExploreStockAppBar(farm: widget.farm),
               const SizedBox(height: 25),
               Padding(
                 padding: kPaddingRightLeft,
