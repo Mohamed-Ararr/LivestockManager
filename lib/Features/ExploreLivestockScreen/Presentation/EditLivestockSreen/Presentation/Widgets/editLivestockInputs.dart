@@ -264,7 +264,7 @@ class _EditLivestockInputsState extends State<EditLivestockInputs> {
                   selectedGestation ?? widget.sheep.gestation;
               widget.sheep.pregenancyProgress = selectedGestation == "No"
                   ? "Not Pregnant"
-                  : "${pregnancyProgress ?? widget.sheep.pregenancyProgress} Months";
+                  : pregnancyProgress ?? widget.sheep.pregenancyProgress;
               widget.sheep.weight =
                   int.tryParse(weight ?? "${widget.sheep.weight}");
               widget.sheep.age = int.tryParse(age ?? "${widget.sheep.age}");
