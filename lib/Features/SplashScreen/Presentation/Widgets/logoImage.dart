@@ -17,7 +17,7 @@ class LogoImage extends StatelessWidget {
         borderRadius: BorderRadius.circular(50),
       ),
       child: SvgPicture.asset(
-        logo,
+        sheepLogo,
         width: 50,
         height: 50,
       ),

@@ -2,7 +2,8 @@
 
 import 'package:flutter/material.dart';
 
-const String logo = "assets/logo.svg";
+const String sheepLogo = "assets/logo.svg";
+const String cowLogo = "assets/cow.svg";
 const String avatar = "assets/avatar.svg";
 const String empty = "assets/Assignment.png";
 const String emptySvg = "assets/task.svg";

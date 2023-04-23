@@ -29,7 +29,6 @@ class CardsListView extends StatelessWidget {
       builder: (context, state) {
         debugPrint("the state is $state");
         if (state is FarmCubitSuccess) {
-          print(farm.livestockList?.length);
           if (farm.livestockList?.length == null) {
             return const EmptyListWidget();
           } else {

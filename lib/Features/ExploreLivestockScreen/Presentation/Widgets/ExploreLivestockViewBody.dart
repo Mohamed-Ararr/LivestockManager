@@ -42,7 +42,7 @@ class _ExploreLivestockViewBodyState extends State<ExploreLivestockViewBody> {
               const SizedBox(height: 25),
               Padding(
                 padding: kPaddingRightLeft,
-                child: Text("${widget.farm.farmID} farm Livestock",
+                child: Text("Farm: ${widget.farm.farmID}",
                     style: AppFonts.regularBlackTitle),
               ),
               const SizedBox(height: 10),

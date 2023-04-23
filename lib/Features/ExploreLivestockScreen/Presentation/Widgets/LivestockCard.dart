@@ -43,7 +43,7 @@ class SheepCard extends StatelessWidget {
         ),
         child: Row(
           children: [
-            const SheepIconCard(),
+            SheepIconCard(livestock: livestock!),
             LivestockCardInfo(livestock: livestock),
           ],
         ),

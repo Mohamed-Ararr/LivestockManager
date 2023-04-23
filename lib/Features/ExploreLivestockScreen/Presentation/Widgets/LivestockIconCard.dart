@@ -2,12 +2,15 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:sheepmanager/Features/ExploreLivestockScreen/Data/Model/livestock_model.dart';
 
 import '../../../../Core/Utils/colors.dart';
 import '../../../../constValues.dart';
 
 class SheepIconCard extends StatelessWidget {
-  const SheepIconCard({super.key});
+  const SheepIconCard({super.key, required this.livestock});
+
+  final LivestockModel livestock;
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +27,7 @@ class SheepIconCard extends StatelessWidget {
         color: AppColors.mainColor,
       ),
       child: SvgPicture.asset(
-        logo,
+        livestock.type == "Cow" ? cowLogo : sheepLogo,
         color: Colors.black,
       ),
     );
