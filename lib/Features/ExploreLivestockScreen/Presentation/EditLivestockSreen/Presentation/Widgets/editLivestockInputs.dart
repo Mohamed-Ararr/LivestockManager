@@ -85,15 +85,17 @@ class _EditLivestockInputsState extends State<EditLivestockInputs> {
             // height: 120,
             selectedItem: widget.sheep.sexe,
             onChanged: (value) {
-              selectedSexe = value;
+              setState(() {
+                selectedSexe = value;
+              });
             },
           ),
           const SizedBox(height: 20),
           CustomDropDown(
+            enabled: selectedSexe == "Male" ? false : true,
             items: const ["Yes", "No"],
             title: "Gestation",
             // height: 100,
-            selectedItem: widget.sheep.gestation,
             onChanged: (gestation) {
               setState(() {
                 selectedGestation = gestation;
@@ -260,8 +262,9 @@ class _EditLivestockInputsState extends State<EditLivestockInputs> {
               widget.sheep.sexe = selectedSexe ?? widget.sheep.sexe;
               widget.sheep.gestation =
                   selectedGestation ?? widget.sheep.gestation;
-              widget.sheep.pregenancyProgress =
-                  pregnancyProgress ?? widget.sheep.pregenancyProgress;
+              widget.sheep.pregenancyProgress = selectedGestation == "No"
+                  ? "Not Pregnant"
+                  : "${pregnancyProgress ?? widget.sheep.pregenancyProgress} Months";
               widget.sheep.weight =
                   int.tryParse(weight ?? "${widget.sheep.weight}");
               widget.sheep.age = int.tryParse(age ?? "${widget.sheep.age}");
