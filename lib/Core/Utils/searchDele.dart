@@ -78,6 +78,13 @@ class SearchBar extends SearchDelegate {
           if (farm.livestockList?.length == null) {
             return const EmptyListWidget();
           } else {
+            // List<LivestockModel> transformed =
+            //     farm.livestockList as List<LivestockModel>;
+            List livestockList = farm.livestockList!.where((livestock) {
+              final result = livestock.id!.toLowerCase();
+              final input = query.toLowerCase();
+              return result.contains(input);
+            }).toList();
             return SingleChildScrollView(
               physics: const BouncingScrollPhysics(),
               child: Column(
@@ -92,7 +99,7 @@ class SearchBar extends SearchDelegate {
                     shrinkWrap: true,
                     physics: const NeverScrollableScrollPhysics(),
                     // itemCount: state.livestockList.length,
-                    itemCount: farm.livestockList?.length,
+                    itemCount: livestockList.length,
                     itemBuilder: (context, index) {
                       return AnimationConfiguration.staggeredList(
                         duration: const Duration(milliseconds: 1500),
@@ -112,12 +119,12 @@ class SearchBar extends SearchDelegate {
                               ],
                               child: SheepCard(
                                 // livestock: state.livestockList[index],
-                                livestock: farm.livestockList?[index],
+                                livestock: livestockList[index],
                                 onTap: () => GoRouter.of(context).push(
                                   AppRouter.showSheepInfoView,
                                   // extra: state.livestockList[index],
                                   extra: {
-                                    "livestock": farm.livestockList?[index],
+                                    "livestock": livestockList[index],
                                     "farm": farm,
                                   },
                                 ),

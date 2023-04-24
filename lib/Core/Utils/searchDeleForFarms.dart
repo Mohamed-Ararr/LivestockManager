@@ -109,7 +109,7 @@ class SearchBarForFarms extends SearchDelegate {
                             child: Padding(
                               padding: kPaddingRightLeft,
                               child: FarmShortBox(
-                                farm: state.farmList[index],
+                                farm: suggestions[index],
                               ),
                             ),
                           ),
