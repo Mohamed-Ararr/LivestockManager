@@ -9,12 +9,10 @@ import 'package:go_router/go_router.dart';
 import 'package:sheepmanager/Core/Utils/router.dart';
 import 'package:sheepmanager/Features/HomeScreen/Data/Models/farm_model.dart';
 import 'package:sheepmanager/Features/HomeScreen/Presentation/Bloc%20Manager/Farm%20Cubit/cubit/farm_cubit_cubit.dart';
-import '../../Features/ExploreLivestockScreen/Data/Model/livestock_model.dart';
 import '../../Features/ExploreLivestockScreen/Presentation/Bloc Manager/LivestockCubit/Livestock_cubit.dart';
 import '../../Features/ExploreLivestockScreen/Presentation/Widgets/LivestockCard.dart';
 import 'EmptyList.dart';
 import 'colors.dart';
-import 'deleteOption.dart';
 
 class SearchBar extends SearchDelegate {
   final FarmModel farm;

@@ -1,11 +1,8 @@
 // ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:sheepmanager/Features/HomeScreen/Data/Models/farm_model.dart';
 import '../../Data/Model/livestock_model.dart';
-import '../Bloc Manager/LivestockCubit/Livestock_cubit.dart';
 
 class LivestockCardInfo extends StatelessWidget {
   const LivestockCardInfo({super.key, required this.livestock});

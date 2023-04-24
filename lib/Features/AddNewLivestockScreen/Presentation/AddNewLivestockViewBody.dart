@@ -6,8 +6,6 @@ import 'package:sheepmanager/Features/AddNewLivestockScreen/Presentation/Widgets
 import 'package:sheepmanager/Features/HomeScreen/Data/Models/farm_model.dart';
 import 'package:sheepmanager/constValues.dart';
 
-import '../../ExploreLivestockScreen/Data/Model/livestock_model.dart';
-
 class AddNewSheepViewBody extends StatelessWidget {
   const AddNewSheepViewBody({super.key, required this.farm});
 

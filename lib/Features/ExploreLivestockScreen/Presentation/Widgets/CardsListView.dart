@@ -4,18 +4,13 @@ import "package:flutter/material.dart";
 import "package:flutter_bloc/flutter_bloc.dart";
 import "package:flutter_slidable/flutter_slidable.dart";
 import "package:flutter_staggered_animations/flutter_staggered_animations.dart";
-import "package:flutter_svg/svg.dart";
 import "package:go_router/go_router.dart";
 import "package:sheepmanager/Core/Utils/EmptyList.dart";
-import "package:sheepmanager/Core/Utils/LoadingWidget.dart";
 import "package:sheepmanager/Core/Utils/deleteOption.dart";
 import "package:sheepmanager/Features/HomeScreen/Presentation/Bloc%20Manager/Farm%20Cubit/cubit/farm_cubit_cubit.dart";
 
-import '../../../../Core/Utils/colors.dart';
 import '../../../../Core/Utils/router.dart';
-import '../../../../constValues.dart';
 import "../../../HomeScreen/Data/Models/farm_model.dart";
-import "../Bloc Manager/LivestockCubit/Livestock_cubit.dart";
 import 'LivestockCard.dart';
 
 class CardsListView extends StatelessWidget {

@@ -1,16 +1,13 @@
 // ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:sheepmanager/Core/Utils/fonts.dart';
 import 'package:sheepmanager/Features/ExploreLivestockScreen/Data/Model/livestock_model.dart';
-import 'package:sheepmanager/Features/ExploreLivestockScreen/Presentation/Bloc%20Manager/LivestockCubit/Livestock_cubit.dart';
 import 'package:sheepmanager/Features/FarmDetailedScreen/Presentation/Widgets/StatsTable.dart';
 import 'package:sheepmanager/Features/FarmDetailedScreen/Presentation/Widgets/consultFlockButton.dart';
 import 'package:sheepmanager/Features/FarmDetailedScreen/Presentation/Widgets/customFarmDetailedAppBar.dart';
 import 'package:sheepmanager/Features/HomeScreen/Data/Models/farm_model.dart';
-import 'package:sheepmanager/Features/HomeScreen/Presentation/Bloc%20Manager/Farm%20Cubit/cubit/farm_cubit_cubit.dart';
 import 'package:sheepmanager/constValues.dart';
 
 import '../../../../Core/Utils/router.dart';
