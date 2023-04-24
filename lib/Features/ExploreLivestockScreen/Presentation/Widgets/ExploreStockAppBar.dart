@@ -25,11 +25,11 @@ class ExploreStockAppBar extends StatelessWidget {
           ),
         ),
         Container(
-          width: 40,
-          height: 40,
+          width: 50,
+          height: 45,
           margin: const EdgeInsets.only(right: 15),
           decoration: BoxDecoration(
-            color: AppColors.mainColor,
+            color: AppColors.secColor,
             borderRadius: BorderRadius.circular(100),
           ),
           child: IconButton(
