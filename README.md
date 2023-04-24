@@ -4,7 +4,7 @@ Livestock Manager is a mobile application designed for veterinarians to manage t
 
 ## Installation
 
-- Clone this repository: git clone "https://github.com/Mohamed-Ararr/SheepManager.git"
+- Clone this repository: git clone "https://github.com/Mohamed-Ararr/LivestockManager.git"
 - Install the required packages: "flutter pub get"
 
 ## Dependencies
