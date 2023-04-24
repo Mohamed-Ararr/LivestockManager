@@ -1,6 +1,6 @@
-# Sheep Manager
+# Livestock Manager
 
-Sheep Manager is a mobile application designed for farmers to manage their sheep inventory. With Sheep Manager, farmers can easily keep track of their sheep, record important information. with local storage you don't have to worry about the data as long you don't wipe the application data.
+Livestock Manager is a mobile application designed for veterinarians to manage their livestock farms dealt with farmers. With livestock Manager, veterinarians can easily keep track of their farms, record important information. with local storage you don't have to worry about the data as long you don't wipe the application data.
 
 ## Installation
 
