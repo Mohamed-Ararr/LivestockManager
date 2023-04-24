@@ -7,6 +7,7 @@ import "package:sheepmanager/Features/HomeScreen/Data/Models/farm_model.dart";
 
 import "../../../../Core/Utils/colors.dart";
 import "../../../../Core/Utils/searchDele.dart";
+import "../../../../constValues.dart";
 
 class ExploreStockAppBar extends StatelessWidget {
   const ExploreStockAppBar({super.key, required this.farm});
@@ -14,36 +15,36 @@ class ExploreStockAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Container(
-          margin: const EdgeInsets.only(left: 5),
-          child: IconButton(
+    return Padding(
+      padding: kPaddingRightLeft,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          IconButton(
             onPressed: () => GoRouter.of(context).pop(),
             icon: const Icon(FontAwesomeIcons.circleXmark),
           ),
-        ),
-        Container(
-          width: 50,
-          height: 45,
-          margin: const EdgeInsets.only(right: 15),
-          decoration: BoxDecoration(
-            color: AppColors.secColor,
-            borderRadius: BorderRadius.circular(100),
-          ),
-          child: IconButton(
-            onPressed: () {
-              showSearch(context: context, delegate: SearchBar(farm));
-            },
-            icon: const Icon(
-              FontAwesomeIcons.magnifyingGlass,
-              color: Colors.white,
-              size: 20,
+          Container(
+            width: 50,
+            height: 45,
+            // margin: const EdgeInsets.only(right: 15),
+            decoration: BoxDecoration(
+              color: AppColors.secColor,
+              borderRadius: BorderRadius.circular(100),
+            ),
+            child: IconButton(
+              onPressed: () {
+                showSearch(context: context, delegate: SearchBar(farm));
+              },
+              icon: const Icon(
+                FontAwesomeIcons.magnifyingGlass,
+                color: Colors.white,
+                size: 20,
+              ),
             ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }
