@@ -31,13 +31,24 @@ class DeleteOption extends StatelessWidget {
       child: ClipRRect(
         borderRadius: kBorderRadius,
         child: IconSlideAction(
-          onTap: () {
-            if (isFarm) {
-              farm?.delete();
-              BlocProvider.of<FarmCubitCubit>(context).fetchAllFarms();
-            } else {
-              livestock?.delete();
-              BlocProvider.of<LivestockCubit>(context).fetchAllSheep();
+          onTap: () async {
+            try {
+              if (isFarm) {
+                farm?.delete();
+                BlocProvider.of<FarmCubitCubit>(context).fetchAllFarms();
+              } else {
+                int ind = index;
+                for (int i = 0; i < farm!.livestockList!.length; i++) {
+                  if (ind == i) {
+                    farm!.livestockList!.removeAt(i);
+                  }
+                }
+                farm!.save();
+                BlocProvider.of<LivestockCubit>(context).fetchAllSheep();
+                BlocProvider.of<FarmCubitCubit>(context).fetchAllFarms();
+              }
+            } catch (e) {
+              debugPrint(e.toString());
             }
           },
           color: const Color.fromARGB(255, 230, 93, 84),

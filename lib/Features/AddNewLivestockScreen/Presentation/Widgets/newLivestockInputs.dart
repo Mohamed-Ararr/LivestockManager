@@ -7,6 +7,7 @@ import "package:flutter/material.dart";
 import "package:flutter_bloc/flutter_bloc.dart";
 import "package:font_awesome_flutter/font_awesome_flutter.dart";
 import "package:go_router/go_router.dart";
+import "package:hive_flutter/hive_flutter.dart";
 import "package:sheepmanager/Core/Utils/colors.dart";
 import "package:sheepmanager/Core/Utils/customDropdown.dart";
 import "package:sheepmanager/Core/Utils/customTextField.dart";
@@ -252,7 +253,7 @@ class _NewLivestockInputsState extends State<NewLivestockInputs> {
           ),
           const SizedBox(height: 20),
           ConfirmButton(
-            onPressed: () {
+            onPressed: () async {
               if (formKey.currentState!.validate() &&
                   selectedType != null &&
                   selectedSexe != null &&

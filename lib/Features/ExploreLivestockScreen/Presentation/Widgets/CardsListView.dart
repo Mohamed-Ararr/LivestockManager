@@ -29,7 +29,9 @@ class CardsListView extends StatelessWidget {
       builder: (context, state) {
         debugPrint("the state is $state");
         if (state is FarmCubitSuccess) {
-          if (farm.livestockList?.length == null) {
+          debugPrint("${farm.livestockList?.length}");
+          if (farm.livestockList?.length == null ||
+              farm.livestockList!.isEmpty) {
             return const EmptyListWidget();
           } else {
             return ListView.builder(
@@ -46,13 +48,13 @@ class CardsListView extends StatelessWidget {
                     child: FadeInAnimation(
                       child: Slidable(
                         actionPane: const SlidableDrawerActionPane(),
-                        secondaryActions: const [
-                          // DeleteOption(
-                          //   index: index,
-                          //   livestock: farm.livestockList?[index],
-                          //   farm: farm,
-                          //   isFarm: false,
-                          // ),
+                        secondaryActions: [
+                          DeleteOption(
+                            index: index,
+                            livestock: farm.livestockList?[index],
+                            farm: farm,
+                            isFarm: false,
+                          ),
                         ],
                         child: SheepCard(
                           // livestock: state.livestockList[index],
