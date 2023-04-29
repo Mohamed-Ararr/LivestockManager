@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import '../../../../Core/Utils/colors.dart';
 
 import '../../../../constValues.dart';
 
@@ -16,10 +17,17 @@ class LogoImage extends StatelessWidget {
         color: Colors.white,
         borderRadius: BorderRadius.circular(50),
       ),
-      child: SvgPicture.asset(
-        sheepLogo,
-        width: 50,
-        height: 50,
+      child: Container(
+        decoration: BoxDecoration(
+          color: AppColors.secColor,
+          borderRadius: BorderRadius.circular(50),
+        ),
+        child: Image.asset(
+          "assets/NewLogo.png",
+          width: 90,
+          height: 90,
+          color: Colors.white,
+        ),
       ),
     );
   }

@@ -10,7 +10,7 @@ class AppTagLine extends StatelessWidget {
     return SizedBox(
       width: MediaQuery.of(context).size.width * 0.7,
       child: const Text(
-        "Manage your flock, from your phone, with ease.",
+        "Manage your farms, from your phone, with ease!",
         style: TextStyle(
           fontSize: 16,
           color: Colors.white,

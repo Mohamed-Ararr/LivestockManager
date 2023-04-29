@@ -17,14 +17,14 @@ class SplashViewBody extends StatefulWidget {
 }
 
 class _SplashViewBodyState extends State<SplashViewBody> {
-  @override
-  void initState() {
-    super.initState();
-    Future.delayed(
-      const Duration(seconds: 3),
-      () => GoRouter.of(context).pushReplacement(AppRouter.homeView),
-    );
-  }
+  // @override
+  // void initState() {
+  //   super.initState();
+  //   Future.delayed(
+  //     const Duration(seconds: 3),
+  //     () => GoRouter.of(context).pushReplacement(AppRouter.homeView),
+  //   );
+  // }
 
   @override
   Widget build(BuildContext context) {

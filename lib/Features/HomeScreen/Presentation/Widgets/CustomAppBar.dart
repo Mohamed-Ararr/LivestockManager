@@ -16,7 +16,6 @@ class CustomAppBar extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: const [
-          LogoImage(),
           Text(
             "Farm Barn",
             style: TextStyle(
