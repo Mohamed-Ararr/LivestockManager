@@ -64,7 +64,7 @@ class _AddNewFarmInputsState extends State<AddNewFarmInputs> {
                 owner: farmOwner!,
                 address: farmAddress!,
                 lastUpdate:
-                    "${DateTime.now().day} ${Utils.months[DateTime.now().month - 1]} ${DateTime.now().year}",
+                    "${DateTime.now().day} ${Utils.months[DateTime.now().month - 1]} ${DateTime.now().year} at ${DateTime.now().hour}:${DateTime.now().minute}",
               );
 
               BlocProvider.of<AddFarmCubit>(context).addNewFarm(farm);

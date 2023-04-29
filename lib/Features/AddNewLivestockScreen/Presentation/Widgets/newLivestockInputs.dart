@@ -259,7 +259,7 @@ class _NewLivestockInputsState extends State<NewLivestockInputs> {
                       : "$pregnancyProgress Months",
                 );
                 widget.farm.lastUpdate =
-                    "${DateTime.now().day} ${Utils.months[DateTime.now().month - 1]} ${DateTime.now().year}";
+                    "${DateTime.now().day} ${Utils.months[DateTime.now().month - 1]} ${DateTime.now().year} at ${DateTime.now().hour}:${DateTime.now().minute}";
                 BlocProvider.of<AddLivestockCubit>(context)
                     .addNewLivestock(livestockModel);
 

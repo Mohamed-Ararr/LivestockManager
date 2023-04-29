@@ -9,6 +9,7 @@ import '../../../../../../Core/Utils/colors.dart';
 import '../../../../../../Core/Utils/confirmButton.dart';
 import '../../../../../../Core/Utils/customDropdown.dart';
 import '../../../../../../Core/Utils/customTextField.dart';
+import '../../../../../../Core/Utils/utils.dart';
 import '../../../../../../constValues.dart';
 import '../../../../Data/Model/livestock_model.dart';
 
@@ -270,6 +271,8 @@ class _EditLivestockInputsState extends State<EditLivestockInputs> {
               widget.sheep.age = int.tryParse(age ?? "${widget.sheep.age}");
               widget.sheep.children =
                   int.parse(selectedNumb ?? "${widget.sheep.children}");
+              widget.farm.lastUpdate =
+                  "${DateTime.now().day} ${Utils.months[DateTime.now().month - 1]} ${DateTime.now().year} at ${DateTime.now().hour}:${DateTime.now().minute}";
 
               // widget.sheep.save();
               widget.farm.livestock = widget.sheep;

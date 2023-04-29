@@ -6,6 +6,7 @@ import 'package:sheepmanager/Features/HomeScreen/Data/Models/farm_model.dart';
 
 import '../../../../Core/Utils/confirmButton.dart';
 import '../../../../Core/Utils/customTextField.dart';
+import '../../../../Core/Utils/utils.dart';
 
 class EditFarmInputs extends StatefulWidget {
   const EditFarmInputs({super.key, required this.farm});
@@ -56,7 +57,8 @@ class _EditFarmInputsState extends State<EditFarmInputs> {
             widget.farm.farmID = farmID ?? widget.farm.farmID;
             widget.farm.owner = farmOwner ?? widget.farm.owner;
             widget.farm.address = farmAddress ?? widget.farm.address;
-
+            widget.farm.lastUpdate =
+                "${DateTime.now().day} ${Utils.months[DateTime.now().month - 1]} ${DateTime.now().year} at ${DateTime.now().hour}:${DateTime.now().minute}";
             widget.farm.save();
             GoRouter.of(context).pop();
           }),
