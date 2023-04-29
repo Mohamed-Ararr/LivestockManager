@@ -22,13 +22,14 @@ class FarmModelAdapter extends TypeAdapter<FarmModel> {
       address: fields[2] as String?,
       livestockList: fields[3] as dynamic,
       livestock: fields[4] as LivestockModel?,
+      lastUpdate: fields[5] as String?,
     );
   }
 
   @override
   void write(BinaryWriter writer, FarmModel obj) {
     writer
-      ..writeByte(5)
+      ..writeByte(6)
       ..writeByte(0)
       ..write(obj.farmID)
       ..writeByte(1)
@@ -38,7 +39,9 @@ class FarmModelAdapter extends TypeAdapter<FarmModel> {
       ..writeByte(3)
       ..write(obj.livestockList)
       ..writeByte(4)
-      ..write(obj.livestock);
+      ..write(obj.livestock)
+      ..writeByte(5)
+      ..write(obj.lastUpdate);
   }
 
   @override

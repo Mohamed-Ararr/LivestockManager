@@ -12,12 +12,12 @@ class FarmTableInfo extends StatelessWidget {
       required this.farmID,
       required this.farmOwner,
       required this.farmAddress,
-      required this.x});
+      required this.lastUpdate});
 
   final String farmID;
   final String farmOwner;
   final String farmAddress;
-  final String x;
+  final String lastUpdate;
 
   @override
   Widget build(BuildContext context) {
@@ -58,17 +58,17 @@ class FarmTableInfo extends StatelessWidget {
             RowContent(content: farmAddress),
           ],
         ),
-        const TableRow(
+        TableRow(
           children: [
-            RowTitle(
+            const RowTitle(
               title: "Last Visit",
               borderRadius: BorderRadius.only(
                 bottomLeft: Radius.circular(15),
               ),
             ),
             RowContent(
-              content: "xxxx",
-              borderRadius: BorderRadius.only(
+              content: lastUpdate,
+              borderRadius: const BorderRadius.only(
                 bottomRight: Radius.circular(15),
               ),
             ),

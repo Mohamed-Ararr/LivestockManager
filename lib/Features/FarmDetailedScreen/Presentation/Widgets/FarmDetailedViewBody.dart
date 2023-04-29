@@ -87,7 +87,7 @@ class _FarmDetailedViewBodyState extends State<FarmDetailedViewBody> {
                   farmID: widget.farm.farmID!,
                   farmOwner: widget.farm.owner!,
                   farmAddress: widget.farm.address!,
-                  x: "hello",
+                  lastUpdate: widget.farm.lastUpdate!,
                 ),
                 const SizedBox(height: 20),
                 Text("Sheep Statistics", style: AppFonts.regularBlackTitle),

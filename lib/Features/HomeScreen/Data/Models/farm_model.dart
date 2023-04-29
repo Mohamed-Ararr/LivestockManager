@@ -15,6 +15,8 @@ class FarmModel extends HiveObject {
   List<dynamic>? livestockList = [LivestockModel()];
   @HiveField(4)
   LivestockModel? livestock;
+  @HiveField(5)
+  String? lastUpdate;
 
   FarmModel({
     this.farmID,
@@ -22,5 +24,6 @@ class FarmModel extends HiveObject {
     this.address,
     this.livestockList,
     this.livestock,
+    this.lastUpdate,
   });
 }
