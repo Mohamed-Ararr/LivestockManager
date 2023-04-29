@@ -7,7 +7,9 @@ import '../../constValues.dart';
 import 'colors.dart';
 
 class EmptyListWidget extends StatelessWidget {
-  const EmptyListWidget({super.key});
+  const EmptyListWidget({super.key, required this.text});
+
+  final String text;
 
   @override
   Widget build(BuildContext context) {
@@ -20,11 +22,11 @@ class EmptyListWidget extends StatelessWidget {
           width: 150,
         ),
         const SizedBox(height: 30),
-        const Center(
+        Center(
             child: Text(
-          "¯\\_(ツ)_/¯\n\nEmpty list, use the button bellow",
+          text,
           textAlign: TextAlign.center,
-          style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+          style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
         )),
       ],
     );

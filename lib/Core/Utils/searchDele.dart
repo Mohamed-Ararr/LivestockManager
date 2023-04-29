@@ -74,7 +74,7 @@ class SearchBar extends SearchDelegate {
         debugPrint("the state is $state");
         if (state is FarmCubitSuccess) {
           if (farm.livestockList?.length == null) {
-            return const EmptyListWidget();
+            return const EmptyListWidget(text: "¯\\_(ツ)_/¯\n\nEmpty list");
           } else {
             // List<LivestockModel> transformed =
             //     farm.livestockList as List<LivestockModel>;
@@ -105,27 +105,16 @@ class SearchBar extends SearchDelegate {
                         child: SlideAnimation(
                           horizontalOffset: 300,
                           child: FadeInAnimation(
-                            child: Slidable(
-                              actionPane: const SlidableDrawerActionPane(),
-                              secondaryActions: const [
-                                // DeleteOption(
-                                //   index: index,
-                                //   livestock: farm.livestockList?[index],
-                                //   farm: farm,
-                                //   isFarm: false,
-                                // ),
-                              ],
-                              child: SheepCard(
-                                // livestock: state.livestockList[index],
-                                livestock: livestockList[index],
-                                onTap: () => GoRouter.of(context).push(
-                                  AppRouter.showSheepInfoView,
-                                  // extra: state.livestockList[index],
-                                  extra: {
-                                    "livestock": livestockList[index],
-                                    "farm": farm,
-                                  },
-                                ),
+                            child: SheepCard(
+                              // livestock: state.livestockList[index],
+                              livestock: livestockList[index],
+                              onTap: () => GoRouter.of(context).push(
+                                AppRouter.showSheepInfoView,
+                                // extra: state.livestockList[index],
+                                extra: {
+                                  "livestock": livestockList[index],
+                                  "farm": farm,
+                                },
                               ),
                             ),
                           ),
@@ -138,7 +127,7 @@ class SearchBar extends SearchDelegate {
             );
           }
         } else {
-          return const EmptyListWidget();
+          return const EmptyListWidget(text: "¯\\_(ツ)_/¯\n\nEmpty list");
         }
       },
     );

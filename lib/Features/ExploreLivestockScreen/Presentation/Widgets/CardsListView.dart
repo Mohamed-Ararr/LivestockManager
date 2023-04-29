@@ -27,7 +27,7 @@ class CardsListView extends StatelessWidget {
           debugPrint("${farm.livestockList?.length}");
           if (farm.livestockList?.length == null ||
               farm.livestockList!.isEmpty) {
-            return const EmptyListWidget();
+            return const EmptyListWidget(text: "¯\\_(ツ)_/¯\n\nEmpty list");
           } else {
             return ListView.builder(
               shrinkWrap: true,
@@ -71,7 +71,7 @@ class CardsListView extends StatelessWidget {
             );
           }
         } else {
-          return const EmptyListWidget();
+          return const EmptyListWidget(text: "¯\\_(ツ)_/¯\n\nEmpty list");
         }
       },
     );

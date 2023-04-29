@@ -28,7 +28,7 @@ class FarmListView extends StatelessWidget {
               },
             );
           } else {
-            return const EmptyListWidget();
+            return const EmptyListWidget(text: "¯\\_(ツ)_/¯\n\nEmpty list");
           }
         } else {
           return const LoadingWidget();

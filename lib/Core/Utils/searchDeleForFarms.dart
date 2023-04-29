@@ -118,7 +118,15 @@ class SearchBarForFarms extends SearchDelegate {
             ),
           );
         } else {
-          return const Center(child: CircularProgressIndicator());
+          return const Center(
+              child: Text(
+            "¯\\_(ツ)_/¯\n\nEmpty list, use the button bellow",
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+            ),
+          ));
         }
       },
     );
