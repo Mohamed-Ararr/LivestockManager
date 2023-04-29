@@ -12,6 +12,7 @@ import "package:sheepmanager/Features/HomeScreen/Data/Models/farm_model.dart";
 import "package:sheepmanager/constValues.dart";
 
 import '../../../../Core/Utils/confirmButton.dart';
+import "../../../../Core/Utils/utils.dart";
 import '../../../ExploreLivestockScreen/Data/Model/livestock_model.dart';
 import "../../../ExploreLivestockScreen/Presentation/Bloc Manager/AddLivestockCubit/add_livestock_cubit.dart";
 
@@ -25,21 +26,6 @@ class NewLivestockInputs extends StatefulWidget {
 }
 
 class _NewLivestockInputsState extends State<NewLivestockInputs> {
-  List<String> months = [
-    'January',
-    'February',
-    'March',
-    'April',
-    'May',
-    'June',
-    'July',
-    'August',
-    'September',
-    'October',
-    'November',
-    'December'
-  ];
-
   String? id;
   String? selectedType;
   String? selectedSexe;
@@ -175,7 +161,7 @@ class _NewLivestockInputsState extends State<NewLivestockInputs> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    "${lastBirthDate.day} ${months[lastBirthDate.month - 1]} ${lastBirthDate.year}",
+                    "${lastBirthDate.day} ${Utils.months[lastBirthDate.month - 1]} ${lastBirthDate.year}",
                     style: TextStyle(
                       fontSize: 17,
                       color: AppColors.secColor,
@@ -232,7 +218,7 @@ class _NewLivestockInputsState extends State<NewLivestockInputs> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    "${lastVisitDate.day} ${months[lastVisitDate.month - 1]} ${lastVisitDate.year}",
+                    "${lastVisitDate.day} ${Utils.months[lastVisitDate.month - 1]} ${lastVisitDate.year}",
                     style: TextStyle(
                       fontSize: 17,
                       color: AppColors.secColor,
@@ -255,9 +241,9 @@ class _NewLivestockInputsState extends State<NewLivestockInputs> {
                   selectedNumb != null) {
                 formKey.currentState!.save();
                 String lastBirth =
-                    "${lastBirthDate.day} ${months[lastBirthDate.month - 1]} ${lastBirthDate.year}";
+                    "${lastBirthDate.day} ${Utils.months[lastBirthDate.month - 1]} ${lastBirthDate.year}";
                 String lastVisit =
-                    "${lastVisitDate.day} ${months[lastVisitDate.month - 1]} ${lastVisitDate.year}";
+                    "${lastVisitDate.day} ${Utils.months[lastVisitDate.month - 1]} ${lastVisitDate.year}";
                 var livestockModel = LivestockModel(
                   id: id!,
                   type: selectedType!,
@@ -272,6 +258,8 @@ class _NewLivestockInputsState extends State<NewLivestockInputs> {
                       ? "Not Pregnant"
                       : "$pregnancyProgress Months",
                 );
+                widget.farm.lastUpdate =
+                    "${DateTime.now().day} ${Utils.months[DateTime.now().month - 1]} ${DateTime.now().year}";
                 BlocProvider.of<AddLivestockCubit>(context)
                     .addNewLivestock(livestockModel);
 

@@ -9,6 +9,7 @@ import 'package:sheepmanager/Features/HomeScreen/Presentation/Bloc%20Manager/Far
 
 import '../../../../Core/Utils/confirmButton.dart';
 import '../../../../Core/Utils/customTextField.dart';
+import '../../../../Core/Utils/utils.dart';
 
 class AddNewFarmInputs extends StatefulWidget {
   const AddNewFarmInputs({super.key});
@@ -63,7 +64,7 @@ class _AddNewFarmInputsState extends State<AddNewFarmInputs> {
                 owner: farmOwner!,
                 address: farmAddress!,
                 lastUpdate:
-                    "${DateTime.now().day} ${DateTime.now().month} ${DateTime.now().year}",
+                    "${DateTime.now().day} ${Utils.months[DateTime.now().month - 1]} ${DateTime.now().year}",
               );
 
               BlocProvider.of<AddFarmCubit>(context).addNewFarm(farm);
