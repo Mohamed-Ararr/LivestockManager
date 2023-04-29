@@ -22,9 +22,7 @@ class CardsListView extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<FarmCubitCubit, FarmCubitState>(
       builder: (context, state) {
-        debugPrint("the state is $state");
         if (state is FarmCubitSuccess) {
-          debugPrint("${farm.livestockList?.length}");
           if (farm.livestockList?.length == null ||
               farm.livestockList!.isEmpty) {
             return const EmptyListWidget(text: "¯\\_(ツ)_/¯\n\nEmpty list");

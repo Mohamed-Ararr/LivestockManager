@@ -13,23 +13,17 @@ import '../../../../constValues.dart';
 import "CardsListView.dart";
 import 'addNewLivestockButton.dart';
 
-class ExploreLivestockViewBody extends StatefulWidget {
+class ExploreLivestockViewBody extends StatelessWidget {
   const ExploreLivestockViewBody({super.key, required this.farm});
 
   final FarmModel farm;
 
   @override
-  State<ExploreLivestockViewBody> createState() =>
-      _ExploreLivestockViewBodyState();
-}
-
-class _ExploreLivestockViewBodyState extends State<ExploreLivestockViewBody> {
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: AddNewSheepButton(
-        onTap: () => GoRouter.of(context)
-            .push(AppRouter.addNewSheepView, extra: widget.farm),
+        onTap: () =>
+            GoRouter.of(context).push(AppRouter.addNewSheepView, extra: farm),
       ),
       body: SafeArea(
         child: SingleChildScrollView(
@@ -37,17 +31,17 @@ class _ExploreLivestockViewBodyState extends State<ExploreLivestockViewBody> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              ExploreStockAppBar(farm: widget.farm),
+              ExploreStockAppBar(farm: farm),
               const SizedBox(height: 25),
               Padding(
                 padding: kPaddingRightLeft,
-                child: Text("Farm: ${widget.farm.farmID}",
+                child: Text("Farm: ${farm.farmID}",
                     style: AppFonts.regularBlackTitle),
               ),
               const SizedBox(height: 10),
               BlocProvider(
                 create: (context) => FarmCubitCubit()..fetchAllFarms(),
-                child: CardsListView(farm: widget.farm),
+                child: CardsListView(farm: farm),
               ),
             ],
           ),
