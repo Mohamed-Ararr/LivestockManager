@@ -3,11 +3,13 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:sheepmanager/Core/Utils/colors.dart';
+import 'package:sheepmanager/Core/Utils/fonts.dart';
 import 'package:sheepmanager/Features/SplashScreen/Presentation/Widgets/appTagLine.dart';
 import 'package:sheepmanager/Features/SplashScreen/Presentation/Widgets/logoImage.dart';
 
 import '../../../Core/Utils/router.dart';
 import 'Widgets/appSlogan.dart';
+import 'Widgets/logo&title.dart';
 
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
@@ -17,14 +19,14 @@ class SplashViewBody extends StatefulWidget {
 }
 
 class _SplashViewBodyState extends State<SplashViewBody> {
-  // @override
-  // void initState() {
-  //   super.initState();
-  //   Future.delayed(
-  //     const Duration(seconds: 3),
-  //     () => GoRouter.of(context).pushReplacement(AppRouter.homeView),
-  //   );
-  // }
+  @override
+  void initState() {
+    super.initState();
+    Future.delayed(
+      const Duration(seconds: 3),
+      () => GoRouter.of(context).pushReplacement(AppRouter.homeView),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -36,9 +38,8 @@ class _SplashViewBodyState extends State<SplashViewBody> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: const [
               Spacer(),
-              LogoImage(),
+              LogoTitleSubtitle(),
               SizedBox(height: 20),
-              AppSlogan(),
               Spacer(),
               AppTagLine(),
               SizedBox(height: 20),

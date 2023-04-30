@@ -12,22 +12,14 @@ class LogoImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(5),
       decoration: BoxDecoration(
         color: Colors.white,
-        borderRadius: BorderRadius.circular(50),
+        borderRadius: BorderRadius.circular(15),
       ),
-      child: Container(
-        decoration: BoxDecoration(
-          color: AppColors.secColor,
-          borderRadius: BorderRadius.circular(50),
-        ),
-        child: Image.asset(
-          "assets/NewLogo.png",
-          width: 90,
-          height: 90,
-          color: Colors.white,
-        ),
+      child: Image.asset(
+        "assets/logoAlt.png",
+        width: 60,
+        height: 60,
       ),
     );
   }

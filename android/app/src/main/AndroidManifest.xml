@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.sheepmanager">
    <application
-        android:label="Livestock Manager"
+        android:label="Farm Care"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

@@ -36,4 +36,10 @@ class AppFonts {
     color: Colors.black,
     fontWeight: FontWeight.bold,
   );
+
+  static TextStyle smallTextBlack = const TextStyle(
+    fontSize: 11.5,
+    color: Colors.black,
+    fontWeight: FontWeight.bold,
+  );
 }

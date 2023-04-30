@@ -8,9 +8,9 @@ class AppSlogan extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Text(
-      "Farm Barn",
+      "Farm Care",
       style: TextStyle(
-        fontSize: 30,
+        fontSize: 26,
         color: Colors.white,
       ),
     );
