@@ -10,6 +10,7 @@ import 'package:sheepmanager/constValues.dart';
 
 import '../../Features/ExploreLivestockScreen/Data/Model/livestock_model.dart';
 import '../../Features/ExploreLivestockScreen/Presentation/Bloc Manager/LivestockCubit/Livestock_cubit.dart';
+import 'utils.dart';
 
 class DeleteOption extends StatelessWidget {
   const DeleteOption(
@@ -43,6 +44,8 @@ class DeleteOption extends StatelessWidget {
                     farm!.livestockList!.removeAt(i);
                   }
                 }
+                farm!.lastUpdate =
+                    "${DateTime.now().day} ${Utils.months[DateTime.now().month - 1]} ${DateTime.now().year} at ${DateTime.now().hour}:${DateTime.now().minute}";
                 farm!.save();
                 BlocProvider.of<LivestockCubit>(context).fetchAllSheep();
                 BlocProvider.of<FarmCubitCubit>(context).fetchAllFarms();

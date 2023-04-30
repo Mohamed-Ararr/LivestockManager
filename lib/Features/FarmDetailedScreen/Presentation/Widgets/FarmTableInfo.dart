@@ -61,7 +61,7 @@ class FarmTableInfo extends StatelessWidget {
         TableRow(
           children: [
             const RowTitle(
-              title: "Last Visit",
+              title: "Last Update",
               borderRadius: BorderRadius.only(
                 bottomLeft: Radius.circular(15),
               ),
