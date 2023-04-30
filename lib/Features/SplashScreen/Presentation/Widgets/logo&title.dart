@@ -14,7 +14,7 @@ class LogoTitleSubtitle extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        const LogoImage(),
+        const LogoImage(color: Colors.white),
         const SizedBox(width: 10),
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,

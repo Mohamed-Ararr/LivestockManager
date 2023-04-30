@@ -22,7 +22,7 @@ class AvatarButton extends StatelessWidget {
           borderRadius: BorderRadius.circular(50),
           color: AppColors.mainColor.withAlpha(100),
         ),
-        child: SvgPicture.asset(avatar),
+        child: SvgPicture.asset(avatar, width: 28),
       ),
     );
   }
