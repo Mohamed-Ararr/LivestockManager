@@ -27,7 +27,7 @@ class FarmTableInfo extends StatelessWidget {
         color: Colors.white,
       ),
       columnWidths: const {
-        0: FlexColumnWidth(0.57),
+        0: FlexColumnWidth(0.56),
       },
       children: [
         TableRow(

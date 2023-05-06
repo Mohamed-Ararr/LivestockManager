@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../../Data/Model/livestock_model.dart';
+import '../../../../Core/Utils/fonts.dart';
 
 class LivestockCardInfo extends StatelessWidget {
   const LivestockCardInfo({super.key, required this.livestock});
@@ -29,12 +30,12 @@ class LivestockCardInfo extends StatelessWidget {
             const SizedBox(height: 10),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: const [
+              children: [
                 Text(
-                  "Tap For More Information",
-                  style: TextStyle(fontWeight: FontWeight.bold),
+                  "Tap For More Info",
+                  style: AppFonts.regularTextBlack,
                 ),
-                Icon(
+                const Icon(
                   FontAwesomeIcons.anglesRight,
                   size: 18,
                   // color: Colors.white,

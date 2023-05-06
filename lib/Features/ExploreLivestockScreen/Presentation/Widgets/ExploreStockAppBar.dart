@@ -24,23 +24,14 @@ class ExploreStockAppBar extends StatelessWidget {
             onPressed: () => GoRouter.of(context).pop(),
             icon: const Icon(FontAwesomeIcons.circleXmark),
           ),
-          Container(
-            width: 50,
-            height: 45,
-            // margin: const EdgeInsets.only(right: 15),
-            decoration: BoxDecoration(
-              color: AppColors.secColor,
-              borderRadius: BorderRadius.circular(100),
-            ),
-            child: IconButton(
-              onPressed: () {
-                showSearch(context: context, delegate: SearchBar(farm));
-              },
-              icon: const Icon(
-                FontAwesomeIcons.magnifyingGlass,
-                color: Colors.white,
-                size: 20,
-              ),
+          IconButton(
+            onPressed: () {
+              showSearch(context: context, delegate: SearchBar(farm));
+            },
+            icon: const Icon(
+              FontAwesomeIcons.magnifyingGlass,
+              color: Colors.black,
+              size: 22,
             ),
           ),
         ],

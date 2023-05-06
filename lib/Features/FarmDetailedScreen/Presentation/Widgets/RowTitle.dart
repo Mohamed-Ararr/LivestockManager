@@ -18,9 +18,12 @@ class RowTitle extends StatelessWidget {
         borderRadius: borderRadius,
         color: AppColors.mainColor,
       ),
-      padding: const EdgeInsets.symmetric(vertical: 20),
-      child: Text(title,
-          style: AppFonts.regularRowTitle, textAlign: TextAlign.center),
+      padding: const EdgeInsets.symmetric(vertical: 21),
+      child: Text(
+        title,
+        style: AppFonts.regularRowTitle,
+        textAlign: TextAlign.center,
+      ),
     );
   }
 }

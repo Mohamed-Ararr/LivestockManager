@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 
 import '../../../../../Core/Utils/colors.dart';
 import '../../../../../constValues.dart';
+import '../../../../FarmDetailedScreen/Presentation/Widgets/RowContent.dart';
+import '../../../../FarmDetailedScreen/Presentation/Widgets/RowTitle.dart';
 
 class TableRows extends StatelessWidget {
   const TableRows({super.key, required this.firstName, required this.lastName});
@@ -13,71 +15,43 @@ class TableRows extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const pad = 20.0;
-    const pad2 = 30.0;
     return Table(
       border: TableBorder.all(
         borderRadius: kBorderRadius,
         color: Colors.white,
       ),
       columnWidths: const {
-        0: FlexColumnWidth(0.57),
+        0: FlexColumnWidth(0.56),
       },
       children: [
         TableRow(
           children: [
-            Container(
-              decoration: BoxDecoration(
-                borderRadius: const BorderRadius.only(
-                  topLeft: Radius.circular(15),
-                ),
-                color: AppColors.mainColor.withAlpha(200),
+            const RowTitle(
+              title: "First Name",
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(15),
               ),
-              padding:
-                  const EdgeInsets.symmetric(vertical: pad2, horizontal: pad),
-              child: const Text("First Name"),
             ),
-            Container(
-              decoration: const BoxDecoration(
-                color: Color.fromARGB(255, 212, 212, 212),
-                borderRadius: BorderRadius.only(
-                  topRight: Radius.circular(15),
-                ),
-              ),
-              padding:
-                  const EdgeInsets.symmetric(vertical: pad2, horizontal: pad),
-              child: Text(
-                firstName,
-                style: const TextStyle(fontWeight: FontWeight.bold),
+            RowContent(
+              content: firstName,
+              borderRadius: const BorderRadius.only(
+                topRight: Radius.circular(15),
               ),
             ),
           ],
         ),
         TableRow(
           children: [
-            Container(
-              decoration: BoxDecoration(
-                color: AppColors.mainColor.withAlpha(200),
-                borderRadius: const BorderRadius.only(
-                  bottomLeft: Radius.circular(15),
-                ),
+            const RowTitle(
+              title: "Last Name",
+              borderRadius: BorderRadius.only(
+                bottomLeft: Radius.circular(15),
               ),
-              padding:
-                  const EdgeInsets.symmetric(vertical: pad2, horizontal: pad),
-              child: const Text("Last Name"),
             ),
-            Container(
-              decoration: const BoxDecoration(
-                borderRadius: BorderRadius.only(
-                  bottomRight: Radius.circular(15),
-                ),
-                color: Color.fromARGB(255, 212, 212, 212),
-              ),
-              padding:
-                  const EdgeInsets.symmetric(vertical: pad2, horizontal: pad),
-              child: Text(
-                lastName,
-                style: const TextStyle(fontWeight: FontWeight.bold),
+            RowContent(
+              content: lastName,
+              borderRadius: const BorderRadius.only(
+                bottomRight: Radius.circular(15),
               ),
             ),
           ],
