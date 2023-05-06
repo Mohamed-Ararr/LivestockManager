@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:sheepmanager/Core/Utils/observer.dart';
@@ -22,6 +23,7 @@ void main() async {
   await Hive.openBox<UserModel>(kUserBox);
   await Hive.openBox<FarmModel>(kFarmBox);
   Bloc.observer = LivestockObserver();
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
   runApp(const LivestockApp());
 }
 

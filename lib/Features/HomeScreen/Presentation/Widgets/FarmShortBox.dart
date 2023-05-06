@@ -32,8 +32,10 @@ class FarmShortBox extends StatelessWidget {
         ],
       ),
       child: InkWell(
-        onTap: () =>
-            GoRouter.of(context).push(AppRouter.farmDetailedView, extra: farm),
+        onTap: () => GoRouter.of(context).push(
+          AppRouter.farmDetailedView,
+          extra: farm,
+        ),
         borderRadius: kBorderRadius,
         child: Column(
           children: [

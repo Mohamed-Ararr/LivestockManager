@@ -28,8 +28,10 @@ class HomeViewBody extends StatelessWidget {
               const SizedBox(height: 25),
               Padding(
                 padding: kPaddingRightLeft,
-                child:
-                    Text("Registered Farms", style: AppFonts.regularBlackTitle),
+                child: Text(
+                  "Registered Farms",
+                  style: AppFonts.regularBlackTitle,
+                ),
               ),
               const SizedBox(height: 10),
               const FarmListView(),
