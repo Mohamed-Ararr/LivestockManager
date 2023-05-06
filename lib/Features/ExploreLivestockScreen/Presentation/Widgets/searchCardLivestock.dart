@@ -5,8 +5,6 @@ import 'package:sheepmanager/Core/Utils/fonts.dart';
 import 'package:sheepmanager/Features/HomeScreen/Data/Models/farm_model.dart';
 
 import '../../../../Core/Utils/colors.dart';
-import '../../../../Core/Utils/searchButton.dart';
-import '../../../../Core/Utils/searchDele.dart';
 import '../../../../constValues.dart';
 
 class SearchCardLivestock extends StatelessWidget {

@@ -2,7 +2,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
@@ -11,7 +10,6 @@ import 'package:sheepmanager/Features/HomeScreen/Presentation/Bloc%20Manager/Far
 import 'package:sheepmanager/constValues.dart';
 import '../../Features/HomeScreen/Presentation/Widgets/FarmShortBox.dart';
 import 'colors.dart';
-import 'deleteOption.dart';
 
 class SearchBarForFarms extends SearchDelegate {
   @override
@@ -93,20 +91,10 @@ class SearchBarForFarms extends SearchDelegate {
                       child: SlideAnimation(
                         horizontalOffset: 300,
                         child: FadeInAnimation(
-                          child: Slidable(
-                            actionPane: const SlidableDrawerActionPane(),
-                            secondaryActions: [
-                              DeleteOption(
-                                farm: suggestions[index],
-                                isFarm: true,
-                                index: index,
-                              ),
-                            ],
-                            child: Padding(
-                              padding: kPaddingRightLeft,
-                              child: FarmShortBox(
-                                farm: suggestions[index],
-                              ),
+                          child: Padding(
+                            padding: kPaddingRightLeft,
+                            child: FarmShortBox(
+                              farm: suggestions[index],
                             ),
                           ),
                         ),
