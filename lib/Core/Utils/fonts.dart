@@ -37,6 +37,12 @@ class AppFonts {
     fontWeight: FontWeight.bold,
   );
 
+  static TextStyle regularTextWhiteBold = const TextStyle(
+    fontSize: 14,
+    color: Colors.white,
+    fontWeight: FontWeight.bold,
+  );
+
   static TextStyle smallTextBlack = const TextStyle(
     fontSize: 11.5,
     color: Colors.black,

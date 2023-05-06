@@ -3,16 +3,13 @@
 import "package:flutter/material.dart";
 import "package:flutter_bloc/flutter_bloc.dart";
 import "package:go_router/go_router.dart";
-import "package:sheepmanager/Core/Utils/searchDele.dart";
 import "package:sheepmanager/Features/ExploreLivestockScreen/Presentation/Widgets/ExploreStockAppBar.dart";
+import "package:sheepmanager/Features/ExploreLivestockScreen/Presentation/Widgets/searchCardLivestock.dart";
 import "package:sheepmanager/Features/HomeScreen/Data/Models/farm_model.dart";
 import "package:sheepmanager/Features/HomeScreen/Presentation/Bloc%20Manager/Farm%20Cubit/cubit/farm_cubit_cubit.dart";
-import "package:sheepmanager/Features/HomeScreen/Presentation/Widgets/SearchCard.dart";
 
-import "../../../../Core/Utils/colors.dart";
 import "../../../../Core/Utils/fonts.dart";
 import "../../../../Core/Utils/router.dart";
-import "../../../../Core/Utils/searchButton.dart";
 import '../../../../constValues.dart';
 import "CardsListView.dart";
 import 'addNewLivestockButton.dart';
@@ -36,7 +33,8 @@ class ExploreLivestockViewBody extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               ExploreStockAppBar(farm: farm),
-              const SizedBox(height: 25),
+              const SizedBox(height: 10),
+              SearchCardLivestock(farm: farm),
               const SizedBox(height: 25),
               Padding(
                 padding: kPaddingRightLeft,

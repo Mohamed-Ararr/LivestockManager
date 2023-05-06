@@ -1,7 +1,6 @@
 // ignore_for_file: file_names
 
 import "package:flutter/material.dart";
-import 'package:sheepmanager/Core/Utils/colors.dart';
 
 import '../../../../constValues.dart';
 import '../../../SplashScreen/Presentation/Widgets/logoImage.dart';

@@ -2,7 +2,6 @@
 
 import 'package:flutter/material.dart';
 
-import '../../../../../Core/Utils/colors.dart';
 import '../../../../../constValues.dart';
 import '../../../../FarmDetailedScreen/Presentation/Widgets/RowContent.dart';
 import '../../../../FarmDetailedScreen/Presentation/Widgets/RowTitle.dart';
