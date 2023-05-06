@@ -261,11 +261,14 @@ class _EditLivestockInputsState extends State<EditLivestockInputs> {
               // widget.sheep.id = id == "" ? widget.sheep.id : id;
               widget.sheep.type = selectedType ?? widget.sheep.type;
               widget.sheep.sexe = selectedSexe ?? widget.sheep.sexe;
-              widget.sheep.gestation =
-                  selectedGestation ?? widget.sheep.gestation;
-              widget.sheep.pregenancyProgress = selectedGestation == "No"
+              widget.sheep.gestation = selectedSexe == "Male"
+                  ? "No"
+                  : selectedGestation ?? widget.sheep.gestation;
+              widget.sheep.pregenancyProgress = selectedSexe == "Male"
                   ? "Not Pregnant"
-                  : pregnancyProgress ?? widget.sheep.pregenancyProgress;
+                  : selectedGestation == "No"
+                      ? "Not Pregnant"
+                      : pregnancyProgress ?? widget.sheep.pregenancyProgress;
               widget.sheep.weight =
                   int.tryParse(weight ?? "${widget.sheep.weight}");
               widget.sheep.age = int.tryParse(age ?? "${widget.sheep.age}");

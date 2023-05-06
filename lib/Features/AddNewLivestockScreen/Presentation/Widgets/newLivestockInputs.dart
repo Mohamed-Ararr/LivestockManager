@@ -256,7 +256,7 @@ class _NewLivestockInputsState extends State<NewLivestockInputs> {
                   gestation: selectedGestation ?? "No",
                   pregenancyProgress: pregnancyProgress == null
                       ? "Not Pregnant"
-                      : "$pregnancyProgress Months",
+                      : "$pregnancyProgress",
                 );
                 widget.farm.lastUpdate =
                     "${DateTime.now().day} ${Utils.months[DateTime.now().month - 1]} ${DateTime.now().year} at ${DateTime.now().hour}:${DateTime.now().minute}";
